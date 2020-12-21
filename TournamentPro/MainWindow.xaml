@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TournamentPro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1200" Width="1600">
-    <Grid>
+        Title="MainWindow" Height="768" Width="1024">
+    <Grid Margin="0,2,0,-2">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
@@ -16,13 +16,67 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.75*" />
+            <RowDefinition Height="0.05*" />
+            <RowDefinition Height="0.12*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Button Grid.Column="1" Grid.Row="1">Button 2</Button>
-        <Button Grid.Column="3" Grid.Row="1">Button 2</Button>
-        <Button Grid.Column="5" Grid.Row="1">Button 2</Button>
+
+        <TextBox Grid.Column="3" Grid.Row="0" Height="150" Width="600" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Name="Info"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
+            Category A Player
+        </TextBlock>
+
+        <ListBox Grid.Column="1" Grid.Row="2" Name="CategoryA" />
+        
+        <TextBox Grid.Column="1" Grid.Row="4" Height="25" Width="194" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Name="CAName"/>
+        <Button Grid.Column="1" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Click="Button_Click_2">Add Player</Button>
+        <Button Grid.Column="1" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Click="Button_Click_1" Name="CARem">Remove Player</Button>
+
+        <TextBox Grid.Column="3" Grid.Row="4" Height="25" Width="194" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Name="CBName"/>        
+        <Button Grid.Column="3" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB">Add Player</Button>
+        <Button Grid.Column="3" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Name="CBRem">Remove Player</Button>
+
+        <TextBox Grid.Column="5" Grid.Row="4" Height="25" Width="194" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Name="CCName"/>
+        <Button Grid.Column="5" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB">Add Player</Button>
+        <Button Grid.Column="5" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Name="CCRem">Remove Player</Button>
+
+        <Button Grid.Column="6" Grid.Row="5" Height="35" Width="115" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" Click="Button_Click">Next</Button>
+
+        <TextBlock Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center">
+            Category B Player
+        </TextBlock>
+
+        <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Name="TextDebug" />
+
+        <ListBox Grid.Column="3" Grid.Row="2" Name="CategoryB">
+            <ListBoxItem>Player 9</ListBoxItem>
+            <ListBoxItem>Player 10</ListBoxItem>
+            <ListBoxItem>Player 11</ListBoxItem>
+            <ListBoxItem>Player 12</ListBoxItem>
+            <ListBoxItem>Player 13</ListBoxItem>
+            <ListBoxItem>Player 14</ListBoxItem>
+            <ListBoxItem>Player 15</ListBoxItem>
+            <ListBoxItem>Player 16</ListBoxItem>
+        </ListBox>
+
+        <TextBlock Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center">
+            Category C Player
+        </TextBlock>
+        <ListBox Grid.Column="5" Grid.Row="2" Name="CategoryC">
+            <ListBoxItem>Player 17</ListBoxItem>
+            <ListBoxItem>Player 18</ListBoxItem>
+            <ListBoxItem>Player 19</ListBoxItem>
+            <ListBoxItem>Player 20</ListBoxItem>
+            <ListBoxItem>Player 21</ListBoxItem>
+            <ListBoxItem>Player 22</ListBoxItem>
+            <ListBoxItem>Player 23</ListBoxItem>
+            <ListBoxItem>Player 24</ListBoxItem>
+        </ListBox>
     </Grid>
 </Window>
