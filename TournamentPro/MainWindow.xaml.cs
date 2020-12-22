@@ -30,16 +30,22 @@ namespace TournamentPro
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.Navigate(Teams());
+            List<string> playersA = CategoryA.Items.
+            List<string> playersB = CategoryB.Items.Cast<String>().ToList();
+            List<string> playersC = CategoryC.Items.Cast<String>().ToList();
 
-            if (CategoryA.Items.Count != CategoryB.Items.Count || CategoryA.Items.Count != CategoryC.Items.Count)
+            var newForm = new Teams(playersA, playersB, playersC); //create your new form.
+            newForm.Show();
+            this.Close();
+
+            /*if (CategoryA.Items.Count != CategoryB.Items.Count || CategoryA.Items.Count != CategoryC.Items.Count)
             {
                 TextDebug.Text = "Uneven number of items";
             }
             else
             {
                 TextDebug.Text = "Even number of items";
-            }
+            }*/
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
