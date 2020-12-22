@@ -36,3 +36,5 @@ C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\Tourname
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\TournamentPro.dll
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\TournamentPro.pdb
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\TournamentPro.genruntimeconfig.cache
+C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\Teams.g.cs
+C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\Teams.baml

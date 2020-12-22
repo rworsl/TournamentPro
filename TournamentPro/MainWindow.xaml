@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TournamentPro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1024">
-    <Grid Margin="0,2,0,-2">
+        Title="Tournament Pro" Height="768" Width="1024">
+    
+    <Grid Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
@@ -26,57 +27,39 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <TextBox Grid.Column="3" Grid.Row="0" Height="150" Width="600" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Name="Info"/>
+        <Label Grid.Column="3" Grid.Row="0" Height="150" Width="600" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Name="Info"/>
 
         <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
-            Category A Player
+            Category A Players
         </TextBlock>
 
         <ListBox Grid.Column="1" Grid.Row="2" Name="CategoryA" />
-        
+
         <TextBox Grid.Column="1" Grid.Row="4" Height="25" Width="194" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Name="CAName"/>
         <Button Grid.Column="1" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Click="Button_Click_2">Add Player</Button>
         <Button Grid.Column="1" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Click="Button_Click_1" Name="CARem">Remove Player</Button>
 
-        <TextBox Grid.Column="3" Grid.Row="4" Height="25" Width="194" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Name="CBName"/>        
-        <Button Grid.Column="3" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB">Add Player</Button>
-        <Button Grid.Column="3" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Name="CBRem">Remove Player</Button>
+        <TextBox Grid.Column="3" Grid.Row="4" Height="25" Width="194" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Name="CBName"/>
+        <Button Grid.Column="3" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Click="Button_Click_3">Add Player</Button>
+        <Button Grid.Column="3" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Name="CBRem" Click="CBRem_Click">Remove Player</Button>
 
         <TextBox Grid.Column="5" Grid.Row="4" Height="25" Width="194" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Name="CCName"/>
-        <Button Grid.Column="5" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB">Add Player</Button>
-        <Button Grid.Column="5" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Name="CCRem">Remove Player</Button>
+        <Button Grid.Column="5" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Click="Button_Click_4">Add Player</Button>
+        <Button Grid.Column="5" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Name="CCRem" Click="CCRem_Click">Remove Player</Button>
 
         <Button Grid.Column="6" Grid.Row="5" Height="35" Width="115" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" Click="Button_Click">Next</Button>
 
         <TextBlock Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center">
-            Category B Player
+            Category B Players
         </TextBlock>
 
         <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Name="TextDebug" />
 
-        <ListBox Grid.Column="3" Grid.Row="2" Name="CategoryB">
-            <ListBoxItem>Player 9</ListBoxItem>
-            <ListBoxItem>Player 10</ListBoxItem>
-            <ListBoxItem>Player 11</ListBoxItem>
-            <ListBoxItem>Player 12</ListBoxItem>
-            <ListBoxItem>Player 13</ListBoxItem>
-            <ListBoxItem>Player 14</ListBoxItem>
-            <ListBoxItem>Player 15</ListBoxItem>
-            <ListBoxItem>Player 16</ListBoxItem>
-        </ListBox>
+        <ListBox Grid.Column="3" Grid.Row="2" Name="CategoryB" />
 
         <TextBlock Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center">
-            Category C Player
+            Category C Players
         </TextBlock>
-        <ListBox Grid.Column="5" Grid.Row="2" Name="CategoryC">
-            <ListBoxItem>Player 17</ListBoxItem>
-            <ListBoxItem>Player 18</ListBoxItem>
-            <ListBoxItem>Player 19</ListBoxItem>
-            <ListBoxItem>Player 20</ListBoxItem>
-            <ListBoxItem>Player 21</ListBoxItem>
-            <ListBoxItem>Player 22</ListBoxItem>
-            <ListBoxItem>Player 23</ListBoxItem>
-            <ListBoxItem>Player 24</ListBoxItem>
-        </ListBox>
+        <ListBox Grid.Column="5" Grid.Row="2" Name="CategoryC" />
     </Grid>
 </Window>

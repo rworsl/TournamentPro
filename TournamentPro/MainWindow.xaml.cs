@@ -25,13 +25,14 @@ namespace TournamentPro
         List<string> CategoryCPlayers = new List<string>();
         public MainWindow()
         {
-            Info.Text = "This is primarily set up to handle 24 players. The hope is that it will be able to handle more or less without throwing any erros, but don't get your hopes up.";
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(CategoryA.Items.Count != CategoryB.Items.Count || CategoryA.Items.Count != CategoryC.Items.Count)
+            MainWindow.Navigate(Teams());
+
+            if (CategoryA.Items.Count != CategoryB.Items.Count || CategoryA.Items.Count != CategoryC.Items.Count)
             {
                 TextDebug.Text = "Uneven number of items";
             }
@@ -55,9 +56,26 @@ namespace TournamentPro
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            var nameToAdd = CAName.Text;
+            var nameToAdd = CBName.Text;
             CategoryB.Items.Add(nameToAdd);
-            CAName.Clear();
+            CBName.Clear();
+        }
+
+        private void CBRem_Click(object sender, RoutedEventArgs e)
+        {
+            CategoryB.Items.Remove(CategoryB.SelectedItem);
+        }
+
+        private void CCRem_Click(object sender, RoutedEventArgs e)
+        {
+            CategoryC.Items.Remove(CategoryC.SelectedItem);
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            var nameToAdd = CCName.Text;
+            CategoryC.Items.Add(nameToAdd);
+            CCName.Clear();
         }
     }
 }
