@@ -1,15 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace TournamentPro
 {
@@ -193,6 +185,14 @@ namespace TournamentPro
                 t8players += i + "\n";
             }
             team8.Text = t8players;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var newForm = new GroupStage(t1, t2, t3, t4, t5, t6, t7, t8); //create your new form.
+
+            newForm.Show();
+            this.Close();
         }
     }
 }

@@ -1,0 +1,22 @@
+﻿<Window x:Class="TournamentPro.GroupStage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TournamentPro"
+        mc:Ignorable="d"
+        Title="Tournament Pro - Group Stage" Height="768" Width="1024">
+
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Margin="10,10,10,55"/>
+        <Button Width="115" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Next</Button>
+    </Grid>
+</Window>

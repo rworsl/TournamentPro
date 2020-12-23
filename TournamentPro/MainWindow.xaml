@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TournamentPro"
         mc:Ignorable="d"
-        Title="Tournament Pro" 
+        Title="Tournament Pro - Player Entry" 
         Height="768" 
         Width="1024">
 
@@ -35,18 +35,8 @@
             Category A Players
         </TextBlock>
 
-            <ListBox Name="CategoryA" Grid.Row="2" Grid.Column="1" SelectionMode="Multiple">
-                <ListBoxItem>Rich</ListBoxItem>
-                <ListBoxItem>Freya</ListBoxItem>
-                <ListBoxItem>Kevin</ListBoxItem>
-                <ListBoxItem>Kim</ListBoxItem>
-                <ListBoxItem>Jude</ListBoxItem>
-                <ListBoxItem>Becky</ListBoxItem>
-                <ListBoxItem>Katie</ListBoxItem>
-                <ListBoxItem>Jason</ListBoxItem>
-            </ListBox>
-
-            <TextBox Grid.Column="1" Grid.Row="4" Height="25" Width="194" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Name="CAName"/>
+        <ListBox Name="CategoryA" Grid.Row="2" Grid.Column="1" SelectionMode="Multiple" />
+        <TextBox Grid.Column="1" Grid.Row="4" Height="25" Width="194" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" Name="CAName"/>
         <Button Grid.Column="1" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Click="Button_Click_2">Add Player</Button>
         <Button Grid.Column="1" Grid.Row="5" Height="25" Width="85" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" BorderThickness="0.5,0.5,0.5,0.5" FontFamily="Berlin Sans FB" Click="Button_Click_1" Name="CARem">Remove Player</Button>
 
@@ -66,29 +56,12 @@
 
         <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Name="TextDebug" />
 
-        <ListBox Name="CategoryB" Grid.Row="2" Grid.Column="3" SelectionMode="Multiple">
-            <ListBoxItem>Barry</ListBoxItem>
-            <ListBoxItem>Mel</ListBoxItem>
-            <ListBoxItem>Emma</ListBoxItem>
-            <ListBoxItem>Emily</ListBoxItem>
-            <ListBoxItem>Linzi</ListBoxItem>
-            <ListBoxItem>George</ListBoxItem>
-            <ListBoxItem>Laura</ListBoxItem>
-            <ListBoxItem>Ben</ListBoxItem>
-        </ListBox>
+        <ListBox Name="CategoryB" Grid.Row="2" Grid.Column="3" SelectionMode="Multiple" />
 
         <TextBlock Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center">
             Category C Players
         </TextBlock>
-        <ListBox Name="CategoryC" Grid.Row="2" Grid.Column="5" SelectionMode="Multiple">
-            <ListBoxItem>Neil</ListBoxItem>
-            <ListBoxItem>Sam</ListBoxItem>
-            <ListBoxItem>Lee</ListBoxItem>
-            <ListBoxItem>Velez</ListBoxItem>
-            <ListBoxItem>Pierre</ListBoxItem>
-            <ListBoxItem>Adam</ListBoxItem>
-            <ListBoxItem>Alex</ListBoxItem>
-            <ListBoxItem>Alastair</ListBoxItem>
-        </ListBox>
+        <ListBox Name="CategoryC" Grid.Row="2" Grid.Column="5" SelectionMode="Multiple" />
+
     </Grid>
 </Window>

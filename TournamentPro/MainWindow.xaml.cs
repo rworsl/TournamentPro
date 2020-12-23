@@ -20,9 +20,9 @@ namespace TournamentPro
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> CategoryAPlayers = new List<string>();
-        List<string> CategoryBPlayers = new List<string>();
-        List<string> CategoryCPlayers = new List<string>();
+        List<string> playersA = new List<string>();
+        List<string> playersB = new List<string>();
+        List<string> playersC = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,22 +30,14 @@ namespace TournamentPro
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<string> playersA = CategoryA.Items.
-            List<string> playersB = CategoryB.Items.Cast<String>().ToList();
-            List<string> playersC = CategoryC.Items.Cast<String>().ToList();
+            playersA = CategoryA.Items.Cast<String>().ToList();
+            playersB = CategoryB.Items.Cast<String>().ToList();
+            playersC = CategoryC.Items.Cast<String>().ToList();
 
             var newForm = new Teams(playersA, playersB, playersC); //create your new form.
+
             newForm.Show();
             this.Close();
-
-            /*if (CategoryA.Items.Count != CategoryB.Items.Count || CategoryA.Items.Count != CategoryC.Items.Count)
-            {
-                TextDebug.Text = "Uneven number of items";
-            }
-            else
-            {
-                TextDebug.Text = "Even number of items";
-            }*/
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
