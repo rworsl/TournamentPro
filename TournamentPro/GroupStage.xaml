@@ -6,17 +6,41 @@
         xmlns:local="clr-namespace:TournamentPro"
         mc:Ignorable="d"
         Title="Tournament Pro - Group Stage" Height="768" Width="1024">
-
-    <Grid Margin="0,0,0,0">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer Margin="10,10,10,55"/>
+        <ScrollViewer Margin="10,10,10,55">
+    <Grid ScrollViewer.CanContentScroll="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
         <Button Width="115" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Next</Button>
+    </Grid>
+    </ScrollViewer>
     </Grid>
 </Window>

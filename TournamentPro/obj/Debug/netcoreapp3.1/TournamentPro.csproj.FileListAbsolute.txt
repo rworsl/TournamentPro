@@ -61,3 +61,5 @@ C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\
 C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\TournamentPro.genruntimeconfig.cache
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\GroupStage.g.cs
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\GroupStage.baml
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\GroupStage.g.cs
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\GroupStage.baml
