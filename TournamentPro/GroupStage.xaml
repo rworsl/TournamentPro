@@ -11,36 +11,66 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
 
         <ScrollViewer Margin="10,10,10,55">
-    <Grid ScrollViewer.CanContentScroll="True">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            </Grid.RowDefinitions>
+            <Grid ScrollViewer.CanContentScroll="True" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="135"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="135"/>
+                </Grid.RowDefinitions>
 
-        <Button Width="115" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Next</Button>
-    </Grid>
+
+                <Border Grid.Column="0" Grid.Row="1" Background="Black" Width="125"/>
+                <TextBlock Text="Court 1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                <Border Grid.Column="1" Grid.Row="1" Background="Black" Width="125"/>
+                <TextBlock Text="Court 2" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                <Border Grid.Column="2" Grid.Row="1" Background="Black" Width="125"/>
+                <TextBlock Text="Court 3" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="125"/>
+                <TextBlock Text="Court 4" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                <!-- Court 1 -->
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="Name1         +         Name2" Name="G1P1" HorizontalAlignment="Left" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="30,30,0,0"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="vs" HorizontalAlignment="Center" Padding="50"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="Name3         +         Name4" Name="G1P2" HorizontalAlignment="Right" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="0,30,30,0"/>
+                <TextBox Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1T1Score" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,25"/>
+                <TextBox Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1T2Score" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,25"/>
+                <Button Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1Button" VerticalAlignment="Bottom" Margin="0">Submit</Button>
+
+                <!-- Court 2 -->
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="Name1         +         Name2" Name="G2P1" HorizontalAlignment="Left" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="30,30,0,0"/>
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="vs" HorizontalAlignment="Center" Padding="50"/>
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="Name3         +         Name4" Name="G2P2" HorizontalAlignment="Right" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="0,30,30,0"/>
+                <TextBox Grid.Column="1" Grid.Row="2" Width="45" Height="20" Name="Game2T1Score" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,25"/>
+                <TextBox Grid.Column="1" Grid.Row="2" Width="45" Height="20" Name="Game2T2Score" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,25"/>
+                <Button Grid.Column="1" Grid.Row="2" Width="45" Height="20" Name="Game2Button" VerticalAlignment="Bottom" Margin="0">Submit</Button>
+
+                <!-- Court 3 -->
+                <TextBlock Grid.Column="2" Grid.Row="2" Text="Name1         +         Name2" Name="G3P1" HorizontalAlignment="Left" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="30,30,0,0"/>
+                <TextBlock Grid.Column="2" Grid.Row="2" Text="vs" HorizontalAlignment="Center" Padding="50"/>
+                <TextBlock Grid.Column="2" Grid.Row="2" Text="Name3         +         Name4" Name="G3P2" HorizontalAlignment="Right" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="0,30,30,0"/>
+                <TextBox Grid.Column="2" Grid.Row="2" Width="45" Height="20" Name="Game3T1Score" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,25"/>
+                <TextBox Grid.Column="2" Grid.Row="2" Width="45" Height="20" Name="Game3T2Score" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,25"/>
+                <Button Grid.Column="2" Grid.Row="2" Width="45" Height="20" Name="Game3Button" VerticalAlignment="Bottom" Margin="0">Submit</Button>
+
+                <!-- Court 4 -->
+                <TextBlock Grid.Column="3" Grid.Row="2" Text="Name1         +         Name2" Name="G4P1" HorizontalAlignment="Left" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="30,30,0,0"/>
+                <TextBlock Grid.Column="3" Grid.Row="2" Text="vs" HorizontalAlignment="Center" Padding="50"/>
+                <TextBlock Grid.Column="3" Grid.Row="2" Text="Name3         +         Name4" Name="G4P2" HorizontalAlignment="Right" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="0,30,30,0"/>
+                <TextBox Grid.Column="3" Grid.Row="2" Width="45" Height="20" Name="Game4T1Score" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,25"/>
+                <TextBox Grid.Column="3" Grid.Row="2" Width="45" Height="20" Name="Game4T2Score" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,25"/>
+                <Button Grid.Column="3" Grid.Row="2" Width="45" Height="20" Name="Game4Button" VerticalAlignment="Bottom" Margin="0">Submit</Button>
+
+            </Grid>
     </ScrollViewer>
+        <Button Width="115" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Next</Button>
     </Grid>
 </Window>
