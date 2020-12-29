@@ -35,35 +35,36 @@ namespace TournamentPro
         List<string> team7Players;
         List<string> team8Players;
 
-        List<string> Game1;
-        List<string> Game2;
-        List<string> Game3;
-        List<string> Game4;
-        List<string> Game5;
-        List<string> Game6;
-        List<string> Game7;
-        List<string> Game8;
-        List<string> Game9;
-        List<string> Game10;
-        List<string> Game11;
-        List<string> Game12;
-        List<string> Game13;
-        List<string> Game14;
-        List<string> Game15;
-        List<string> Game16;
-        List<string> Game17;
-        List<string> Game18;
-        List<string> Game19;
-        List<string> Game20;
-        List<string> Game21;
-        List<string> Game22;
-        List<string> Game23;
-        List<string> Game24;
+        List<string> Game1 = new List<string> { };
+        List<string> Game2 = new List<string> { };
+        List<string> Game3 = new List<string> { };
+        List<string> Game4 = new List<string> { };
+        List<string> Game5 = new List<string> { };
+        List<string> Game6 = new List<string> { };
+        List<string> Game7 = new List<string> { };
+        List<string> Game8 = new List<string> { };
+        List<string> Game9 = new List<string> { };
+        List<string> Game10 = new List<string> { };
+        List<string> Game11 = new List<string> { };
+        List<string> Game12 = new List<string> { };
+        List<string> Game13 = new List<string> { };
+        List<string> Game14 = new List<string> { };
+        List<string> Game15 = new List<string> { };
+        List<string> Game16 = new List<string> { };
+        List<string> Game17 = new List<string> { };
+        List<string> Game18 = new List<string> { };
+        List<string> Game19 = new List<string> { };
+        List<string> Game20 = new List<string> { };
+        List<string> Game21 = new List<string> { };
+        List<string> Game22 = new List<string> { };
+        List<string> Game23 = new List<string> { };
+        List<string> Game24 = new List<string> { };
 
-        List<List<string>> GamesList;
+        List<List<string>> GamesList = new List<List<string>> { };
 
         public GroupStage(List<string> t1, List<string> t2, List<string> t3, List<string> t4, List<string> t5, List<string> t6, List<string> t7, List<string> t8)
         {
+            InitializeComponent();
             team1Players = t1;
             team2Players = t2;
             team3Players = t3;
@@ -74,13 +75,12 @@ namespace TournamentPro
             team8Players = t8;
             assignGames1stHalf();
             Court1Details();
-            InitializeComponent();
         }
 
         private void assignGames1stHalf()
         {
             //Game 1 Players
-            Game1.Add(team1Players[0]);
+            Game1.Add(team1Players[0].ToString());
             Game1.Add(team1Players[1]);
             Game1.Add(team4Players[0]);
             Game1.Add(team4Players[1]);
@@ -156,7 +156,10 @@ namespace TournamentPro
 
         private void Court1Details()
         {
-            G1P1.Text = Game1[0] + "\n" + Game1[1];
+            string p1 = Game1[0].ToString() + "\n" + "+" + "\n" + Game1[1].ToString();
+            G1P1.Text = p1;
+            string p2 = Game1[2].ToString() + "\n" + "+" + "\n" + Game1[3].ToString();
+            G1P1.Text = p2;
         }
 
 
