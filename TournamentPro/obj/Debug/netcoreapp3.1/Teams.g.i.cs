@@ -117,7 +117,7 @@ namespace TournamentPro {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TournamentPro;V1.0.0.0;component/teams.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TournamentPro;component/teams.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Teams.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

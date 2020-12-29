@@ -41,12 +41,12 @@
                 <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="125"/>
                 <TextBlock Text="Court 4" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
                 <!-- Court 1 -->
-                <TextBlock Grid.Column="0" Grid.Row="2" Text="Name1         +         Name2" Name="G1P1" HorizontalAlignment="Left" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="30,30,0,0"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="" Name="G1P1" HorizontalAlignment="Left" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="30,30,0,0"/>
                 <TextBlock Grid.Column="0" Grid.Row="2" Text="vs" HorizontalAlignment="Center" Padding="50"/>
-                <TextBlock Grid.Column="0" Grid.Row="2" Text="Name3         +         Name4" Name="G1P2" HorizontalAlignment="Right" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="0,30,30,0"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="" Name="G1P2" HorizontalAlignment="Right" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="0,30,30,0"/>
                 <TextBox Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1T1Score" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,25"/>
                 <TextBox Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1T2Score" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,25"/>
-                <Button Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1Button" VerticalAlignment="Bottom" Margin="0">Submit</Button>
+                <Button Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1Button" VerticalAlignment="Bottom" Margin="0" Click="Game1Button_Click">Submit</Button>
 
                 <!-- Court 1 waiting list -->
                 <TextBlock Grid.Column="0" Grid.Row="4" Text="Next playing:" HorizontalAlignment="Center" Width="75" VerticalAlignment="Bottom" />

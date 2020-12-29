@@ -25,3 +25,18 @@ Team 4 - Player 1 + Player 3	vs	Team 3 - Player 1 + Player 3
 Team 4 - Player 1 + Player 2	vs	Team 2 - Player 1 + Player 2
 Team 4 - Player 2 + Player 3	vs	Team 1 - Player 2 + Player 3
 Team 4 - Player 1 + Player 3	vs	Team 3 - Player 1 + Player 3
+=========================================================================
+Team 1 - Player 1 + Player 2	vs	Team 4 - Player 1 + Player 2
+Team 3 - Player 1 + Player 2	vs	Team 2 - Player 1 + Player 2
+
+Team 1 - Player 2 + Player 3	vs	Team 3 - Player 2 + Player 3
+Team 2 - Player 2 + Player 3	vs	Team 4 - Player 2 + Player 3
+
+Team 1 - Player 1 + Player 3	vs	Team 2 - Player 1 + Player 3
+Team 3 - Player 1 + Player 3	vs	Team 4 - Player 1 + Player 3
+Team 1 - Player 1 + Player 2	vs	Team 3 - Player 1 + Player 2
+Team 2 - Player 1 + Player 2	vs	Team 4 - Player 1 + Player 2
+Team 1 - Player 2 + Player 3	vs	Team 4 - Player 2 + Player 3
+Team 2 - Player 2 + Player 3	vs	Team 3 - Player 2 + Player 3
+Team 1 - Player 1 + Player 3	vs	Team 2 - Player 1 + Player 3
+Team 4 - Player 1 + Player 3	vs	Team 3 - Player 1 + Player 3
