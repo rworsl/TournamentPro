@@ -20,9 +20,9 @@ namespace TournamentPro
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> playersA = new List<string>();
-        List<string> playersB = new List<string>();
-        List<string> playersC = new List<string>();
+        //List<string> playersA = new List<string>();
+        //List<string> playersB = new List<string>();
+        //List<string> playersC = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,9 +30,15 @@ namespace TournamentPro
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            playersA = CategoryA.Items.Cast<String>().ToList();
-            playersB = CategoryB.Items.Cast<String>().ToList();
-            playersC = CategoryC.Items.Cast<String>().ToList();
+            //playersA = CategoryA.Items.Cast<String>().ToList();
+            //playersB = CategoryB.Items.Cast<String>().ToList();
+            //playersC = CategoryC.Items.Cast<String>().ToList();
+
+            //remove before executable
+            List<string> playersA = new List<string>{"Rich", "Freya", "Kevin", "Laura", "Emily", "Velez", "Neil", "Kim"};
+            List<string> playersB = new List<string> { "Becky", "Barry", "George", "Katie", "Pierre", "Jude", "Mel", "Sweetcheeks" };
+            List<string> playersC = new List<string> { "Lee", "Jason", "Linzi", "Alex", "Alastair", "Ah Dee", "Paul", "Andy" };
+
 
             var newForm = new Teams(playersA, playersB, playersC); //create your new form.
 
