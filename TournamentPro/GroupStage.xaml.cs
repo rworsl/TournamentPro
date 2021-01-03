@@ -45,6 +45,15 @@ namespace TournamentPro
         int Team7PointsAgainst = 0;
         int Team8PointsAgainst = 0;
 
+        int Team1Wins = 0;
+        int Team2Wins = 0;
+        int Team3Wins = 0;
+        int Team4Wins = 0;
+        int Team5Wins = 0;
+        int Team6Wins = 0;
+        int Team7Wins = 0;
+        int Team8Wins = 0;
+
         List<string> team1Players;
         List<string> team2Players;
         List<string> team3Players;
@@ -84,6 +93,7 @@ namespace TournamentPro
         public GroupStage(List<string> t1, List<string> t2, List<string> t3, List<string> t4, List<string> t5, List<string> t6, List<string> t7, List<string> t8)
         {
             InitializeComponent();
+            Next.IsEnabled = false;
             team1Players = t1;
             team2Players = t2;
             team3Players = t3;
@@ -107,6 +117,10 @@ namespace TournamentPro
                 Team1Score += Int32.Parse(score);
                 var scoreAgainst = Game1T2Score.Text;
                 Team1PointsAgainst += Int32.Parse(score);
+                if (Int32.Parse(score) == 21)
+                {
+                    Team1Wins += 1;
+                }
             }
             else if (c1t1 == "team2")
             {
@@ -114,6 +128,9 @@ namespace TournamentPro
                 Team2Score += Int32.Parse(score);
                 var scoreAgainst = Game1T2Score.Text;
                 Team2PointsAgainst += Int32.Parse(score);
+                {
+                    Team2Wins += 1;
+                }
             }
             else if (c1t1 == "team3")
             {
@@ -121,6 +138,9 @@ namespace TournamentPro
                 Team3Score += Int32.Parse(score);
                 var scoreAgainst = Game1T2Score.Text;
                 Team3PointsAgainst += Int32.Parse(score);
+                {
+                    Team3Wins += 1;
+                }
             }
             else
             {
@@ -128,6 +148,9 @@ namespace TournamentPro
                 Team4Score += Int32.Parse(score);
                 var scoreAgainst = Game1T2Score.Text;
                 Team4PointsAgainst += Int32.Parse(score);
+                {
+                    Team4Wins += 1;
+                }
             }
             Game1T1Score.Clear();
         }
@@ -214,7 +237,6 @@ namespace TournamentPro
             }
             Game2T2Score.Clear();
         }
-
 
         private void assignGames1stHalf()
         {
@@ -319,23 +341,36 @@ namespace TournamentPro
 
         private void Court1Details()
         {
-            var selectedGame = GamesList[0];
-            string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
-            G1P1.Text = p1;
+            if (GamesList.Count > 0)
+            {
+                var selectedGame = GamesList[0];
+                string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
+                G1P1.Text = p1;
 
-            string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
-            G1P2.Text = p2;
+                string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
+                G1P2.Text = p2;
 
-            c1t1 = GamesList[0][4];
-            c1t2 = GamesList[0][5];
-            GamesList.RemoveAt(0);
+                c1t1 = GamesList[0][4];
+                c1t2 = GamesList[0][5];
+                GamesList.RemoveAt(0);
+            }
+            else
+            {
+                var selectedGame = GamesList[0];
+                string p1 = "" + "\n" + "+" + "\n" + "";
+                C1NG1.Text = p1;
+
+                string p2 = "" + "\n" + "+" + "\n" + "";
+                C1NG2.Text = p2;
+                Next.IsEnabled = true;
+            }
         }
 
         private void Court1Next()
         {
-            if (GamesList.Count > 1)
+            if (GamesList.Count > 0)
             {
-                var selectedGame = GamesList[1];
+                var selectedGame = GamesList[0];
                 string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
                 C1NG1.Text = p1;
 
@@ -369,7 +404,7 @@ namespace TournamentPro
 
         private void Court2Next()
         {
-            var selectedGame = GamesList[1];
+            var selectedGame = GamesList[0];
             string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
             C2NG1.Text = p1;
 

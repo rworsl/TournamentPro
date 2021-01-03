@@ -96,6 +96,6 @@
             <TextBlock Grid.Column="3" Grid.Row="5" Text="" Name="C4NG2" HorizontalAlignment="Right" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="0,30,30,0"/>
 
         </Grid>
-        <Button Width="115" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Next</Button>
+        <Button Width="115" Height="35" Name="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Next</Button>
     </Grid>
 </Window>
