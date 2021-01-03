@@ -45,7 +45,7 @@
             <TextBlock Grid.Column="0" Grid.Row="2" Text="" Name="G1P2" HorizontalAlignment="Right" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="0,30,30,0"/>
             <TextBox Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1T1Score" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,25"/>
             <TextBox Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1T2Score" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,25"/>
-            <Button Grid.Column="0" Grid.Row="2" Width="45" Height="20" Name="Game1Button" VerticalAlignment="Bottom" Margin="0" Click="Game1Button_Click">Submit</Button>
+            <Button Grid.Column="0" Grid.Row="2" Width="45" Name="Game1Button" Margin="106,130,105,0" Click="Game1Button_Click">Submit</Button>
 
             <!-- Court 1 waiting list -->
             <TextBlock Grid.Column="0" Grid.Row="4" Text="Next playing:" HorizontalAlignment="Center" Width="75" VerticalAlignment="Bottom" />

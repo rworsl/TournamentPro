@@ -36,6 +36,15 @@ namespace TournamentPro
         int Team7Score = 0;
         int Team8Score = 0;
 
+        int Team1PointsAgainst = 0;
+        int Team2PointsAgainst = 0;
+        int Team3PointsAgainst = 0;
+        int Team4PointsAgainst = 0;
+        int Team5PointsAgainst = 0;
+        int Team6PointsAgainst = 0;
+        int Team7PointsAgainst = 0;
+        int Team8PointsAgainst = 0;
+
         List<string> team1Players;
         List<string> team2Players;
         List<string> team3Players;
@@ -96,21 +105,29 @@ namespace TournamentPro
             {
                 var score = Game1T1Score.Text;
                 Team1Score += Int32.Parse(score);
+                var scoreAgainst = Game1T2Score.Text;
+                Team1PointsAgainst += Int32.Parse(score);
             }
             else if (c1t1 == "team2")
             {
                 var score = Game1T1Score.Text;
                 Team2Score += Int32.Parse(score);
+                var scoreAgainst = Game1T2Score.Text;
+                Team2PointsAgainst += Int32.Parse(score);
             }
             else if (c1t1 == "team3")
             {
                 var score = Game1T1Score.Text;
                 Team3Score += Int32.Parse(score);
+                var scoreAgainst = Game1T2Score.Text;
+                Team3PointsAgainst += Int32.Parse(score);
             }
             else
             {
                 var score = Game1T1Score.Text;
                 Team4Score += Int32.Parse(score);
+                var scoreAgainst = Game1T2Score.Text;
+                Team4PointsAgainst += Int32.Parse(score);
             }
             Game1T1Score.Clear();
         }
@@ -120,21 +137,30 @@ namespace TournamentPro
             {
                 var score = Game1T2Score.Text;
                 Team1Score += Int32.Parse(score);
+                var scoreAgainst = Game1T1Score.Text;
+                Team1PointsAgainst += Int32.Parse(score);
             }
             else if (c1t1 == "team2")
             {
                 var score = Game1T2Score.Text;
                 Team2Score += Int32.Parse(score);
+                var scoreAgainst = Game1T1Score.Text;
+                Team2PointsAgainst += Int32.Parse(score);
             }
             else if (c1t1 == "team3")
             {
                 var score = Game1T2Score.Text;
                 Team3Score += Int32.Parse(score);
+                var scoreAgainst = Game1T1Score.Text;
+                Team3PointsAgainst += Int32.Parse(score);
             }
             else
             {
                 var score = Game1T2Score.Text;
                 Team4Score += Int32.Parse(score);
+                Team4PointsAgainst += Int32.Parse(score);
+                var scoreAgainst = Game1T1Score.Text;
+                Team4PointsAgainst += Int32.Parse(score);
             }
             Game1T2Score.Clear();
         }
@@ -307,12 +333,24 @@ namespace TournamentPro
 
         private void Court1Next()
         {
-            var selectedGame = GamesList[1];
-            string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
-            C1NG1.Text = p1;
+            if (GamesList.Count > 1)
+            {
+                var selectedGame = GamesList[1];
+                string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
+                C1NG1.Text = p1;
 
-            string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
-            C1NG2.Text = p2;
+                string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
+                C1NG2.Text = p2;
+            }
+            else
+            {
+
+                string p1 = "" + "\n" + "+" + "\n" + "";
+                C1NG1.Text = p1;
+
+                string p2 = "" + "\n" + "+" + "\n" + "";
+                C1NG2.Text = p2;
+            }
         }
 
         private void Court2Details()
@@ -341,7 +379,10 @@ namespace TournamentPro
 
         private void Game1Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            scoreCollectC1T1();
+            scoreCollectC1T2();
+            Court1Details();
+            Court1Next();
         }
     }
 }
