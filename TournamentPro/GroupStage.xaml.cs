@@ -412,12 +412,32 @@ namespace TournamentPro
             C2NG2.Text = p2;
         }
 
-        private void Game1Button_Click(object sender, RoutedEventArgs e)
+        private void Game1Button_Click_1(object sender, RoutedEventArgs e)
         {
-            scoreCollectC1T1();
-            scoreCollectC1T2();
-            Court1Details();
-            Court1Next();
+            try
+            {
+                var T1score = Game1T1Score.Text;
+                var T1S = Int32.Parse(T1score);
+                var T2score = Game1T2Score.Text;
+                var T2S = Int32.Parse(T2score);
+
+                if ((T1S == 21) && (T2S < 21) || (T2S == 21) && (T1S < 21))
+                {
+                    C1Info.Text = "";
+                    scoreCollectC1T1();
+                    scoreCollectC1T2();
+                    Court1Details();
+                    Court1Next();
+                }
+                else
+                {
+                    C1Info.Text = "Scores must be to 21 with no setting";
+                }
+            }
+            catch
+            {
+                C1Info.Text = "A score must be entered";
+            }
         }
     }
 }
