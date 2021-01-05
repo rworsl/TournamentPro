@@ -89,6 +89,7 @@ namespace TournamentPro
         List<string> Game24 = new List<string> { };
 
         List<List<string>> GamesList = new List<List<string>> { };
+        List<List<string>> GamesList2 = new List<List<string>> { };
 
         public GroupStage(List<string> t1, List<string> t2, List<string> t3, List<string> t4, List<string> t5, List<string> t6, List<string> t7, List<string> t8)
         {
@@ -103,10 +104,13 @@ namespace TournamentPro
             team7Players = t7;
             team8Players = t8;
             assignGames1stHalf();
+            assignGames2ndHalf();
             Court1Details();
             Court1Next();
             Court2Details();
             Court2Next();
+            Court3Details();
+            Court3Next();
         }
 
         private void scoreCollectC1T1()
@@ -190,52 +194,138 @@ namespace TournamentPro
 
         private void scoreCollectC2T1()
         {
-            if (c1t1 == "team1")
+            if (c2t1 == "team1")
             {
-                var score = Game1T1Score.Text;
+                var score = Game2T1Score.Text;
                 Team1Score += Int32.Parse(score);
+                var scoreAgainst = Game2T2Score.Text;
+                Team1PointsAgainst += Int32.Parse(score);
             }
-            else if (c1t1 == "team2")
+            else if (c2t1 == "team2")
             {
-                var score = Game1T1Score.Text;
+                var score = Game2T1Score.Text;
                 Team2Score += Int32.Parse(score);
+                var scoreAgainst = Game2T2Score.Text;
+                Team2PointsAgainst += Int32.Parse(score);
             }
-            else if (c1t1 == "team3")
+            else if (c2t1 == "team3")
             {
-                var score = Game1T1Score.Text;
+                var score = Game2T1Score.Text;
                 Team3Score += Int32.Parse(score);
+                var scoreAgainst = Game2T2Score.Text;
+                Team3PointsAgainst += Int32.Parse(score);
             }
             else
             {
-                var score = Game1T1Score.Text;
+                var score = Game2T1Score.Text;
                 Team4Score += Int32.Parse(score);
+                Team4PointsAgainst += Int32.Parse(score);
+                var scoreAgainst = Game2T2Score.Text;
+                Team4PointsAgainst += Int32.Parse(score);
             }
             Game2T1Score.Clear();
         }
 
         private void scoreCollectC2T2()
         {
-            if (c1t1 == "team1")
+            if (c2t2 == "team1")
             {
-                var score = Game1T1Score.Text;
+                var score = Game2T2Score.Text;
                 Team1Score += Int32.Parse(score);
+                var scoreAgainst = Game2T1Score.Text;
+                Team1PointsAgainst += Int32.Parse(score);
             }
-            else if (c1t1 == "team2")
+            else if (c2t2 == "team2")
             {
-                var score = Game1T1Score.Text;
+                var score = Game2T2Score.Text;
                 Team2Score += Int32.Parse(score);
+                var scoreAgainst = Game2T1Score.Text;
+                Team2PointsAgainst += Int32.Parse(score);
             }
-            else if (c1t1 == "team3")
+            else if (c2t2 == "team3")
             {
-                var score = Game1T1Score.Text;
+                var score = Game2T2Score.Text;
                 Team3Score += Int32.Parse(score);
+                var scoreAgainst = Game2T1Score.Text;
+                Team3PointsAgainst += Int32.Parse(score);
             }
             else
             {
-                var score = Game1T1Score.Text;
+                var score = Game2T2Score.Text;
                 Team4Score += Int32.Parse(score);
+                Team4PointsAgainst += Int32.Parse(score);
+                var scoreAgainst = Game2T1Score.Text;
+                Team4PointsAgainst += Int32.Parse(score);
             }
             Game2T2Score.Clear();
+        }
+
+        private void scoreCollectC3T1()
+        {
+            if (c2t1 == "team1")
+            {
+                var score = Game3T1Score.Text;
+                Team1Score += Int32.Parse(score);
+                var scoreAgainst = Game3T2Score.Text;
+                Team1PointsAgainst += Int32.Parse(score);
+            }
+            else if (c3t1 == "team2")
+            {
+                var score = Game3T1Score.Text;
+                Team2Score += Int32.Parse(score);
+                var scoreAgainst = Game3T2Score.Text;
+                Team2PointsAgainst += Int32.Parse(score);
+            }
+            else if (c3t1 == "team3")
+            {
+                var score = Game3T1Score.Text;
+                Team3Score += Int32.Parse(score);
+                var scoreAgainst = Game3T2Score.Text;
+                Team3PointsAgainst += Int32.Parse(score);
+            }
+            else
+            {
+                var score = Game3T1Score.Text;
+                Team4Score += Int32.Parse(score);
+                Team4PointsAgainst += Int32.Parse(score);
+                var scoreAgainst = Game3T2Score.Text;
+                Team4PointsAgainst += Int32.Parse(score);
+            }
+            Game3T1Score.Clear();
+        }
+
+        private void scoreCollectC3T2()
+        {
+            if (c2t2 == "team1")
+            {
+                var score = Game3T2Score.Text;
+                Team1Score += Int32.Parse(score);
+                var scoreAgainst = Game3T1Score.Text;
+                Team1PointsAgainst += Int32.Parse(score);
+            }
+            else if (c3t2 == "team2")
+            {
+                var score = Game3T2Score.Text;
+                Team2Score += Int32.Parse(score);
+                var scoreAgainst = Game3T1Score.Text;
+                Team2PointsAgainst += Int32.Parse(score);
+            }
+            else if (c3t2 == "team3")
+            {
+                var score = Game3T2Score.Text;
+                Team3Score += Int32.Parse(score);
+                var scoreAgainst = Game3T1Score.Text;
+                Team3PointsAgainst += Int32.Parse(score);
+            }
+            else
+            {
+                var score = Game3T2Score.Text;
+                Team4Score += Int32.Parse(score);
+                Team4PointsAgainst += Int32.Parse(score);
+                var scoreAgainst = Game3T1Score.Text;
+                Team4PointsAgainst += Int32.Parse(score);
+            }
+            Game3T2Score.Clear();
         }
 
         private void assignGames1stHalf()
@@ -339,6 +429,107 @@ namespace TournamentPro
             GamesList.Add(Game12);
         }
 
+        private void assignGames2ndHalf()
+        {
+            //Game 13 Players
+            Game13.Add(team5Players[0].ToString());
+            Game13.Add(team5Players[1]);
+            Game13.Add(team8Players[0]);
+            Game13.Add(team8Players[1]);
+            Game13.Add("team5");
+            Game13.Add("team8");
+            //Game 14 Players
+            Game14.Add(team7Players[0]);
+            Game14.Add(team7Players[1]);
+            Game14.Add(team6Players[0]);
+            Game14.Add(team6Players[1]);
+            Game14.Add("team7");
+            Game14.Add("team6");
+            //Game 15 Players
+            Game15.Add(team5Players[1]);
+            Game15.Add(team5Players[2]);
+            Game15.Add(team7Players[1]);
+            Game15.Add(team7Players[2]);
+            Game15.Add("team5");
+            Game15.Add("team7");
+            //Game 16 Players
+            Game16.Add(team6Players[1]);
+            Game16.Add(team6Players[2]);
+            Game16.Add(team8Players[1]);
+            Game16.Add(team8Players[2]);
+            Game16.Add("team6");
+            Game16.Add("team8");
+            //Game 17 Players
+            Game17.Add(team5Players[0]);
+            Game17.Add(team5Players[2]);
+            Game17.Add(team6Players[0]);
+            Game17.Add(team6Players[2]);
+            Game17.Add("team5");
+            Game17.Add("team6");
+            //Game 18 Players
+            Game18.Add(team7Players[0]);
+            Game18.Add(team7Players[2]);
+            Game18.Add(team8Players[0]);
+            Game18.Add(team8Players[2]);
+            Game18.Add("team7");
+            Game18.Add("team8");
+            //Game 19 Players
+            Game19.Add(team5Players[0]);
+            Game19.Add(team5Players[1]);
+            Game19.Add(team7Players[0]);
+            Game19.Add(team7Players[1]);
+            Game19.Add("team5");
+            Game19.Add("team7");
+            //Game 20 Players
+            Game20.Add(team6Players[0]);
+            Game20.Add(team6Players[1]);
+            Game20.Add(team8Players[0]);
+            Game20.Add(team8Players[1]);
+            Game20.Add("team6");
+            Game20.Add("team8");
+            //Game 21 Players
+            Game21.Add(team5Players[1]);
+            Game21.Add(team5Players[2]);
+            Game21.Add(team8Players[1]);
+            Game21.Add(team8Players[2]);
+            Game21.Add("team5");
+            Game21.Add("team8");
+            //Game 22 Players
+            Game22.Add(team6Players[1]);
+            Game22.Add(team6Players[2]);
+            Game22.Add(team7Players[1]);
+            Game22.Add(team7Players[2]);
+            Game22.Add("team6");
+            Game22.Add("team7");
+            //Game 23 Players
+            Game23.Add(team5Players[0]);
+            Game23.Add(team5Players[2]);
+            Game23.Add(team6Players[0]);
+            Game23.Add(team6Players[2]);
+            Game23.Add("team5");
+            Game23.Add("team6");
+            //Game 24 Players
+            Game24.Add(team8Players[0]);
+            Game24.Add(team8Players[2]);
+            Game24.Add(team7Players[0]);
+            Game24.Add(team7Players[2]);
+            Game24.Add("team8");
+            Game24.Add("team7");
+
+            GamesList2.Add(Game13);
+            GamesList2.Add(Game14);
+            GamesList2.Add(Game15);
+            GamesList2.Add(Game16);
+            GamesList2.Add(Game17);
+            GamesList2.Add(Game18);
+            GamesList2.Add(Game19);
+            GamesList2.Add(Game20);
+            GamesList2.Add(Game21);
+            GamesList2.Add(Game22);
+            GamesList2.Add(Game23);
+            GamesList2.Add(Game24);
+        }
+
         private void Court1Details()
         {
             if (GamesList.Count > 0)
@@ -389,27 +580,101 @@ namespace TournamentPro
         }
 
         private void Court2Details()
-        { 
-            var selectedGame = GamesList[0];
-            string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
-            G2P1.Text = p1;
+        {
+            if (GamesList.Count > 0)
+            {
+                var selectedGame = GamesList[0];
+                string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
+                G2P1.Text = p1;
 
-            string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
-            G2P2.Text = p2;
+                string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
+                G2P2.Text = p2;
 
-            c1t1 = selectedGame[4];
-            c1t2 = selectedGame[5];
-            GamesList.RemoveAt(0);
+                c2t1 = GamesList[0][4];
+                c2t2 = GamesList[0][5];
+                GamesList.RemoveAt(0);
+            }
+            else
+            {
+                var selectedGame = GamesList[0];
+                string p1 = "" + "\n" + "+" + "\n" + "";
+                C2NG1.Text = p1;
+
+                string p2 = "" + "\n" + "+" + "\n" + "";
+                C2NG2.Text = p2;
+                Next.IsEnabled = true;
+            }
         }
 
         private void Court2Next()
         {
-            var selectedGame = GamesList[0];
-            string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
-            C2NG1.Text = p1;
+            if (GamesList.Count > 0)
+            {
+                var selectedGame = GamesList[0];
+                string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
+                C2NG1.Text = p1;
 
-            string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
-            C2NG2.Text = p2;
+                string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
+                C2NG2.Text = p2;
+            }
+            else
+            {
+
+                string p1 = "" + "\n" + "+" + "\n" + "";
+                C2NG1.Text = p1;
+
+                string p2 = "" + "\n" + "+" + "\n" + "";
+                C2NG2.Text = p2;
+            }
+        }
+
+        private void Court3Details()
+        {
+            if (GamesList.Count > 0)
+            {
+                var selectedGame = GamesList2[0];
+                string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
+                G3P1.Text = p1;
+
+                string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
+                G3P2.Text = p2;
+
+                c3t1 = GamesList2[0][4];
+                c3t2 = GamesList2[0][5];
+                GamesList.RemoveAt(0);
+            }
+            else
+            {
+                var selectedGame = GamesList2[0];
+                string p1 = "" + "\n" + "+" + "\n" + "";
+                C3NG1.Text = p1;
+
+                string p2 = "" + "\n" + "+" + "\n" + "";
+                C3NG2.Text = p2;
+                Next.IsEnabled = true;
+            }
+        }
+
+        private void Court3Next()
+        {
+            if (GamesList2.Count > 0)
+            {
+                var selectedGame = GamesList2[0];
+                string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
+                C3NG1.Text = p1;
+
+                string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
+                C3NG2.Text = p2;
+            }
+            else
+            {
+
+                string p1 = "" + "\n" + "+" + "\n" + "";
+                C3NG1.Text = p1;
+
+                string p2 = "" + "\n" + "+" + "\n" + "";
+                C3NG2.Text = p2;
+            }
         }
 
         private void Game1Button_Click_1(object sender, RoutedEventArgs e)
@@ -437,6 +702,62 @@ namespace TournamentPro
             catch
             {
                 C1Info.Text = "A score must be entered";
+            }
+        }
+
+        private void Game2Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var T1score = Game2T1Score.Text;
+                var T1S = Int32.Parse(T1score);
+                var T2score = Game2T2Score.Text;
+                var T2S = Int32.Parse(T2score);
+
+                if ((T1S == 21) && (T2S < 21) || (T2S == 21) && (T1S < 21))
+                {
+                    C2Info.Text = "";
+                    scoreCollectC2T1();
+                    scoreCollectC2T2();
+                    Court2Details();
+                    Court2Next();
+                }
+                else
+                {
+                    C2Info.Text = "Scores must be to 21 with no setting";
+                }
+            }
+            catch
+            {
+                C2Info.Text = "A score must be entered";
+            }
+        }
+
+        private void Game3Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var T1score = Game3T1Score.Text;
+                var T1S = Int32.Parse(T1score);
+                var T2score = Game3T2Score.Text;
+                var T2S = Int32.Parse(T2score);
+
+                if ((T1S == 21) && (T2S < 21) || (T2S == 21) && (T1S < 21))
+                {
+                    C3Info.Text = "";
+                    scoreCollectC3T1();
+                    scoreCollectC3T2();
+                    Court3Details();
+                    Court3Next();
+                }
+                else
+                {
+                    C3Info.Text = "Scores must be to 21 with no setting";
+                }
+            }
+            catch
+            {
+                C3Info.Text = "A score must be entered";
             }
         }
     }
