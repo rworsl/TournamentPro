@@ -106,11 +106,11 @@ namespace TournamentPro
             assignGames1stHalf();
             assignGames2ndHalf();
             Court1Details();
-            Court1Next();
             Court2Details();
             Court2Next();
             Court3Details();
-            Court3Next();
+            Court4Details();
+            Court4Next();
         }
 
         private void scoreCollectC1T1()
@@ -262,21 +262,21 @@ namespace TournamentPro
 
         private void scoreCollectC3T1()
         {
-            if (c2t1 == "team1")
+            if (c3t1 == "team5")
             {
                 var score = Game3T1Score.Text;
                 Team1Score += Int32.Parse(score);
                 var scoreAgainst = Game3T2Score.Text;
                 Team1PointsAgainst += Int32.Parse(score);
             }
-            else if (c3t1 == "team2")
+            else if (c3t1 == "team6")
             {
                 var score = Game3T1Score.Text;
                 Team2Score += Int32.Parse(score);
                 var scoreAgainst = Game3T2Score.Text;
                 Team2PointsAgainst += Int32.Parse(score);
             }
-            else if (c3t1 == "team3")
+            else if (c3t1 == "team7")
             {
                 var score = Game3T1Score.Text;
                 Team3Score += Int32.Parse(score);
@@ -296,21 +296,21 @@ namespace TournamentPro
 
         private void scoreCollectC3T2()
         {
-            if (c2t2 == "team1")
+            if (c2t2 == "team5")
             {
                 var score = Game3T2Score.Text;
                 Team1Score += Int32.Parse(score);
                 var scoreAgainst = Game3T1Score.Text;
                 Team1PointsAgainst += Int32.Parse(score);
             }
-            else if (c3t2 == "team2")
+            else if (c3t2 == "team6")
             {
                 var score = Game3T2Score.Text;
                 Team2Score += Int32.Parse(score);
                 var scoreAgainst = Game3T1Score.Text;
                 Team2PointsAgainst += Int32.Parse(score);
             }
-            else if (c3t2 == "team3")
+            else if (c3t2 == "team7")
             {
                 var score = Game3T2Score.Text;
                 Team3Score += Int32.Parse(score);
@@ -326,6 +326,74 @@ namespace TournamentPro
                 Team4PointsAgainst += Int32.Parse(score);
             }
             Game3T2Score.Clear();
+        }
+
+        private void scoreCollectC4T1()
+        {
+            if (c4t1 == "team5")
+            {
+                var score = Game4T1Score.Text;
+                Team1Score += Int32.Parse(score);
+                var scoreAgainst = Game4T2Score.Text;
+                Team1PointsAgainst += Int32.Parse(score);
+            }
+            else if (c4t1 == "team6")
+            {
+                var score = Game4T1Score.Text;
+                Team2Score += Int32.Parse(score);
+                var scoreAgainst = Game4T2Score.Text;
+                Team2PointsAgainst += Int32.Parse(score);
+            }
+            else if (c4t1 == "team7")
+            {
+                var score = Game4T1Score.Text;
+                Team3Score += Int32.Parse(score);
+                var scoreAgainst = Game4T2Score.Text;
+                Team3PointsAgainst += Int32.Parse(score);
+            }
+            else
+            {
+                var score = Game4T1Score.Text;
+                Team4Score += Int32.Parse(score);
+                Team4PointsAgainst += Int32.Parse(score);
+                var scoreAgainst = Game4T2Score.Text;
+                Team4PointsAgainst += Int32.Parse(score);
+            }
+            Game4T1Score.Clear();
+        }
+
+        private void scoreCollectC4T2()
+        {
+            if (c4t2 == "team5")
+            {
+                var score = Game4T2Score.Text;
+                Team1Score += Int32.Parse(score);
+                var scoreAgainst = Game4T1Score.Text;
+                Team1PointsAgainst += Int32.Parse(score);
+            }
+            else if (c4t2 == "team6")
+            {
+                var score = Game4T2Score.Text;
+                Team2Score += Int32.Parse(score);
+                var scoreAgainst = Game4T1Score.Text;
+                Team2PointsAgainst += Int32.Parse(score);
+            }
+            else if (c4t2 == "team7")
+            {
+                var score = Game4T2Score.Text;
+                Team3Score += Int32.Parse(score);
+                var scoreAgainst = Game4T1Score.Text;
+                Team3PointsAgainst += Int32.Parse(score);
+            }
+            else
+            {
+                var score = Game4T2Score.Text;
+                Team4Score += Int32.Parse(score);
+                Team4PointsAgainst += Int32.Parse(score);
+                var scoreAgainst = Game4T1Score.Text;
+                Team4PointsAgainst += Int32.Parse(score);
+            }
+            Game4T2Score.Clear();
         }
 
         private void assignGames1stHalf()
@@ -549,33 +617,14 @@ namespace TournamentPro
             {
                 var selectedGame = GamesList[0];
                 string p1 = "" + "\n" + "+" + "\n" + "";
-                C1NG1.Text = p1;
+                C2NG1.Text = p1;
 
                 string p2 = "" + "\n" + "+" + "\n" + "";
-                C1NG2.Text = p2;
+                C2NG2.Text = p2;
+            }
+            if (GamesList.Count == 0 && GamesList2.Count == 0)
+            {
                 Next.IsEnabled = true;
-            }
-        }
-
-        private void Court1Next()
-        {
-            if (GamesList.Count > 0)
-            {
-                var selectedGame = GamesList[0];
-                string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
-                C1NG1.Text = p1;
-
-                string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
-                C1NG2.Text = p2;
-            }
-            else
-            {
-
-                string p1 = "" + "\n" + "+" + "\n" + "";
-                C1NG1.Text = p1;
-
-                string p2 = "" + "\n" + "+" + "\n" + "";
-                C1NG2.Text = p2;
             }
         }
 
@@ -602,6 +651,9 @@ namespace TournamentPro
 
                 string p2 = "" + "\n" + "+" + "\n" + "";
                 C2NG2.Text = p2;
+            }
+            if (GamesList.Count == 0 && GamesList2.Count == 0)
+            {
                 Next.IsEnabled = true;
             }
         }
@@ -630,7 +682,7 @@ namespace TournamentPro
 
         private void Court3Details()
         {
-            if (GamesList.Count > 0)
+            if (GamesList2.Count > 0)
             {
                 var selectedGame = GamesList2[0];
                 string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
@@ -641,39 +693,75 @@ namespace TournamentPro
 
                 c3t1 = GamesList2[0][4];
                 c3t2 = GamesList2[0][5];
-                GamesList.RemoveAt(0);
+                GamesList2.RemoveAt(0);
             }
             else
             {
                 var selectedGame = GamesList2[0];
                 string p1 = "" + "\n" + "+" + "\n" + "";
-                C3NG1.Text = p1;
+                C4NG1.Text = p1;
 
                 string p2 = "" + "\n" + "+" + "\n" + "";
-                C3NG2.Text = p2;
+                C4NG2.Text = p2;
+            }
+            if (GamesList.Count == 0 && GamesList2.Count == 0)
+            {
                 Next.IsEnabled = true;
             }
+
         }
 
-        private void Court3Next()
+
+
+        private void Court4Details()
         {
             if (GamesList2.Count > 0)
             {
                 var selectedGame = GamesList2[0];
                 string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
-                C3NG1.Text = p1;
+                G4P1.Text = p1;
 
                 string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
-                C3NG2.Text = p2;
+                G4P2.Text = p2;
+
+                c4t1 = GamesList2[0][4];
+                c4t2 = GamesList2[0][5];
+                GamesList2.RemoveAt(0);
+            }
+            else
+            {
+                var selectedGame = GamesList2[0];
+                string p1 = "" + "\n" + "+" + "\n" + "";
+                C4NG1.Text = p1;
+
+                string p2 = "" + "\n" + "+" + "\n" + "";
+                C4NG2.Text = p2;
+            }
+            if (GamesList.Count == 0 && GamesList2.Count == 0)
+            {
+                Next.IsEnabled = true;
+            }
+        }
+
+        private void Court4Next()
+        {
+            if (GamesList2.Count > 0)
+            {
+                var selectedGame = GamesList2[0];
+                string p1 = selectedGame[0].ToString() + "\n" + "+" + "\n" + selectedGame[1].ToString();
+                C4NG1.Text = p1;
+
+                string p2 = selectedGame[2].ToString() + "\n" + "+" + "\n" + selectedGame[3].ToString();
+                C4NG2.Text = p2;
             }
             else
             {
 
                 string p1 = "" + "\n" + "+" + "\n" + "";
-                C3NG1.Text = p1;
+                C4NG1.Text = p1;
 
                 string p2 = "" + "\n" + "+" + "\n" + "";
-                C3NG2.Text = p2;
+                C4NG2.Text = p2;
             }
         }
 
@@ -692,7 +780,7 @@ namespace TournamentPro
                     scoreCollectC1T1();
                     scoreCollectC1T2();
                     Court1Details();
-                    Court1Next();
+                    Court2Next();
                 }
                 else
                 {
@@ -748,7 +836,7 @@ namespace TournamentPro
                     scoreCollectC3T1();
                     scoreCollectC3T2();
                     Court3Details();
-                    Court3Next();
+                    Court4Next();
                 }
                 else
                 {
@@ -759,6 +847,41 @@ namespace TournamentPro
             {
                 C3Info.Text = "A score must be entered";
             }
+        }
+
+        private void Game4Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var T1score = Game4T1Score.Text;
+                var T1S = Int32.Parse(T1score);
+                var T2score = Game4T2Score.Text;
+                var T2S = Int32.Parse(T2score);
+
+                if ((T1S == 21) && (T2S < 21) || (T2S == 21) && (T1S < 21))
+                {
+                    C4Info.Text = "";
+                    scoreCollectC4T1();
+                    scoreCollectC4T2();
+                    Court4Details();
+                    Court4Next();
+                }
+                else
+                {
+                    C4Info.Text = "Scores must be to 21 with no setting";
+                }
+            }
+            catch
+            {
+                C4Info.Text = "A score must be entered";
+            }
+        }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            var newForm = new Knockouts(Team1Score, Team2Score, Team3Score, Team4Score, Team5Score, Team6Score, Team7Score, Team8Score, Team1PointsAgainst, Team2PointsAgainst, Team3PointsAgainst, Team4PointsAgainst, Team5PointsAgainst, Team6PointsAgainst, Team7PointsAgainst, Team8PointsAgainst, Team1Wins, Team2Wins, Team3Wins, Team4Wins, Team5Wins, Team6Wins, Team7Wins, Team8Wins); 
+            newForm.Show();
+            this.Close();
         }
     }
 }

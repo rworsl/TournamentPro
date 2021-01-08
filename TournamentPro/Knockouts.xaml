@@ -1,0 +1,185 @@
+﻿<Window x:Class="TournamentPro.Knockouts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TournamentPro"
+        mc:Ignorable="d"
+        Title="Knockouts" Height="768" Width="1024">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+
+        <Grid ScrollViewer.CanContentScroll="True" Margin="0,-10,0,10" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="16*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Top knockout team -->
+            <TextBlock Grid.Column="1" Grid.Row="1" Name="K1T1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Name="K1T2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18"/>
+
+            <!-- Bottom knockout team -->
+            <TextBlock Grid.Column="1" Grid.Row="5" Name="K2T1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="6" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="7" Name="K2T2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18"/>
+
+            <!-- Top match lines -->
+            <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="102" Height="2" Margin="0,0,0,10" VerticalAlignment="Bottom"/>
+            <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="2" Height="20" Margin="100,97,0,0"/>
+            <Border Grid.Column="3" Grid.Row="3" Background="Black" Width="102" Height="2" Margin="0,10,0,0" VerticalAlignment="Top"/>
+            <Border Grid.Column="3" Grid.Row="3" Background="Black" Width="2" Margin="113,0,13,73"/>
+            <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="2" Height="10" VerticalAlignment="Bottom" Margin="113,0,13,0"/>
+            <Border Grid.Column="3" Grid.Row="2" Background="Black" Width="2" Height="13" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="100,0,0,0"/>
+            <Border Grid.Column="3" Grid.Row="2" Background="Black" Width="2" Height="13" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,0,0"/>
+            <Border Grid.Column="3" Grid.Row="2" Background="Black" Height="2" Width="15" Margin="113,0,0,0"/>
+            <Border Grid.Column="3" Grid.Row="2" Background="Black" Margin="115,16,0,16" RenderTransformOrigin="0.5,0.5"/>
+
+            <Border Grid.Column="4" Grid.Row="2" Background="Black" Width="2" Margin="0,12.15,0,70" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+
+
+            <!-- Bottom knockout lines -->
+            <Border Grid.Column="4" Grid.Row="3" Background="Black" Width="2" Height="150" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="150" Height="2" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+            <Border Grid.Column="5" Grid.Row="4" Background="Black" Width="65" Height="2" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+            <Border Grid.Column="5" Grid.Row="3" Background="Black" Width="2" Margin="0,74,0,12" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+            <Border Grid.Column="5" Grid.Row="4" Background="Black" Width="2" Margin="0,12,0,74" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="2" Height="150" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="2" Margin="0,26,0,12.25" HorizontalAlignment="Left" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.054"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="5" Background="Black" Width="2" Height="20" Margin="0,108,0,14" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+
+            <Border Grid.Column="3" Grid.Row="5" Background="Black" Width="102" Height="2" Margin="0,0,0,10" VerticalAlignment="Bottom"/>
+            <Border Grid.Column="3" Grid.Row="5" Background="Black" Width="2" Height="20" Margin="100,97,0,0"/>
+            <Border Grid.Column="3" Grid.Row="7" Background="Black" Width="102" Height="2" Margin="0,10,0,0" VerticalAlignment="Top"/>
+            <Border Grid.Column="3" Grid.Row="5" Background="Black" Width="2" Margin="113,72,13,7" Grid.RowSpan="2"/>
+
+            <Border Grid.Column="3" Grid.Row="5" Background="Black" Width="2" Margin="113,108,13,14" Grid.RowSpan="2"/>
+            <Border Grid.Column="3" Grid.Row="6" Background="Black" Width="2" Margin="113,18,13,73" Grid.RowSpan="2"/>
+            <Border Grid.Column="3" Grid.Row="6" Background="Black" Width="15" Height="2" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+            <!-- Final -->
+            <TextBlock Grid.Column="5" Grid.Row="3" Name="FT1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
+            <TextBlock Grid.Column="5" Grid.Row="5" Name="FT2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,15,0,0"/>
+
+            <!-- Final Score Entries -->
+            <TextBox Grid.Column="6" Grid.Row="3" Width="45" Height="20" Name="FT1G1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,0"/>
+            <TextBox Grid.Column="6" Grid.Row="3" Width="45" Height="20" Name="FT1G2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,13,0"/>
+            <TextBox Grid.Column="7" Grid.Row="3" Width="45" Height="20" Name="FT1G3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+
+            <TextBlock Grid.Column="6" Grid.Row="3" Text="Game 1" Name="FG1" HorizontalAlignment="Left" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="8,0,0,0"/>
+            <TextBlock Grid.Column="6" Grid.Row="3" Text="Game 2" Name="FG2" HorizontalAlignment="Right" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,11,0"/>
+            <TextBlock Grid.Column="7" Grid.Row="3" Text="Game 3" Name="FG3" HorizontalAlignment="Left" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,7,0"/>
+
+            <TextBox Grid.Column="6" Grid.Row="5" Width="45" Height="20" Name="FT2G1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,0,0,0"/>
+            <TextBox Grid.Column="6" Grid.Row="5" Width="45" Height="20" Name="FT2G2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,13,0"/>
+            <TextBox Grid.Column="7" Grid.Row="5" Width="45" Height="20" Name="FT2G3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,10,0"/>
+
+            <Button Grid.Column="6" Grid.Row="5" Width="45" Height="20" Name="FB1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="11,0,0,0">Submit</Button>
+            <Button Grid.Column="6" Grid.Row="5" Width="45" Height="20" Name="FB2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,13,0">Submit</Button>
+            <Button Grid.Column="7" Grid.Row="5" Width="45" Height="20" Name="FB3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
+
+            <!-- Playoff -->
+            <TextBlock Grid.Column="5" Grid.Row="7" Name="PT1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,15"/>
+            <TextBlock Grid.Column="5" Grid.Row="8" Name="PT2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="12" Margin="0,15,0,0"/>
+
+            <!-- Playoff Score Entries -->
+            <TextBox Grid.Column="6" Grid.Row="7" Width="45" Height="20" Name="PT1G1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,15"/>
+            <TextBox Grid.Column="6" Grid.Row="7" Width="45" Height="20" Name="PT1G2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,13,15"/>
+            <TextBox Grid.Column="7" Grid.Row="7" Width="45" Height="20" Name="PT1G3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,10,15"/>
+
+            <TextBlock Grid.Column="6" Grid.Row="7" Text="Game 1" Name="PG1" HorizontalAlignment="Left" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="8,0,0,0"/>
+            <TextBlock Grid.Column="6" Grid.Row="7" Text="Game 2" Name="PG2" HorizontalAlignment="Right" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,11,0"/>
+            <TextBlock Grid.Column="7" Grid.Row="7" Text="Game 3" Name="PG3" HorizontalAlignment="Left" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,7,0"/>
+
+            <TextBox Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PT2G1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,15,0,0"/>
+            <TextBox Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PT2G2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,13,0"/>
+            <TextBox Grid.Column="7" Grid.Row="8" Width="45" Height="20" Name="PT2G3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,15,10,0"/>
+
+            <Button Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PB1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,15">Submit</Button>
+            <Button Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PB2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,13,15">Submit</Button>
+            <Button Grid.Column="7" Grid.Row="8" Width="45" Height="20" Name="PB3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,10,15">Submit</Button>
+
+            <TextBlock Grid.Column="5" FontSize="18" Grid.Row="9" Width="254" Name="PText" Text="Third Place Playoff" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="NoWrap" Margin="47,10,0,42" Grid.ColumnSpan="3" />
+            <!-- Court 2 
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="" Name="G2P1" HorizontalAlignment="Left" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="20,30,0,0"/>
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="vs" HorizontalAlignment="Center" Padding="50"/>
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="" Name="G2P2" HorizontalAlignment="Right" Width="75" TextAlignment="Center" TextWrapping="Wrap" Margin="0,30,20,0"/>
+                <TextBox Grid.Column="1" Grid.Row="2" Width="45" Height="20" Name="Game2T1Score" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="45,0,0,25"/>
+                <TextBox Grid.Column="1" Grid.Row="2" Width="45" Height="20" Name="Game2T2Score" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,45,25"/>
+                <Button Grid.Column="1" Grid.Row="2" Width="45" Height="20" Name="Game2Button" VerticalAlignment="Bottom" Margin="0" Click="Game2Button_Click">Submit</Button>
+                -->
+
+            <!-- Upper score entries -->
+
+            <TextBox Grid.Column="1" Grid.Row="1" Width="45" Height="20" Name="K1T1G1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+            <TextBox Grid.Column="2" Grid.Row="1" Width="45" Height="20" Name="K1T1G2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0"/>
+            <TextBox Grid.Column="2" Grid.Row="1" Width="45" Height="20" Name="K1T1G3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Game 1" Name="K1G1" HorizontalAlignment="Right" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,7,0"/>
+            <TextBlock Grid.Column="2" Grid.Row="1" Text="Game 2" Name="K1G2" HorizontalAlignment="Left" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="7,0,0,0"/>
+            <TextBlock Grid.Column="2" Grid.Row="1" Text="Game 3" Name="K1G3" HorizontalAlignment="Right" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,7,0"/>
+
+            <TextBox Grid.Column="1" Grid.Row="3" Width="45" Height="20" Name="K1T2G1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0"/>
+            <TextBox Grid.Column="2" Grid.Row="3" Width="45" Height="20" Name="K1T2G2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"/>
+            <TextBox Grid.Column="2" Grid.Row="3" Width="45" Height="20" Name="K1T2G3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0"/>
+            <Button Grid.Column="1" Grid.Row="3" Width="45" Height="20" Name="K1B1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
+            <Button Grid.Column="2" Grid.Row="3" Width="45" Height="20" Name="K1B2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">Submit</Button>
+            <Button Grid.Column="2" Grid.Row="3" Width="45" Height="20" Name="K1B3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
+
+            <!-- Lower score entries -->
+
+            <TextBox Grid.Column="1" Grid.Row="5" Width="45" Height="20" Name="K2T1G1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+            <TextBox Grid.Column="2" Grid.Row="5" Width="45" Height="20" Name="K2T1G2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0"/>
+            <TextBox Grid.Column="2" Grid.Row="5" Width="45" Height="20" Name="K2T1G3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="5" Text="Game 1" Name="K2G1" HorizontalAlignment="Right" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,7,0"/>
+            <TextBlock Grid.Column="2" Grid.Row="5" Text="Game 2" Name="K2G2" HorizontalAlignment="Left" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="7,0,0,0"/>
+            <TextBlock Grid.Column="2" Grid.Row="5" Text="Game 3" Name="K2G3" HorizontalAlignment="Right" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,7,0"/>
+
+            <TextBox Grid.Column="1" Grid.Row="7" Width="45" Height="20" Name="K2T2G1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0"/>
+            <TextBox Grid.Column="2" Grid.Row="7" Width="45" Height="20" Name="K2T2G2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"/>
+            <TextBox Grid.Column="2" Grid.Row="7" Width="45" Height="20" Name="K2T2G3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0"/>
+
+            <Button Grid.Column="1" Grid.Row="7" Width="45" Height="20" Name="K2B1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
+            <Button Grid.Column="2" Grid.Row="7" Width="45" Height="20" Name="K2B2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">Submit</Button>
+            <Button Grid.Column="2" Grid.Row="7" Width="45" Height="20" Name="K2B3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
+
+        </Grid>
+        <Button Width="115" Height="35" Name="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Click="Next_Click">Results</Button>
+    </Grid>
+</Window>
