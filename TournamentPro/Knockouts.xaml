@@ -114,25 +114,25 @@
             <Button Grid.Column="7" Grid.Row="5" Width="45" Height="20" Name="FB3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
 
             <!-- Playoff -->
-            <TextBlock Grid.Column="5" Grid.Row="7" Name="PT1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,15"/>
-            <TextBlock Grid.Column="5" Grid.Row="8" Name="PT2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="12" Margin="0,15,0,0"/>
+            <TextBlock Grid.Column="5" Grid.Row="7" Name="PT1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,10"/>
+            <TextBlock Grid.Column="5" Grid.Row="8" Name="PT2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="12" Margin="0,5,0,0"/>
 
             <!-- Playoff Score Entries -->
-            <TextBox Grid.Column="6" Grid.Row="7" Width="45" Height="20" Name="PT1G1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,15"/>
-            <TextBox Grid.Column="6" Grid.Row="7" Width="45" Height="20" Name="PT1G2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,13,15"/>
-            <TextBox Grid.Column="7" Grid.Row="7" Width="45" Height="20" Name="PT1G3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,10,15"/>
+            <TextBox Grid.Column="6" Grid.Row="7" Width="45" Height="20" Name="PT1G1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,10"/>
+            <TextBox Grid.Column="6" Grid.Row="7" Width="45" Height="20" Name="PT1G2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,13,10"/>
+            <TextBox Grid.Column="7" Grid.Row="7" Width="45" Height="20" Name="PT1G3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,10,10"/>
 
             <TextBlock Grid.Column="6" Grid.Row="7" Text="Game 1" Name="PG1" HorizontalAlignment="Left" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="8,0,0,0"/>
             <TextBlock Grid.Column="6" Grid.Row="7" Text="Game 2" Name="PG2" HorizontalAlignment="Right" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,11,0"/>
             <TextBlock Grid.Column="7" Grid.Row="7" Text="Game 3" Name="PG3" HorizontalAlignment="Left" Width="50" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,7,0"/>
 
-            <TextBox Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PT2G1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,15,0,0"/>
-            <TextBox Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PT2G2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,13,0"/>
-            <TextBox Grid.Column="7" Grid.Row="8" Width="45" Height="20" Name="PT2G3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,15,10,0"/>
+            <TextBox Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PT2G1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,5,0,0"/>
+            <TextBox Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PT2G2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,13,0"/>
+            <TextBox Grid.Column="7" Grid.Row="8" Width="45" Height="20" Name="PT2G3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,10,0"/>
 
-            <Button Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PB1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,15">Submit</Button>
-            <Button Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PB2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,13,15">Submit</Button>
-            <Button Grid.Column="7" Grid.Row="8" Width="45" Height="20" Name="PB3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,10,15">Submit</Button>
+            <Button Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PB1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,25">Submit</Button>
+            <Button Grid.Column="6" Grid.Row="8" Width="45" Height="20" Name="PB2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,13,25">Submit</Button>
+            <Button Grid.Column="7" Grid.Row="8" Width="45" Height="20" Name="PB3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,10,25">Submit</Button>
 
             <TextBlock Grid.Column="5" FontSize="18" Grid.Row="9" Width="254" Name="PText" Text="Third Place Playoff" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="NoWrap" Margin="47,10,0,42" Grid.ColumnSpan="3" />
             <!-- Court 2 

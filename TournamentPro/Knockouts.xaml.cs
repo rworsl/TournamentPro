@@ -130,5 +130,66 @@ namespace TournamentPro
             }
         }
 
+        private void pointsFor()
+        {
+            int firstScore = 0;
+            int secondScore = 0;
+            int thirdScore = 0;
+            int fourthScore = 0;
+
+            firstScore = Team1For;
+            
+            if (Team2For > firstScore)
+            {
+                secondScore = firstScore;
+                firstScore = Team2For;
+            }
+            else
+            {
+                secondScore = Team2For;
+            }
+
+            if (Team3For > firstScore)
+            {
+                thirdScore = secondScore;
+                secondScore = firstScore;
+                firstScore = Team3For;
+            }
+            else if (Team3For > secondScore)
+            {
+                thirdScore = secondScore;
+                secondScore = Team3For;
+            }
+            else
+            {
+                thirdScore = Team3For;
+            }
+
+            if (Team4For > firstScore)
+            {
+                fourthScore = thirdScore;
+                thirdScore = secondScore;
+                secondScore = firstScore;
+                firstScore = Team3For;
+            }
+            else if (Team4For > secondScore)
+            {
+                fourthScore = thirdScore;
+                thirdScore = secondScore;
+                secondScore = Team3For;
+            }
+            else if (Team4For > thirdScore)
+            {
+                fourthScore = thirdScore;
+                thirdScore = Team3For;
+            }
+            else
+            {
+                fourthScore = Team4For;
+            }
+
+        }
+
+
     }
 }
