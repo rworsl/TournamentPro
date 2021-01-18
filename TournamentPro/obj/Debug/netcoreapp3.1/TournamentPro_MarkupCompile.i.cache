@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\
+C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\
 TournamentPro
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\App.xaml
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\App.xaml
 4-2083313750
 
-8-1126045238
+9-571588393
 1921654412462
 GroupStage.xaml;Knockouts.xaml;MainWindow.xaml;Teams.xaml;
 
-True
+False
 

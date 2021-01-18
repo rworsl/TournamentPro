@@ -52,6 +52,9 @@ namespace ConsoleApp2
         static int Team8Losses = 0;
 
         static List<int> pointsFor = new List<int> { };
+        static List<int> pointsAgainst = new List<int> { };
+        static List<int> gamesFor = new List<int> { };
+        static List<int> gamesAgainst = new List<int> { };
 
         static string FirstHalfTopTeam = "";
         static string FirstHalfSecondTeam = "";
@@ -59,11 +62,104 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             SortPoints();
+            sortTopPoints();
         }
+
+        /*
+         * [7,7,5,4] Top 2 the same
+         * [7,6,6,4] Middle 2 the same
+         * [7,6,6,6] Bottom 3 the same
+         * [7,7,7,4] Top 3 the same
+         * [7,7,7,7] All the same
+         * [7,6,5,4] All different
+        */
+
+        static void sortTopPoints()
+        {
+            pointsFor.Sort();
+            pointsFor.Reverse();
+
+            //All Teams on different points gained
+            if ((pointsFor[0] != pointsFor[1]) && (pointsFor[1] != pointsFor[2]))
+            {
+                if(Team1For == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team1";
+                    if(Team2For == pointsFor[1])
+                    {
+                        FirstHalfSecondTeam = "Team2";
+                    }
+                    else if (Team3For == pointsFor[1])
+                    {
+                        FirstHalfSecondTeam = "Team3";
+                    }
+                    else
+                    {
+                        FirstHalfSecondTeam = "Team4";
+                    }
+                }
+                else if(Team2For == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team2";
+                    if (Team1For == pointsFor[1])
+                    {
+                        FirstHalfSecondTeam = "Team1";
+                    }
+                    else if (Team3For == pointsFor[1])
+                    {
+                        FirstHalfSecondTeam = "Team3";
+                    }
+                    else
+                    {
+                        FirstHalfSecondTeam = "Team4";
+                    }
+                }
+                else if(Team3For == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team3";
+                    if (Team1For == pointsFor[1])
+                    {
+                        FirstHalfSecondTeam = "Team1";
+                    }
+                    else if (Team2For == pointsFor[1])
+                    {
+                        FirstHalfSecondTeam = "Team2";
+                    }
+                    else
+                    {
+                        FirstHalfSecondTeam = "Team4";
+                    }
+                }
+                else
+                {
+                    FirstHalfTopTeam = "Team4";
+                    if (Team1For == pointsFor[1])
+                    {
+                        FirstHalfSecondTeam = "Team1";
+                    }
+                    else if (Team2For == pointsFor[1])
+                    {
+                        FirstHalfSecondTeam = "Team2";
+                    }
+                    else
+                    {
+                        FirstHalfSecondTeam = "Team3";
+                    }
+                }
+            }
+
+            //Top 2 teams have the same points
+            if ((pointsFor[0] == pointsFor[1]) && (pointsFor[1] != pointsFor[2]))
+            {
+
+            }
+
+        }
+
+
 
         private static void SortPoints()
         {
-
             Team1.Add(Team1For);
             Team1.Add(Team1PointsAgainst);
             Team1.Add(Team1Wins);
@@ -84,69 +180,25 @@ namespace ConsoleApp2
             Team4.Add(Team4Wins);
             Team4.Add(Team4Losses);
 
+            pointsFor.Add(Team1For);
+            pointsFor.Add(Team2For);
+            pointsFor.Add(Team3For);
+            pointsFor.Add(Team4For);
 
+            pointsAgainst.Add(Team1For);
+            pointsAgainst.Add(Team2For);
+            pointsAgainst.Add(Team3For);
+            pointsAgainst.Add(Team4For);
 
-            /*
-            if (pointsFor[0] == pointsFor[3]) 
-            {
-                //all four are the same score
-                string returned = pickRandomFromFour("team1", "team2", "team3", "team4");
+            gamesFor.Add(Team1Wins);
+            gamesFor.Add(Team2Wins);
+            gamesFor.Add(Team3Wins);
+            gamesFor.Add(Team4Wins);
 
-                teams = LowestPointsAgainstFromFour(Team1PointsAgainst, Team2PointsAgainst, Team3PointsAgainst, Team4PointsAgainst);
-
-                FirstHalfTopTeam = teams[0];
-                FirstHalfSecondTeam = teams[1];
-
-                Console.WriteLine(returned); 
-
-            }
-            else if (pointsFor[1] == pointsFor[3])
-            {
-                //bottom 3 are the same score
-                Console.WriteLine("items 2, 3 and 4 are the same");
-            }
-            else if (pointsFor[0] == pointsFor[1])
-            {
-                //solve which order the top 2 are
-                string returned = pickRandomFromTwo("team1", "team2");
-                Console.WriteLine("items 1 and 2 are the same");
-            }
-            else if (pointsFor[1] == pointsFor[2])
-            {
-                //solve which team goes in 2nd
-                var selectedScore = LowestPointsAgainstFromTwo(pointsFor[1], pointsFor[2]);
-                
-                if(selectedScore == Team1PointsAgainst)
-                {
-                    FirstHalfSecondTeam = "Team1";
-                }
-                else if (selectedScore == Team2PointsAgainst)
-                {
-                    FirstHalfSecondTeam = "Team2";
-                }
-                else if (selectedScore == Team3PointsAgainst)
-                {
-                    FirstHalfSecondTeam = "Team3";
-                }
-                else if (selectedScore == Team4PointsAgainst)
-                {
-                    FirstHalfSecondTeam = "Team4";
-                }
-
-                Console.WriteLine("items 2 and 3 are the same");
-            }
-            else if (pointsFor[0] == pointsFor[2])
-            {
-                //solve which team goes in 2nd
-                Console.WriteLine("items 1, 2 and 3 are the same");
-            }
-            else
-            {
-                //No duplicates so top 2 are just the first 2 items
-                Console.WriteLine(pointsFor[0] + ", " + pointsFor[1]);
-            }
-            */
-
+            gamesAgainst.Add(Team1Losses);
+            gamesAgainst.Add(Team2Losses);
+            gamesAgainst.Add(Team3Losses);
+            gamesAgainst.Add(Team4Losses);
         }
 
         private static int LowestPointsAgainstFromTwo(int teamOne, int teamTwo)
