@@ -15,19 +15,19 @@ namespace ConsoleApp2
         static List<int> Team7 = new List<int> { };
         static List<int> Team8 = new List<int> { };
 
-        static int Team1For = 0;
-        static int Team2For = 0;
-        static int Team3For = 0;
-        static int Team4For = 0;
+        static int Team1For = 5;
+        static int Team2For = 5;
+        static int Team3For = 3;
+        static int Team4For = 3;
         static int Team5For = 0;
         static int Team6For = 0;
         static int Team7For = 0;
         static int Team8For = 0;
 
-        static int Team1PointsAgainst = 0;
-        static int Team2PointsAgainst = 0;
-        static int Team3PointsAgainst = 0;
-        static int Team4PointsAgainst = 0;
+        static int Team1PointsAgainst = 1;
+        static int Team2PointsAgainst = 2;
+        static int Team3PointsAgainst = 3;
+        static int Team4PointsAgainst = 4;
         static int Team5PointsAgainst = 0;
         static int Team6PointsAgainst = 0;
         static int Team7PointsAgainst = 0;
@@ -151,6 +151,98 @@ namespace ConsoleApp2
             //Top 2 teams have the same points
             if ((pointsFor[0] == pointsFor[1]) && (pointsFor[1] != pointsFor[2]))
             {
+                int pointsAgainstPair1 = 0;
+                int pointsAgainstPair2 = 0;
+                List<string> TeamsList = new List<string> { };
+                TeamsList.Add("Team1");
+                TeamsList.Add("Team2");
+                TeamsList.Add("Team3");
+                TeamsList.Add("Team4");
+
+                int Compare1 = 0;
+                int Compare2 = 0;
+
+                if (pointsFor[0] == Team1For)
+                {
+                    TeamsList.RemoveAt(0);
+                    Compare1 = Team1PointsAgainst;
+                    if (pointsFor[1] == Team2For)
+                    {
+                        TeamsList.RemoveAt(0);
+                        Compare2 = Team1PointsAgainst;
+                    }
+                    else if (pointsFor[1] == Team3For)
+                    {
+                        TeamsList.RemoveAt(1);
+                        Compare2 = Team2PointsAgainst;
+                    }
+                    else if (pointsFor[1] == Team4For)
+                    {
+                        TeamsList.RemoveAt(2);
+                        Compare2 = Team4PointsAgainst;
+                    }
+                }
+                else if (pointsFor[0] == Team2For)
+                {
+                    TeamsList.RemoveAt(1);
+                    Compare1 = Team2PointsAgainst;
+                    if (pointsFor[1] == Team1For)
+                    {
+                        TeamsList.RemoveAt(0);
+                        Compare2 = Team1PointsAgainst;
+                    }
+                    else if (pointsFor[1] == Team3For)
+                    {
+                        TeamsList.RemoveAt(1);
+                        Compare2 = Team3PointsAgainst;
+                    }
+                    else if (pointsFor[1] == Team4For)
+                    {
+                        TeamsList.RemoveAt(2);
+                        Compare2 = Team4PointsAgainst;
+                    }
+                }
+                else if (pointsFor[0] == Team3For)
+                {
+                    TeamsList.RemoveAt(2);
+                    Compare1 = Team3PointsAgainst;
+                    if (pointsFor[1] == Team1For)
+                    {
+                        TeamsList.RemoveAt(0);
+                        Compare2 = Team1PointsAgainst;
+                    }
+                    else if (pointsFor[1] == Team2For)
+                    {
+                        TeamsList.RemoveAt(1);
+                        Compare2 = Team2PointsAgainst;
+                    }
+                    else if (pointsFor[1] == Team4For)
+                    {
+                        TeamsList.RemoveAt(2);
+                        Compare2 = Team4PointsAgainst;
+                    }
+                }
+                else
+                {
+                    TeamsList.RemoveAt(3);
+                    Compare1 = Team4PointsAgainst;
+                    if (pointsFor[1] == Team1For)
+                    {
+                        TeamsList.RemoveAt(0);
+                        Compare2 = Team1PointsAgainst;
+                    }
+                    else if (pointsFor[1] == Team2For)
+                    {
+                        TeamsList.RemoveAt(1);
+                        Compare2 = Team2PointsAgainst;
+                    }
+                    else if (pointsFor[1] == Team3For)
+                    {
+                        TeamsList.RemoveAt(2);
+                        Compare2 = Team3PointsAgainst;
+                    }
+                }
+
 
             }
 
