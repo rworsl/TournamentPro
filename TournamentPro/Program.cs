@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TournamentPro
+namespace Testbed
 {
     class Program
     {
@@ -16,7 +16,7 @@ namespace TournamentPro
         static List<int> Team8 = new List<int> { };
 
         static int Team1For = 4;
-        static int Team2For = 3;
+        static int Team2For = 4;
         static int Team3For = 4;
         static int Team4For = 2;
         static int Team5For = 0;
@@ -24,7 +24,7 @@ namespace TournamentPro
         static int Team7For = 0;
         static int Team8For = 0;
 
-        static int Team1PointsAgainst = 2;
+        static int Team1PointsAgainst = 3;
         static int Team2PointsAgainst = 3;
         static int Team3PointsAgainst = 3;
         static int Team4PointsAgainst = 1;
@@ -33,9 +33,9 @@ namespace TournamentPro
         static int Team7PointsAgainst = 0;
         static int Team8PointsAgainst = 0;
 
-        static int Team1Wins = 5;
-        static int Team2Wins = 3;
-        static int Team3Wins = 4;
+        static int Team1Wins = 3;
+        static int Team2Wins = 4;
+        static int Team3Wins = 3;
         static int Team4Wins = 0;
         static int Team5Wins = 0;
         static int Team6Wins = 0;
@@ -44,7 +44,7 @@ namespace TournamentPro
 
         static int Team1Losses = 6;
         static int Team2Losses = 6;
-        static int Team3Losses = 0;
+        static int Team3Losses = 6;
         static int Team4Losses = 0;
         static int Team5Losses = 0;
         static int Team6Losses = 0;
@@ -880,7 +880,7 @@ namespace TournamentPro
                 SecondTeam = "Team4";
             }
 
-            //Allocate team to third team for points comparison
+            //Allocate team to Third team for points comparison
             if (teamThree == "Team1")
             {
                 compare3 = Team1[2];
@@ -903,20 +903,264 @@ namespace TournamentPro
             }
 
             //Do the actual comparison, results will either a draw or one team with lower points than the other
-            if (compare1 > compare2)
+            // 1,2,3
+            if ((compare1 < compare2) && (compare2 < compare3))
             {
                 results.Add(FirstTeam);
+                results.Add(SecondTeam);
+                results.Add(ThirdTeam);
+            }
+            // 1,3,2
+            else if ((compare1 < compare2) && (compare2 > compare3) && (compare1 < compare3))
+            {
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
                 results.Add(SecondTeam);
             }
-            else if (compare1 < compare2)
+            // 2,1,3
+            else if ((compare1 > compare2) && (compare2 < compare3) && (compare1 < compare3))
             {
                 results.Add(SecondTeam);
                 results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+
+            }
+            // 2,3,1
+            else if ((compare1 > compare2) && (compare2 < compare3) && (compare1 > compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(ThirdTeam);
+                results.Add(FirstTeam);
+            }
+            // 3,2,1
+            else if ((compare1 > compare2) && (compare2 > compare3) && (compare1 > compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+
+            }
+            //handles 3,1,2
+            else if ((compare1 < compare2) && (compare2 > compare3) && (compare1 > compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+
+            }
+            //handles draw with top 2 [1=2,3]
+            else if ((compare1 == compare2) && (compare2 < compare3))
+            {
+                results = GamesLostFromTwo(FirstTeam, SecondTeam);
+            }
+            //handles draw with top 2 [1=3,2]
+            else if ((compare1 == compare3) && (compare2 > compare3))
+            {
+                results.Add(SecondTeam);
+                var blah = GamesLostFromTwo(FirstTeam, ThirdTeam);
+                results.Add(blah[0]);
+            }
+            //handles draw with top 2 [2=3,1]
+            else if ((compare2 == compare3) && (compare2 < compare1))
+            {
+                results.Add(SecondTeam);
+                var blah = GamesLostFromTwo(SecondTeam, ThirdTeam);
+                results.Add(blah[0]);
+            }
+            //handles draw with bottom 2 [3, 1=2]
+            else if ((compare1 == compare2) && (compare2 > compare3))
+            {
+                var deets = GamesLostFromTwo(FirstTeam, SecondTeam);
+                results.Add(ThirdTeam);
+                results.Add(deets[0]);
+            }
+            //handles draw with bottom 2 [2, 1=3]
+            else if ((compare1 == compare3) && (compare2 < compare3))
+            {
+                var deets = GamesLostFromTwo(FirstTeam, ThirdTeam);
+                results.Add(SecondTeam);
+                results.Add(deets[0]);
+            }
+            //handles draw with bottom 2 [1, 2=3]
+            else if ((compare2 == compare3) && (compare2 > compare1))
+            {
+                var deets = GamesLostFromTwo(SecondTeam, ThirdTeam);
+                results.Add(FirstTeam);
+                results.Add(deets[0]);
+            }
+            //handles draw with all three
+            else
+            {
+                //Go to games won from three
+                results = GamesLostFromThree(FirstTeam, SecondTeam, ThirdTeam);
+            }
+
+            return results;
+        }
+
+        private static List<string> GamesLostFromThree(string teamOne, string teamTwo, string teamThree)
+        {
+            List<string> results = new List<string> { };
+            string FirstTeam = "";
+            string SecondTeam = "";
+            string ThirdTeam = "";
+            int compare1 = 0;
+            int compare2 = 0;
+            int compare3 = 0;
+
+            //Allocate team to First team for points comparison
+            if (teamOne == "Team1")
+            {
+                compare1 = Team1[3];
+                FirstTeam = "Team1";
+            }
+            else if (teamOne == "Team2")
+            {
+                compare1 = Team2[3];
+                FirstTeam = "Team2";
+            }
+            else if (teamOne == "Team3")
+            {
+                compare1 = Team3[3];
+                FirstTeam = "Team3";
             }
             else
             {
-                //Go to Games Lost
-                results = GamesLostFromTwo(FirstTeam, SecondTeam);
+                compare1 = Team4[3];
+                FirstTeam = "Team4";
+            }
+
+            //Allocate team to Second team for points comparison
+            if (teamTwo == "Team1")
+            {
+                compare2 = Team1[3];
+                SecondTeam = "Team1";
+            }
+            else if (teamTwo == "Team2")
+            {
+                compare2 = Team2[3];
+                SecondTeam = "Team2";
+            }
+            else if (teamTwo == "Team3")
+            {
+                compare2 = Team3[3];
+                SecondTeam = "Team3";
+            }
+            else
+            {
+                compare2 = Team4[3];
+                SecondTeam = "Team4";
+            }
+
+            //Allocate team to Third team for points comparison
+            if (teamThree == "Team1")
+            {
+                compare3 = Team1[3];
+                ThirdTeam = "Team1";
+            }
+            else if (teamThree == "Team2")
+            {
+                compare3 = Team2[3];
+                ThirdTeam = "Team2";
+            }
+            else if (teamThree == "Team3")
+            {
+                compare3 = Team3[3];
+                ThirdTeam = "Team3";
+            }
+            else
+            {
+                compare3 = Team4[3];
+                ThirdTeam = "Team4";
+            }
+
+            //Do the actual comparison, results will either a draw or one team with lower points than the other
+            // 1,2,3
+            if ((compare1 < compare2) && (compare2 < compare3))
+            {
+                results.Add(FirstTeam);
+                results.Add(SecondTeam);
+                results.Add(ThirdTeam);
+            }
+            // 1,3,2
+            else if ((compare1 < compare2) && (compare2 > compare3) && (compare1 < compare3))
+            {
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+                results.Add(SecondTeam);
+            }
+            // 2,1,3
+            else if ((compare1 > compare2) && (compare2 < compare3) && (compare1 < compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+
+            }
+            // 2,3,1
+            else if ((compare1 > compare2) && (compare2 < compare3) && (compare1 > compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(ThirdTeam);
+                results.Add(FirstTeam);
+            }
+            // 3,2,1
+            else if ((compare1 > compare2) && (compare2 > compare3) && (compare1 > compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+
+            }
+            //handles 3,1,2
+            else if ((compare1 < compare2) && (compare2 > compare3) && (compare1 > compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+
+            }
+            //handles draw with top 2 [1=2,3]
+            else if ((compare1 == compare2) && (compare2 < compare3))
+            {
+                results = pickRandomFromTwo(FirstTeam, SecondTeam);
+            }
+            //handles draw with top 2 [1=3,2]
+            else if ((compare1 == compare3) && (compare2 > compare3))
+            {
+                results = pickRandomFromTwo(FirstTeam, ThirdTeam);
+            }
+            //handles draw with top 2 [2=3,1]
+            else if ((compare2 == compare3) && (compare2 < compare1))
+            {
+                results = pickRandomFromTwo(SecondTeam, ThirdTeam);
+            }
+            //handles draw with bottom 2 [3, 1=2]
+            else if ((compare1 == compare2) && (compare2 > compare3))
+            {
+                var deets = pickRandomFromTwo(FirstTeam, SecondTeam);
+                results.Add(ThirdTeam);
+                results.Add(deets[0]);
+            }
+            //handles draw with bottom 2 [2, 1=3]
+            else if ((compare1 == compare3) && (compare2 < compare3))
+            {
+                var deets = pickRandomFromTwo(FirstTeam, ThirdTeam);
+                results.Add(SecondTeam);
+                results.Add(deets[0]);
+            }
+            //handles draw with bottom 2 [1, 2=3]
+            else if ((compare2 == compare3) && (compare2 > compare1))
+            {
+                var deets = pickRandomFromTwo(SecondTeam, ThirdTeam);
+                results.Add(FirstTeam);
+                results.Add(deets[0]);
+            }
+            //handles draw with all three
+            else
+            {
+                //Go to games won from three
+                results = pickRandomFromThree(FirstTeam, SecondTeam, ThirdTeam);
             }
 
             return results;
@@ -1080,16 +1324,20 @@ namespace TournamentPro
             return FinalTeams;
         }
 
-        private static string pickRandomFromThree(string teamOne, string teamTwo, string teamThree)
+        private static List<string> pickRandomFromThree(string teamOne, string teamTwo, string teamThree)
         {
-            List<string> teams = new List<string> { };
-            teams.Add(teamOne);
-            teams.Add(teamTwo);
-            teams.Add(teamThree);
+            List<string> RawTeams = new List<string> { };
+            List<string> FinalTeams = new List<string> { };
+            RawTeams.Add(teamOne);
+            RawTeams.Add(teamTwo);
+            RawTeams.Add(teamThree);
             Random rnd = new Random();
-            int selected = rnd.Next(1, 4);
-            string chosen = teams[selected];
-            return chosen;
+            int selected = rnd.Next(0, 2);
+            FinalTeams.Add(RawTeams[selected]);
+            RawTeams.RemoveAt(selected);
+            int selected2 = rnd.Next(0, 2);
+            FinalTeams.Add(RawTeams[selected2]);
+            return FinalTeams;
         }
 
         private static string pickRandomFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
