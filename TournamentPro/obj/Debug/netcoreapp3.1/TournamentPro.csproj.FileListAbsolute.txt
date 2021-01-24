@@ -64,3 +64,4 @@ C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\Tourname
 C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\GroupStage.g.cs
 C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\GroupStage.baml
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\Knockouts.g.cs
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\Knockouts.g.cs

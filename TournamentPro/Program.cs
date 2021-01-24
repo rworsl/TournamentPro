@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp2
+namespace TournamentPro
 {
     class Program
     {
@@ -15,35 +15,35 @@ namespace ConsoleApp2
         static List<int> Team7 = new List<int> { };
         static List<int> Team8 = new List<int> { };
 
-        static int Team1For = 5;
-        static int Team2For = 5;
-        static int Team3For = 3;
-        static int Team4For = 3;
+        static int Team1For = 4;
+        static int Team2For = 3;
+        static int Team3For = 4;
+        static int Team4For = 2;
         static int Team5For = 0;
         static int Team6For = 0;
         static int Team7For = 0;
         static int Team8For = 0;
 
-        static int Team1PointsAgainst = 1;
-        static int Team2PointsAgainst = 2;
+        static int Team1PointsAgainst = 2;
+        static int Team2PointsAgainst = 3;
         static int Team3PointsAgainst = 3;
-        static int Team4PointsAgainst = 4;
+        static int Team4PointsAgainst = 1;
         static int Team5PointsAgainst = 0;
         static int Team6PointsAgainst = 0;
         static int Team7PointsAgainst = 0;
         static int Team8PointsAgainst = 0;
 
-        static int Team1Wins = 0;
-        static int Team2Wins = 0;
-        static int Team3Wins = 0;
+        static int Team1Wins = 5;
+        static int Team2Wins = 3;
+        static int Team3Wins = 4;
         static int Team4Wins = 0;
         static int Team5Wins = 0;
         static int Team6Wins = 0;
         static int Team7Wins = 0;
         static int Team8Wins = 0;
 
-        static int Team1Losses = 0;
-        static int Team2Losses = 0;
+        static int Team1Losses = 6;
+        static int Team2Losses = 6;
         static int Team3Losses = 0;
         static int Team4Losses = 0;
         static int Team5Losses = 0;
@@ -62,7 +62,7 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             SortPoints();
-            sortTopPoints();
+            PointsFor();
         }
 
         /*
@@ -72,180 +72,473 @@ namespace ConsoleApp2
          * [7,7,7,4] Top 3 the same
          * [7,7,7,7] All the same
          * [7,6,5,4] All different
+         * [7,6,5,5] Bottom two the same
         */
 
-        static void sortTopPoints()
+        static void PointsFor()
         {
+
+            List<List<int>> TeamsList = new List<List<int>> { };
+            TeamsList.Add(Team1);
+            TeamsList.Add(Team2);
+            TeamsList.Add(Team3);
+            TeamsList.Add(Team4);
+
             pointsFor.Sort();
             pointsFor.Reverse();
-
-            //All Teams on different points gained
-            if ((pointsFor[0] != pointsFor[1]) && (pointsFor[1] != pointsFor[2]))
+            //All Teams on different points gained ---------- DONE!!!
+            if ((pointsFor[0] != pointsFor[1]) && (pointsFor[1] != pointsFor[2]) && (pointsFor[2] != pointsFor[3]))
             {
-                if(Team1For == pointsFor[0])
+                //Allocate top team
+                if (Team1[0] == pointsFor[0])
                 {
                     FirstHalfTopTeam = "Team1";
-                    if(Team2For == pointsFor[1])
-                    {
-                        FirstHalfSecondTeam = "Team2";
-                    }
-                    else if (Team3For == pointsFor[1])
-                    {
-                        FirstHalfSecondTeam = "Team3";
-                    }
-                    else
-                    {
-                        FirstHalfSecondTeam = "Team4";
-                    }
                 }
-                else if(Team2For == pointsFor[0])
+                else if (Team2[0] == pointsFor[0])
                 {
                     FirstHalfTopTeam = "Team2";
-                    if (Team1For == pointsFor[1])
-                    {
-                        FirstHalfSecondTeam = "Team1";
-                    }
-                    else if (Team3For == pointsFor[1])
-                    {
-                        FirstHalfSecondTeam = "Team3";
-                    }
-                    else
-                    {
-                        FirstHalfSecondTeam = "Team4";
-                    }
                 }
-                else if(Team3For == pointsFor[0])
+                else if (Team3[0] == pointsFor[0])
                 {
                     FirstHalfTopTeam = "Team3";
-                    if (Team1For == pointsFor[1])
-                    {
-                        FirstHalfSecondTeam = "Team1";
-                    }
-                    else if (Team2For == pointsFor[1])
-                    {
-                        FirstHalfSecondTeam = "Team2";
-                    }
-                    else
-                    {
-                        FirstHalfSecondTeam = "Team4";
-                    }
                 }
                 else
                 {
                     FirstHalfTopTeam = "Team4";
-                    if (Team1For == pointsFor[1])
-                    {
-                        FirstHalfSecondTeam = "Team1";
-                    }
-                    else if (Team2For == pointsFor[1])
-                    {
-                        FirstHalfSecondTeam = "Team2";
-                    }
-                    else
-                    {
-                        FirstHalfSecondTeam = "Team3";
-                    }
+                }
+
+                //Allocate second team
+                if (Team1[0] == pointsFor[1])
+                {
+                    FirstHalfSecondTeam = "Team1";
+                }
+                else if (Team2[0] == pointsFor[1])
+                {
+                    FirstHalfSecondTeam = "Team2";
+                }
+                else if (Team3[0] == pointsFor[1])
+                {
+                    FirstHalfSecondTeam = "Team3";
+                }
+                else
+                {
+                    FirstHalfSecondTeam = "Team4";
                 }
             }
 
-            //Top 2 teams have the same points
+            //Bottom 2 teams have the same points ---------- DONE!!!
+            if ((pointsFor[0] != pointsFor[1]) && (pointsFor[1] != pointsFor[2]) && (pointsFor[2] == pointsFor[3]))
+            {
+                //Allocate top team
+                if (Team1[0] == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team1";
+                }
+                else if (Team2[0] == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team2";
+                }
+                else if (Team3[0] == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team3";
+                }
+                else
+                {
+                    FirstHalfTopTeam = "Team4";
+                }
+
+                //Allocate second team
+                if (Team1[0] == pointsFor[1])
+                {
+                    FirstHalfSecondTeam = "Team1";
+                }
+                else if (Team2[0] == pointsFor[1])
+                {
+                    FirstHalfSecondTeam = "Team2";
+                }
+                else if (Team3[0] == pointsFor[1])
+                {
+                    FirstHalfSecondTeam = "Team3";
+                }
+                else
+                {
+                    FirstHalfSecondTeam = "Team4";
+                }
+            }
+
+            //Top 2 teams have the same points ---------- DONE!!!
             if ((pointsFor[0] == pointsFor[1]) && (pointsFor[1] != pointsFor[2]))
             {
-                int pointsAgainstPair1 = 0;
-                int pointsAgainstPair2 = 0;
-                List<string> TeamsList = new List<string> { };
-                TeamsList.Add("Team1");
-                TeamsList.Add("Team2");
-                TeamsList.Add("Team3");
-                TeamsList.Add("Team4");
+                var inputTeam1 = "";
+                var inputTeam2 = "";
 
-                int Compare1 = 0;
-                int Compare2 = 0;
-
-                if (pointsFor[0] == Team1For)
+                //Allocate top team
+                if (Team1[0] == pointsFor[0])
                 {
-                    TeamsList.RemoveAt(0);
-                    Compare1 = Team1PointsAgainst;
-                    if (pointsFor[1] == Team2For)
+                    inputTeam1 = "Team1";
+                }
+                else if (Team2[0] == pointsFor[0])
+                {
+                    inputTeam1 = "Team2";
+                }
+                else if (Team3[0] == pointsFor[0])
+                {
+                    inputTeam1 = "Team3";
+                }
+                else
+                {
+                    inputTeam1 = "Team4";
+                }
+
+                if (inputTeam1 == "Team1")
+                {
+                    //Allocate second team
+                    if (Team2[0] == pointsFor[1])
                     {
-                        TeamsList.RemoveAt(0);
-                        Compare2 = Team1PointsAgainst;
+                        inputTeam2 = "Team2";
                     }
-                    else if (pointsFor[1] == Team3For)
+                    else if (Team3[0] == pointsFor[1])
                     {
-                        TeamsList.RemoveAt(1);
-                        Compare2 = Team2PointsAgainst;
+                        inputTeam2 = "Team3";
                     }
-                    else if (pointsFor[1] == Team4For)
+                    else
                     {
-                        TeamsList.RemoveAt(2);
-                        Compare2 = Team4PointsAgainst;
+                        inputTeam2 = "Team4";
                     }
                 }
-                else if (pointsFor[0] == Team2For)
+
+                else if (inputTeam1 == "Team2")
                 {
-                    TeamsList.RemoveAt(1);
-                    Compare1 = Team2PointsAgainst;
-                    if (pointsFor[1] == Team1For)
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[1])
                     {
-                        TeamsList.RemoveAt(0);
-                        Compare2 = Team1PointsAgainst;
+                        inputTeam2 = "Team1";
                     }
-                    else if (pointsFor[1] == Team3For)
+                    else if (Team3[0] == pointsFor[1])
                     {
-                        TeamsList.RemoveAt(1);
-                        Compare2 = Team3PointsAgainst;
+                        inputTeam2 = "Team3";
                     }
-                    else if (pointsFor[1] == Team4For)
+                    else
                     {
-                        TeamsList.RemoveAt(2);
-                        Compare2 = Team4PointsAgainst;
+                        inputTeam2 = "Team4";
                     }
                 }
-                else if (pointsFor[0] == Team3For)
+
+                else if (inputTeam1 == "Team3")
                 {
-                    TeamsList.RemoveAt(2);
-                    Compare1 = Team3PointsAgainst;
-                    if (pointsFor[1] == Team1For)
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[1])
                     {
-                        TeamsList.RemoveAt(0);
-                        Compare2 = Team1PointsAgainst;
+                        inputTeam2 = "Team1";
                     }
-                    else if (pointsFor[1] == Team2For)
+                    else if (Team2[0] == pointsFor[1])
                     {
-                        TeamsList.RemoveAt(1);
-                        Compare2 = Team2PointsAgainst;
+                        inputTeam2 = "Team2";
                     }
-                    else if (pointsFor[1] == Team4For)
+                    else
                     {
-                        TeamsList.RemoveAt(2);
-                        Compare2 = Team4PointsAgainst;
+                        inputTeam2 = "Team4";
+                    }
+                }
+
+                else
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team1";
+                    }
+                    else if (Team2[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team3";
+                    }
+                }
+
+                var results = LowestPointsAgainstFromTwo(inputTeam1, inputTeam2);
+
+                FirstHalfTopTeam = results[0];
+                FirstHalfSecondTeam = results[1];
+            }
+
+            //Middle 2 teams have the same points ---------- DONE!!!
+            if ((pointsFor[0] != pointsFor[1]) && (pointsFor[1] == pointsFor[2]) && (pointsFor[1] != pointsFor[3]))
+            {
+                var inputTeam1 = "";
+                var inputTeam2 = "";
+
+                //Allocate top team
+                if (Team1[0] == pointsFor[1])
+                {
+                    inputTeam1 = "Team1";
+                }
+                else if (Team2[0] == pointsFor[1])
+                {
+                    inputTeam1 = "Team2";
+                }
+                else if (Team3[0] == pointsFor[1])
+                {
+                    inputTeam1 = "Team3";
+                }
+                else
+                {
+                    inputTeam1 = "Team4";
+                }
+
+                if (inputTeam1 == "Team1")
+                {
+                    //Allocate second team
+                    if (Team2[0] == pointsFor[2])
+                    {
+                        inputTeam2 = "Team2";
+                    }
+                    else if (Team3[0] == pointsFor[2])
+                    {
+                        inputTeam2 = "Team3";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team4";
+                    }
+                }
+
+                else if (inputTeam1 == "Team2")
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[2])
+                    {
+                        inputTeam2 = "Team1";
+                    }
+                    else if (Team3[0] == pointsFor[2])
+                    {
+                        inputTeam2 = "Team3";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team4";
+                    }
+                }
+
+                else if (inputTeam1 == "Team3")
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[2])
+                    {
+                        inputTeam2 = "Team1";
+                    }
+                    else if (Team2[0] == pointsFor[2])
+                    {
+                        inputTeam2 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team4";
+                    }
+                }
+
+                else
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[2])
+                    {
+                        inputTeam2 = "Team1";
+                    }
+                    else if (Team2[0] == pointsFor[2])
+                    {
+                        inputTeam2 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team3";
+                    }
+                }
+
+                var results = LowestPointsAgainstFromTwo(inputTeam1, inputTeam2);
+
+                if (Team1For == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team1";
+                }
+                else if (Team2For == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team2";
+                }
+                else if (Team3For == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team3";
+                }
+                else
+                {
+                    FirstHalfTopTeam = "Team4";
+                }
+
+                FirstHalfSecondTeam = results[0];
+
+            }
+
+            //Top 3 teams have the same points
+            if ((pointsFor[0] == pointsFor[2]) && (pointsFor[1] != pointsFor[3]))
+            {
+                var inputTeam1 = "";
+                var inputTeam2 = "";
+                var inputTeam3 = "";
+
+                //Allocate top team
+                if (Team1[0] == pointsFor[0])
+                {
+                    inputTeam1 = "Team1";
+                }
+                else if (Team2[0] == pointsFor[0])
+                {
+                    inputTeam1 = "Team2";
+                }
+                else if (Team3[0] == pointsFor[0])
+                {
+                    inputTeam1 = "Team3";
+                }
+                else
+                {
+                    inputTeam1 = "Team4";
+                }
+
+                //Allocate second team
+                if (inputTeam1 == "Team1")
+                {
+                    //Allocate second team
+                    if (Team2[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team2";
+                    }
+                    else if (Team3[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team3";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team4";
+                    }
+                }
+                else if (inputTeam1 == "Team2")
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team1";
+                    }
+                    else if (Team3[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team3";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team4";
+                    }
+                }
+                else if (inputTeam1 == "Team3")
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team1";
+                    }
+                    else if (Team2[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team4";
                     }
                 }
                 else
                 {
-                    TeamsList.RemoveAt(3);
-                    Compare1 = Team4PointsAgainst;
-                    if (pointsFor[1] == Team1For)
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[1])
                     {
-                        TeamsList.RemoveAt(0);
-                        Compare2 = Team1PointsAgainst;
+                        inputTeam2 = "Team1";
                     }
-                    else if (pointsFor[1] == Team2For)
+                    else if (Team2[0] == pointsFor[1])
                     {
-                        TeamsList.RemoveAt(1);
-                        Compare2 = Team2PointsAgainst;
+                        inputTeam2 = "Team2";
                     }
-                    else if (pointsFor[1] == Team3For)
+                    else
                     {
-                        TeamsList.RemoveAt(2);
-                        Compare2 = Team3PointsAgainst;
+                        inputTeam2 = "Team3";
+                    }
+                }
+
+                //Allocate third team
+                if (inputTeam1 == "Team1" && inputTeam2 == "Team2")
+                {
+                    //Allocate second team
+                    if (Team3[0] == pointsFor[2])
+                    {
+                        inputTeam3 = "Team3";
+                    }
+                    else
+                    {
+                        inputTeam3 = "Team4";
+                    }
+                }
+                else if (inputTeam1 == "Team1" && inputTeam2 == "Team3")
+                {
+                    //Allocate second team
+                    if (Team2[0] == pointsFor[2])
+                    {
+                        inputTeam3 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam3 = "Team4";
+                    }
+                }
+                else if (inputTeam1 == "Team1" && inputTeam2 == "Team4")
+                {
+                    //Allocate second team
+                    if (Team2[0] == pointsFor[2])
+                    {
+                        inputTeam3 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam3 = "Team3";
+                    }
+                }
+                else if (inputTeam1 == "Team2" && inputTeam2 == "Team3")
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[2])
+                    {
+                        inputTeam3 = "Team1";
+                    }
+                    else
+                    {
+                        inputTeam3 = "Team4";
                     }
                 }
 
 
+                var results = LowestPointsAgainstFromThree(inputTeam1, inputTeam2, inputTeam3);
+
+                FirstHalfTopTeam = results[0];
+                FirstHalfSecondTeam = results[1];
             }
 
+            //Bottom 3 teams have the same points
+            if ((pointsFor[0] != pointsFor[1]) && (pointsFor[1] == pointsFor[3]))
+            {
+            }
+
+            //All teams have the same points
+            if ((pointsFor[0] == pointsFor[3]))
+            {
+            }
+
+            Console.WriteLine(FirstHalfTopTeam);
+            Console.WriteLine(FirstHalfSecondTeam);
         }
 
 
@@ -293,95 +586,498 @@ namespace ConsoleApp2
             gamesAgainst.Add(Team4Losses);
         }
 
-        private static int LowestPointsAgainstFromTwo(int teamOne, int teamTwo)
+        private static List<string> LowestPointsAgainstFromTwo(string teamOne, string teamTwo)
         {
-            if (teamOne > teamTwo)
+            List<string> results = new List<string> { };
+            string FirstTeam = "";
+            string SecondTeam = "";
+            int compare1 = 0;
+            int compare2 = 0;
+
+            //Allocate team to First team for points comparison
+            if (teamOne == "Team1")
             {
-                return teamTwo;
+                compare1 = Team1[1];
+                FirstTeam = "Team1";
             }
-            else if(teamTwo > teamOne)
+            else if (teamOne == "Team2")
             {
-                return teamOne;
+                compare1 = Team2[1];
+                FirstTeam = "Team2";
+            }
+            else if (teamOne == "Team3")
+            {
+                compare1 = Team3[1];
+                FirstTeam = "Team3";
             }
             else
             {
-                //needs to look at games won
-                return 0;
+                compare1 = Team4[1];
+                FirstTeam = "Team4";
             }
-        }
 
-        private static int LowestPointsAgainstFromThree(int teamOne, int teamTwo, int teamThree)
-        {
-            if ((teamOne < teamTwo) && (teamOne < teamThree))
+            //Allocate team to Second team for points comparison
+            if (teamTwo == "Team1")
             {
-                return teamOne;
+                compare2 = Team1[1];
+                SecondTeam = "Team1";
             }
-            else if ((teamTwo < teamOne) && (teamTwo < teamThree))
+            else if (teamTwo == "Team2")
             {
-                return teamTwo;
+                compare2 = Team2[1];
+                SecondTeam = "Team2";
             }
-            else if ((teamThree < teamOne) && (teamTwo > teamThree))
+            else if (teamTwo == "Team3")
             {
-                return teamThree;
+                compare2 = Team3[1];
+                SecondTeam = "Team3";
             }
             else
             {
-                //needs to look at games won
-                return 0;
+                compare2 = Team4[1];
+                SecondTeam = "Team4";
             }
+
+            //Do the actual comparison, results will either a draw or one team with lower points than the other
+            if (compare1 < compare2)
+            {
+                results.Add(FirstTeam);
+                results.Add(SecondTeam);
+            }
+            else if (compare1 > compare2)
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+            }
+            else
+            {
+                //Go to Games Won
+                results = GamesWonFromTwo(FirstTeam, SecondTeam);
+            }
+
+            return results;
         }
 
-        private static List<int> LowestPointsAgainstFromFour(int teamOne, int teamTwo, int teamThree, int teamFour)
+        private static List<string> LowestPointsAgainstFromThree(string teamOne, string teamTwo, string teamThree)
         {
-            List<int> lowestScores = new List<int> { };
+            List<string> results = new List<string> { };
+            string FirstTeam = "";
+            string SecondTeam = "";
+            string ThirdTeam = "";
+            int compare1 = 0;
+            int compare2 = 0;
+            int compare3 = 0;
 
-            lowestScores.Add(teamOne);
-            lowestScores.Add(teamTwo);
-            lowestScores.Add(teamThree);
-            lowestScores.Add(teamFour);
-            lowestScores.Sort();
+            //Allocate team to First team for points comparison
+            if (teamOne == "Team1")
+            {
+                compare1 = Team1[1];
+                FirstTeam = "Team1";
+            }
+            else if (teamOne == "Team2")
+            {
+                compare1 = Team2[1];
+                FirstTeam = "Team2";
+            }
+            else if (teamOne == "Team3")
+            {
+                compare1 = Team3[1];
+                FirstTeam = "Team3";
+            }
+            else
+            {
+                compare1 = Team4[1];
+                FirstTeam = "Team4";
+            }
 
-            List<int> output = new List<int> { };
+            //Allocate team to Second team for points comparison
+            if (teamTwo == "Team1")
+            {
+                compare2 = Team1[1];
+                SecondTeam = "Team1";
+            }
+            else if (teamTwo == "Team2")
+            {
+                compare2 = Team2[1];
+                SecondTeam = "Team2";
+            }
+            else if (teamTwo == "Team3")
+            {
+                compare2 = Team3[1];
+                SecondTeam = "Team3";
+            }
+            else
+            {
+                compare2 = Team4[1];
+                SecondTeam = "Team4";
+            }
 
-            if ((lowestScores[0] < lowestScores[1]) && (lowestScores[1] < lowestScores[2]))
+            //Allocate team to Third team for points comparison
+            if (teamThree == "Team1")
             {
-                //lowest scores are all different so just pick the two lowest
-                output.Add(lowestScores[0]);
-                output.Add(lowestScores[1]);
+                compare3 = Team1[1];
+                ThirdTeam = "Team1";
             }
-            else if((lowestScores[0] < lowestScores[1]) && (lowestScores[1] == lowestScores[2]) && (lowestScores[1] != lowestScores[3]))
+            else if (teamThree == "Team2")
             {
-                //lowest score is unique, and middle two are the same
+                compare3 = Team2[1];
+                ThirdTeam = "Team2";
             }
-            else if ((lowestScores[0] < lowestScores[1]) && (lowestScores[1] == lowestScores[2]) && (lowestScores[1] == lowestScores[3]))
+            else if (teamThree == "Team3")
             {
-                //lowest score is unique, and top 3 are the same
+                compare3 = Team3[1];
+                ThirdTeam = "Team3";
             }
-            else if ((lowestScores[0] == lowestScores[1]) && (lowestScores[1] != lowestScores[2]))
+            else
             {
-                //lowest 2 scores are the same
+                compare3 = Team4[1];
+                ThirdTeam = "Team4";
             }
-            else if ((lowestScores[0] == lowestScores[2]) && (lowestScores[0] != lowestScores[3]))
+
+            //Do the actual comparison, results will either a draw or one team with lower points than the other
+            // 1,2,3
+            if ((compare1 < compare2) && (compare2 < compare3))
             {
-                //lowest 3 scores are the same
+                results.Add(FirstTeam);
+                results.Add(SecondTeam);
+                results.Add(ThirdTeam);
             }
-            else if (lowestScores[0] == lowestScores[3])
+            // 1,3,2
+            else if ((compare1 < compare2) && (compare2 > compare3) && (compare1 < compare3))
             {
-                //all scores are the same
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+                results.Add(SecondTeam);
             }
-            return output;
+            // 2,1,3
+            else if ((compare1 > compare2) && (compare2 < compare3) && (compare1 < compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+
+            }
+            // 2,3,1
+            else if ((compare1 > compare2) && (compare2 < compare3) && (compare1 > compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(ThirdTeam);
+                results.Add(FirstTeam);
+            }
+            // 3,2,1
+            else if ((compare1 > compare2) && (compare2 > compare3) && (compare1 > compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+
+            }
+            //handles 3,1,2
+            else if ((compare1 < compare2) && (compare2 > compare3) && (compare1 > compare3))
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+                results.Add(ThirdTeam);
+
+            }
+            //handles draw with top 2 [1=2,3]
+            else if ((compare1 == compare2) && (compare2 < compare3))
+            {
+                results = GamesWonFromTwo(FirstTeam, SecondTeam);
+            }
+            //handles draw with top 2 [1=3,2]
+            else if ((compare1 == compare3) && (compare2 > compare3))
+            {
+                results = GamesWonFromTwo(FirstTeam, ThirdTeam);
+            }
+            //handles draw with top 2 [2=3,1]
+            else if ((compare2 == compare3) && (compare2 < compare1))
+            {
+                results = GamesWonFromTwo(SecondTeam, ThirdTeam);
+            }
+            //handles draw with bottom 2 [3, 1=2]
+            else if ((compare1 == compare2) && (compare2 > compare3))
+            {
+                var deets = GamesWonFromTwo(FirstTeam, SecondTeam);
+                results.Add(ThirdTeam);
+                results.Add(deets[0]);
+            }
+            //handles draw with bottom 2 [2, 1=3]
+            else if ((compare1 == compare3) && (compare2 < compare3))
+            {
+                var deets = GamesWonFromTwo(FirstTeam, ThirdTeam);
+                results.Add(SecondTeam);
+                results.Add(deets[0]);
+            }
+            //handles draw with bottom 2 [1, 2=3]
+            else if ((compare2 == compare3) && (compare2 > compare1))
+            {
+                var deets = GamesWonFromTwo(SecondTeam, ThirdTeam);
+                results.Add(FirstTeam);
+                results.Add(deets[0]);
+            }
+            //handles draw with all three
+            else
+            {
+                //Go to games won from three
+                results = GamesWonFromThree(FirstTeam, SecondTeam, ThirdTeam);
+            }
+
+            return results;
         }
 
-
-        private static string pickRandomFromTwo(string teamOne, string teamTwo)
+        private static List<string> GamesWonFromThree(string teamOne, string teamTwo, string teamThree)
         {
-            List<string> teams = new List<string> { };
-            teams.Add(teamOne);
-            teams.Add(teamTwo);
+            List<string> results = new List<string> { };
+            string FirstTeam = "";
+            string SecondTeam = "";
+            string ThirdTeam = "";
+            int compare1 = 0;
+            int compare2 = 0;
+            int compare3 = 0;
+
+            //Allocate team to First team for points comparison
+            if (teamOne == "Team1")
+            {
+                compare1 = Team1[2];
+                FirstTeam = "Team1";
+            }
+            else if (teamOne == "Team2")
+            {
+                compare1 = Team2[2];
+                FirstTeam = "Team2";
+            }
+            else if (teamOne == "Team3")
+            {
+                compare1 = Team3[2];
+                FirstTeam = "Team3";
+            }
+            else
+            {
+                compare1 = Team4[2];
+                FirstTeam = "Team4";
+            }
+
+            //Allocate team to Second team for points comparison
+            if (teamTwo == "Team1")
+            {
+                compare2 = Team1[2];
+                SecondTeam = "Team1";
+            }
+            else if (teamTwo == "Team2")
+            {
+                compare2 = Team2[2];
+                SecondTeam = "Team2";
+            }
+            else if (teamTwo == "Team3")
+            {
+                compare2 = Team3[2];
+                SecondTeam = "Team3";
+            }
+            else
+            {
+                compare2 = Team4[2];
+                SecondTeam = "Team4";
+            }
+
+            //Allocate team to third team for points comparison
+            if (teamThree == "Team1")
+            {
+                compare3 = Team1[2];
+                ThirdTeam = "Team1";
+            }
+            else if (teamThree == "Team2")
+            {
+                compare3 = Team2[2];
+                ThirdTeam = "Team2";
+            }
+            else if (teamThree == "Team3")
+            {
+                compare3 = Team3[2];
+                ThirdTeam = "Team3";
+            }
+            else
+            {
+                compare3 = Team4[2];
+                ThirdTeam = "Team4";
+            }
+
+            //Do the actual comparison, results will either a draw or one team with lower points than the other
+            if (compare1 > compare2)
+            {
+                results.Add(FirstTeam);
+                results.Add(SecondTeam);
+            }
+            else if (compare1 < compare2)
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+            }
+            else
+            {
+                //Go to Games Lost
+                results = GamesLostFromTwo(FirstTeam, SecondTeam);
+            }
+
+            return results;
+        }
+
+        private static List<string> GamesWonFromTwo(string teamOne, string teamTwo)
+        {
+            List<string> results = new List<string> { };
+            string FirstTeam = "";
+            string SecondTeam = "";
+            int compare1 = 0;
+            int compare2 = 0;
+
+            //Allocate team to First team for points comparison
+            if (teamOne == "Team1")
+            {
+                compare1 = Team1[2];
+                FirstTeam = "Team1";
+            }
+            else if (teamOne == "Team2")
+            {
+                compare1 = Team2[2];
+                FirstTeam = "Team2";
+            }
+            else if (teamOne == "Team3")
+            {
+                compare1 = Team3[2];
+                FirstTeam = "Team3";
+            }
+            else
+            {
+                compare1 = Team4[2];
+                FirstTeam = "Team4";
+            }
+
+            //Allocate team to Second team for points comparison
+            if (teamTwo == "Team1")
+            {
+                compare2 = Team1[2];
+                SecondTeam = "Team1";
+            }
+            else if (teamTwo == "Team2")
+            {
+                compare2 = Team2[2];
+                SecondTeam = "Team2";
+            }
+            else if (teamTwo == "Team3")
+            {
+                compare2 = Team3[2];
+                SecondTeam = "Team3";
+            }
+            else
+            {
+                compare2 = Team4[2];
+                SecondTeam = "Team4";
+            }
+
+            //Do the actual comparison, results will either a draw or one team with lower points than the other
+            if (compare1 > compare2)
+            {
+                results.Add(FirstTeam);
+                results.Add(SecondTeam);
+            }
+            else if (compare1 < compare2)
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+            }
+            else
+            {
+                //Go to Games Lost
+                results = GamesLostFromTwo(FirstTeam, SecondTeam);
+            }
+
+            return results;
+        }
+
+        private static List<string> GamesLostFromTwo(string teamOne, string teamTwo)
+        {
+            List<string> results = new List<string> { };
+            string FirstTeam = "";
+            string SecondTeam = "";
+            int compare1 = 0;
+            int compare2 = 0;
+
+            //Allocate team to First team for points comparison
+            if (teamOne == "Team1")
+            {
+                compare1 = Team1[3];
+                FirstTeam = "Team1";
+            }
+            else if (teamOne == "Team2")
+            {
+                compare1 = Team2[3];
+                FirstTeam = "Team2";
+            }
+            else if (teamOne == "Team3")
+            {
+                compare1 = Team3[3];
+                FirstTeam = "Team3";
+            }
+            else
+            {
+                compare1 = Team4[3];
+                FirstTeam = "Team4";
+            }
+
+            //Allocate team to Second team for points comparison
+            if (teamTwo == "Team1")
+            {
+                compare2 = Team1[3];
+                SecondTeam = "Team1";
+            }
+            else if (teamTwo == "Team2")
+            {
+                compare2 = Team2[3];
+                SecondTeam = "Team2";
+            }
+            else if (teamTwo == "Team3")
+            {
+                compare2 = Team3[3];
+                SecondTeam = "Team3";
+            }
+            else
+            {
+                compare2 = Team4[3];
+                SecondTeam = "Team4";
+            }
+
+            //Do the actual comparison, results will either a draw or one team with lower points than the other
+            if (compare1 < compare2)
+            {
+                results.Add(FirstTeam);
+                results.Add(SecondTeam);
+            }
+            else if (compare1 > compare2)
+            {
+                results.Add(SecondTeam);
+                results.Add(FirstTeam);
+            }
+            else
+            {
+                //Go to Random From Two
+                results = pickRandomFromTwo(FirstTeam, SecondTeam);
+            }
+
+            return results;
+        }
+
+        private static List<string> pickRandomFromTwo(string teamOne, string teamTwo)
+        {
+            List<string> RawTeams = new List<string> { };
+            List<string> FinalTeams = new List<string> { };
+            RawTeams.Add(teamOne);
+            RawTeams.Add(teamTwo);
             Random rnd = new Random();
-            int selected = rnd.Next(1,3);
-            string chosen = teams[selected];
-            return chosen;
+            int selected = rnd.Next(0, 2);
+            FinalTeams.Add(RawTeams[selected]);
+            RawTeams.RemoveAt(selected);
+            FinalTeams.Add(RawTeams[0]);
+            return FinalTeams;
         }
 
         private static string pickRandomFromThree(string teamOne, string teamTwo, string teamThree)
