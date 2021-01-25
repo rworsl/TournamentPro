@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Testbed
+namespace test
 {
     class Program
     {
@@ -379,7 +379,7 @@ namespace Testbed
 
             }
 
-            //Top 3 teams have the same points
+            //Top 3 teams have the same points ---------- DONE!!!
             if ((pointsFor[0] == pointsFor[2]) && (pointsFor[1] != pointsFor[3]))
             {
                 var inputTeam1 = "";
@@ -527,9 +527,168 @@ namespace Testbed
                 FirstHalfSecondTeam = results[1];
             }
 
-            //Bottom 3 teams have the same points
+            //Bottom 3 teams have the same points ---------- DONE!!!
             if ((pointsFor[0] != pointsFor[1]) && (pointsFor[1] == pointsFor[3]))
             {
+                var inputTeam1 = "";
+                var inputTeam2 = "";
+                var inputTeam3 = "";
+
+                //Allocate top team
+                if (Team1[0] == pointsFor[0])
+                {
+                    inputTeam1 = "Team1";
+                }
+                else if (Team2[0] == pointsFor[0])
+                {
+                    inputTeam1 = "Team2";
+                }
+                else if (Team3[0] == pointsFor[0])
+                {
+                    inputTeam1 = "Team3";
+                }
+                else
+                {
+                    inputTeam1 = "Team4";
+                }
+
+                //Allocate second team
+                if (inputTeam1 == "Team1")
+                {
+                    //Allocate second team
+                    if (Team2[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team2";
+                    }
+                    else if (Team3[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team3";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team4";
+                    }
+                }
+                else if (inputTeam1 == "Team2")
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team1";
+                    }
+                    else if (Team3[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team3";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team4";
+                    }
+                }
+                else if (inputTeam1 == "Team3")
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team1";
+                    }
+                    else if (Team2[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team4";
+                    }
+                }
+                else
+                {
+                    //Allocate second team
+                    if (Team1[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team1";
+                    }
+                    else if (Team2[0] == pointsFor[1])
+                    {
+                        inputTeam2 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam2 = "Team3";
+                    }
+                }
+
+                //Allocate third team
+                if (inputTeam1 == "Team1" && inputTeam2 == "Team2")
+                {
+                    //Allocate third team
+                    if (Team3[0] == pointsFor[2])
+                    {
+                        inputTeam3 = "Team3";
+                    }
+                    else
+                    {
+                        inputTeam3 = "Team4";
+                    }
+                }
+                else if (inputTeam1 == "Team1" && inputTeam2 == "Team3")
+                {
+                    //Allocate third team
+                    if (Team2[0] == pointsFor[2])
+                    {
+                        inputTeam3 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam3 = "Team4";
+                    }
+                }
+                else if (inputTeam1 == "Team1" && inputTeam2 == "Team4")
+                {
+                    //Allocate third team
+                    if (Team2[0] == pointsFor[2])
+                    {
+                        inputTeam3 = "Team2";
+                    }
+                    else
+                    {
+                        inputTeam3 = "Team3";
+                    }
+                }
+                else if (inputTeam1 == "Team2" && inputTeam2 == "Team3")
+                {
+                    //Allocate third team
+                    if (Team1[0] == pointsFor[2])
+                    {
+                        inputTeam3 = "Team1";
+                    }
+                    else
+                    {
+                        inputTeam3 = "Team4";
+                    }
+                }
+
+
+                var results = LowestPointsAgainstFromThree(inputTeam1, inputTeam2, inputTeam3);
+
+                FirstHalfTopTeam = results[0];
+                if (Team1[0] == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team1";
+                }
+                else if (Team2[0] == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team2";
+                }
+                else if (Team3[0] == pointsFor[0])
+                {
+                    FirstHalfTopTeam = "Team3";
+                }
+                else
+                {
+                    FirstHalfTopTeam = "Team4";
+                }
+                FirstHalfSecondTeam = results[0];
             }
 
             //All teams have the same points
@@ -1332,7 +1491,7 @@ namespace Testbed
             RawTeams.Add(teamTwo);
             RawTeams.Add(teamThree);
             Random rnd = new Random();
-            int selected = rnd.Next(0, 2);
+            int selected = rnd.Next(0, 3);
             FinalTeams.Add(RawTeams[selected]);
             RawTeams.RemoveAt(selected);
             int selected2 = rnd.Next(0, 2);
@@ -1340,20 +1499,20 @@ namespace Testbed
             return FinalTeams;
         }
 
-        private static string pickRandomFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
+        private static List<string> pickRandomFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
         {
-            List<string> teams = new List<string> { };
-            teams.Add(teamOne);
-            teams.Add(teamTwo);
-            teams.Add(teamThree);
-            teams.Add(teamFour);
+            List<string> RawTeams = new List<string> { };
+            List<string> FinalTeams = new List<string> { };
+            RawTeams.Add(teamOne);
+            RawTeams.Add(teamTwo);
+            RawTeams.Add(teamThree);
             Random rnd = new Random();
             int selected = rnd.Next(0, 4);
-            string chosenOne = teams[selected];
-            teams.RemoveAt(selected);
+            FinalTeams.Add(RawTeams[selected]);
+            RawTeams.RemoveAt(selected);
             int selected2 = rnd.Next(0, 3);
-            string chosenTwo = teams[selected2];
-            return chosenOne + " " + chosenTwo;
+            FinalTeams.Add(RawTeams[selected2]);
+            return FinalTeams;
         }
     }
 }
