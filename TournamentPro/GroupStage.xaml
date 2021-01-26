@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TournamentPro"
         mc:Ignorable="d"
-        Title="Tournament Pro - Group Stage" Height="768" Width="1024">
+        Title="Tournament Pro - Group Stage" Height="768" Width="1024" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>

@@ -485,16 +485,16 @@ namespace TournamentPro
 
             GamesList.Add(Game1);
             GamesList.Add(Game2);
-            GamesList.Add(Game3);
-            GamesList.Add(Game4);
-            GamesList.Add(Game5);
-            GamesList.Add(Game6);
-            GamesList.Add(Game7);
-            GamesList.Add(Game8);
-            GamesList.Add(Game9);
-            GamesList.Add(Game10);
-            GamesList.Add(Game11);
-            GamesList.Add(Game12);
+            //GamesList.Add(Game3);
+            //GamesList.Add(Game4);
+            //GamesList.Add(Game5);
+            //GamesList.Add(Game6);
+            //GamesList.Add(Game7);
+            //GamesList.Add(Game8);
+            //GamesList.Add(Game9);
+            //GamesList.Add(Game10);
+            //GamesList.Add(Game11);
+            //GamesList.Add(Game12);
         }
 
         private void assignGames2ndHalf()
@@ -586,16 +586,16 @@ namespace TournamentPro
 
             GamesList2.Add(Game13);
             GamesList2.Add(Game14);
-            GamesList2.Add(Game15);
-            GamesList2.Add(Game16);
-            GamesList2.Add(Game17);
-            GamesList2.Add(Game18);
-            GamesList2.Add(Game19);
-            GamesList2.Add(Game20);
-            GamesList2.Add(Game21);
-            GamesList2.Add(Game22);
-            GamesList2.Add(Game23);
-            GamesList2.Add(Game24);
+            //GamesList2.Add(Game15);
+            //GamesList2.Add(Game16);
+            //GamesList2.Add(Game17);
+            //GamesList2.Add(Game18);
+            //GamesList2.Add(Game19);
+            //GamesList2.Add(Game20);
+            //GamesList2.Add(Game21);
+            //GamesList2.Add(Game22);
+            //GamesList2.Add(Game23);
+            //GamesList2.Add(Game24);
         }
 
         private void Court1Details()

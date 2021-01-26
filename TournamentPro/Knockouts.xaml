@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TournamentPro"
         mc:Ignorable="d"
-        Title="Knockouts" Height="768" Width="1024">
+        Title="Knockouts" Height="768" Width="1024" ResizeMode="NoResize">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -41,14 +41,14 @@
             </Grid.RowDefinitions>
 
             <!-- Top knockout team -->
-            <TextBlock Grid.Column="1" Grid.Row="1" Name="K1T1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Name="K1T1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="18"/>
             <TextBlock Grid.Column="1" Grid.Row="2" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18"/>
-            <TextBlock Grid.Column="1" Grid.Row="3" Name="K1T2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Name="K1T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18"/>
 
             <!-- Bottom knockout team -->
-            <TextBlock Grid.Column="1" Grid.Row="5" Name="K2T1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="5" Name="K2T1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="18"/>
             <TextBlock Grid.Column="1" Grid.Row="6" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18"/>
-            <TextBlock Grid.Column="1" Grid.Row="7" Name="K2T2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="7" Name="K2T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18"/>
 
             <!-- Top match lines -->
             <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="102" Height="2" Margin="0,0,0,10" VerticalAlignment="Bottom"/>
@@ -93,8 +93,8 @@
             <Border Grid.Column="3" Grid.Row="6" Background="Black" Width="15" Height="2" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
             <!-- Final -->
-            <TextBlock Grid.Column="5" Grid.Row="3" Name="FT1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
-            <TextBlock Grid.Column="5" Grid.Row="5" Name="FT2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,15,0,0"/>
+            <TextBlock Grid.Column="5" Grid.Row="3" Name="FT1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
+            <TextBlock Grid.Column="5" Grid.Row="5" Name="FT2" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,15,0,0"/>
 
             <!-- Final Score Entries -->
             <TextBox Grid.Column="6" Grid.Row="3" Width="45" Height="20" Name="FT1G1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,0"/>
@@ -114,8 +114,8 @@
             <Button Grid.Column="7" Grid.Row="5" Width="45" Height="20" Name="FB3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
 
             <!-- Playoff -->
-            <TextBlock Grid.Column="5" Grid.Row="7" Name="PT1" Text="Team1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,10"/>
-            <TextBlock Grid.Column="5" Grid.Row="8" Name="PT2" Text="Team2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="12" Margin="0,5,0,0"/>
+            <TextBlock Grid.Column="5" Grid.Row="7" Name="PT1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,10"/>
+            <TextBlock Grid.Column="5" Grid.Row="8" Name="PT2" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="12" Margin="0,5,0,0"/>
 
             <!-- Playoff Score Entries -->
             <TextBox Grid.Column="6" Grid.Row="7" Width="45" Height="20" Name="PT1G1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="11,0,0,10"/>
@@ -180,6 +180,6 @@
             <Button Grid.Column="2" Grid.Row="7" Width="45" Height="20" Name="K2B3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
 
         </Grid>
-        <Button Width="115" Height="35" Name="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Click="Next_Click">Results</Button>
+        <Button Width="115" Height="35" Name="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Results</Button>
     </Grid>
 </Window>
