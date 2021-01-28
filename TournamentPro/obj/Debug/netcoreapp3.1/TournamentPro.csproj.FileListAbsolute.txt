@@ -23,7 +23,6 @@ C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\Tourname
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\bin\Debug\netcoreapp3.1\TournamentPro.runtimeconfig.dev.json
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\bin\Debug\netcoreapp3.1\TournamentPro.dll
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\bin\Debug\netcoreapp3.1\TournamentPro.pdb
-C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\TournamentPro.csprojAssemblyReference.cache
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\TournamentPro_MarkupCompile.cache
@@ -67,3 +66,4 @@ C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\Tourname
 C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\Knockouts.g.cs
 C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\Knockouts.baml
 C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\Knockouts.baml
+C:\Users\Freya\Desktop\Programming Projects\TournamentPro\TournamentPro\TournamentPro\obj\Debug\netcoreapp3.1\TournamentPro.csprojAssemblyReference.cache

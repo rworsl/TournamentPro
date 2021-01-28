@@ -101,20 +101,25 @@ namespace TournamentPro
             Team7Wins = T7Wins;
             Team8Wins = T8Wins;
 
+            setup();
+            //AssignGames();
+        }
+
+        public void setup()
+        {
             TeamLosses();
             SortPoints();
             PointsFor();
-            AssignGames();
         }
 
-        private void AssignGames()
+        public void AssignGames()
         {
             string K1T1Text = FirstHalfTopTeam;
             string K1T2Text = FirstHalfSecondTeam;
             K1T1.Text = K1T1Text;
             K1T2.Text = K1T2Text;
         }
-        private void TeamLosses()
+        public void TeamLosses()
         {
             Team1Losses = 8 - Team1Wins;
             Team2Losses = 8 - Team2Wins;
@@ -674,7 +679,7 @@ namespace TournamentPro
             Console.WriteLine(FirstHalfSecondTeam);
             return FirstHalfTopTeam;
         }
-        private static void SortPoints()
+        public static void SortPoints()
         {
             Team1.Add(Team1For);
             Team1.Add(Team1PointsAgainst);
@@ -716,7 +721,7 @@ namespace TournamentPro
             gamesAgainst.Add(Team3Losses);
             gamesAgainst.Add(Team4Losses);
         }
-        private static List<string> LowestPointsAgainstFromTwo(string teamOne, string teamTwo)
+        public static List<string> LowestPointsAgainstFromTwo(string teamOne, string teamTwo)
         {
             List<string> results = new List<string> { };
             string FirstTeam = "";
@@ -787,7 +792,7 @@ namespace TournamentPro
 
             return results;
         }
-        private static List<string> LowestPointsAgainstFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
+        public static List<string> LowestPointsAgainstFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
         {
             List<string> results = new List<string> { };
             string FirstTeam = "";
@@ -1110,7 +1115,7 @@ namespace TournamentPro
 
             return results;
         }
-        private static List<string> GamesWonFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
+        public static List<string> GamesWonFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
         {
             List<string> results = new List<string> { };
             string FirstTeam = "";
@@ -1434,7 +1439,7 @@ namespace TournamentPro
 
             return results;
         }
-        private static List<string> GamesLostFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
+        public static List<string> GamesLostFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
         {
             List<string> results = new List<string> { };
             string FirstTeam = "";
@@ -1757,7 +1762,7 @@ namespace TournamentPro
 
             return results;
         }
-        private static List<string> LowestPointsAgainstFromThree(string teamOne, string teamTwo, string teamThree)
+        public static List<string> LowestPointsAgainstFromThree(string teamOne, string teamTwo, string teamThree)
         {
             List<string> results = new List<string> { };
             string FirstTeam = "";
@@ -1924,7 +1929,7 @@ namespace TournamentPro
 
             return results;
         }
-        private static List<string> GamesWonFromThree(string teamOne, string teamTwo, string teamThree)
+        public static List<string> GamesWonFromThree(string teamOne, string teamTwo, string teamThree)
         {
             List<string> results = new List<string> { };
             string FirstTeam = "";
@@ -2095,7 +2100,7 @@ namespace TournamentPro
 
             return results;
         }
-        private static List<string> GamesLostFromThree(string teamOne, string teamTwo, string teamThree)
+        public static List<string> GamesLostFromThree(string teamOne, string teamTwo, string teamThree)
         {
             List<string> results = new List<string> { };
             string FirstTeam = "";
@@ -2262,7 +2267,7 @@ namespace TournamentPro
 
             return results;
         }
-        private static List<string> GamesWonFromTwo(string teamOne, string teamTwo)
+        public static List<string> GamesWonFromTwo(string teamOne, string teamTwo)
         {
             List<string> results = new List<string> { };
             string FirstTeam = "";
@@ -2333,7 +2338,7 @@ namespace TournamentPro
 
             return results;
         }
-        private static List<string> GamesLostFromTwo(string teamOne, string teamTwo)
+        public static List<string> GamesLostFromTwo(string teamOne, string teamTwo)
         {
             List<string> results = new List<string> { };
             string FirstTeam = "";
@@ -2404,7 +2409,7 @@ namespace TournamentPro
 
             return results;
         }
-        private static List<string> pickRandomFromTwo(string teamOne, string teamTwo)
+        public static List<string> pickRandomFromTwo(string teamOne, string teamTwo)
         {
             List<string> RawTeams = new List<string> { };
             List<string> FinalTeams = new List<string> { };
@@ -2417,7 +2422,7 @@ namespace TournamentPro
             FinalTeams.Add(RawTeams[0]);
             return FinalTeams;
         }
-        private static List<string> pickRandomFromThree(string teamOne, string teamTwo, string teamThree)
+        public static List<string> pickRandomFromThree(string teamOne, string teamTwo, string teamThree)
         {
             List<string> RawTeams = new List<string> { };
             List<string> FinalTeams = new List<string> { };
@@ -2432,7 +2437,7 @@ namespace TournamentPro
             FinalTeams.Add(RawTeams[selected2]);
             return FinalTeams;
         }
-        private static List<string> pickRandomFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
+        public static List<string> pickRandomFromFour(string teamOne, string teamTwo, string teamThree, string teamFour)
         {
             List<string> RawTeams = new List<string> { };
             List<string> FinalTeams = new List<string> { };
