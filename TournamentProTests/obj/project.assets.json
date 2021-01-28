@@ -1638,6 +1638,9 @@
       "TournamentPro/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "MSTest.TestFramework": "2.1.2"
+        },
         "compile": {
           "bin/placeholder/TournamentPro.dll": {}
         },
@@ -5813,5 +5816,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: MSTest.TestFramework from 2.1.2 to 2.1.0. Reference the package directly from the project to select a different version. \r\n TournamentProTests -> TournamentPro -> MSTest.TestFramework (>= 2.1.2) \r\n TournamentProTests -> MSTest.TestFramework (>= 2.1.0)",
+      "libraryId": "MSTest.TestFramework",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

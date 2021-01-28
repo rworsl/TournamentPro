@@ -1,8 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TournamentPro;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using TournamentPro;
 
 namespace TournamentPro.Tests
 {
@@ -25,16 +23,15 @@ namespace TournamentPro.Tests
         [STAThread]
         public void pickRandomFromFourTest()
         {
-            var trial = new setup();
+            var bm = new Knockouts();
+
             //var test1 = new Knockouts(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
             string a = "1";
             string b = "2";
             string c = "3";
             string d = "4";
 
-
-            // var trythis = new KnockoutsTests
-            Assert.IsNotNull(test1);
+            var result = pickRandomFromFour("1", "2", "3", "4");
         }
 
         [TestMethod()]
