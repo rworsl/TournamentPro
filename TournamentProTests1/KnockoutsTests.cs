@@ -13,19 +13,7 @@ namespace TournamentPro.Tests
         [TestMethod()]
         public void KnockoutsTest()
         {
-            new Knockouts(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 5, 1, 1, 1, 1, 1, 1);
-        }
-
-        [TestMethod()]
-        public void setupTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void AssignGamesTest()
-        {
-            Assert.Fail();
+            new Knockouts(5, 4, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 5, 1, 1, 1, 1, 1, 1);
         }
 
         [TestMethod()]
@@ -41,15 +29,12 @@ namespace TournamentPro.Tests
         }
 
         [TestMethod()]
-        public void SortPointsTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void LowestPointsAgainstFromTwoTest()
         {
-            Assert.Fail();
+            new Knockouts(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 5, 1, 1, 1, 1, 1, 1);
+            //int Team2Losses = 5;
+            var dm = TournamentPro.Knockouts.pickRandomFromTwo("Team1", "Team2");
+            Assert.AreEqual("Team1", dm[0]);
         }
 
         [TestMethod()]
