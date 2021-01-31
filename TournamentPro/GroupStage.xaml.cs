@@ -160,21 +160,21 @@ namespace TournamentPro
         }
         private void scoreCollectC1T2()
         {
-            if (c1t1 == "team1")
+            if (c1t2 == "team1")
             {
                 var score = Game1T2Score.Text;
                 Team1Score += Int32.Parse(score);
                 var scoreAgainst = Game1T1Score.Text;
                 Team1PointsAgainst += Int32.Parse(score);
             }
-            else if (c1t1 == "team2")
+            else if (c1t2 == "team2")
             {
                 var score = Game1T2Score.Text;
                 Team2Score += Int32.Parse(score);
                 var scoreAgainst = Game1T1Score.Text;
                 Team2PointsAgainst += Int32.Parse(score);
             }
-            else if (c1t1 == "team3")
+            else if (c1t2 == "team3")
             {
                 var score = Game1T2Score.Text;
                 Team3Score += Int32.Parse(score);
@@ -296,7 +296,7 @@ namespace TournamentPro
 
         private void scoreCollectC3T2()
         {
-            if (c2t2 == "team5")
+            if (c3t2 == "team5")
             {
                 var score = Game3T2Score.Text;
                 Team1Score += Int32.Parse(score);
@@ -879,7 +879,7 @@ namespace TournamentPro
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            var newForm = new Knockouts(Team1Score, Team2Score, Team3Score, Team4Score, Team5Score, Team6Score, Team7Score, Team8Score, Team1PointsAgainst, Team2PointsAgainst, Team3PointsAgainst, Team4PointsAgainst, Team5PointsAgainst, Team6PointsAgainst, Team7PointsAgainst, Team8PointsAgainst, Team1Wins, Team2Wins, Team3Wins, Team4Wins, Team5Wins, Team6Wins, Team7Wins, Team8Wins); 
+            var newForm = new Knockouts(Team1Score, Team2Score, Team3Score, Team4Score, Team5Score, Team6Score, Team7Score, Team8Score, Team1PointsAgainst, Team2PointsAgainst, Team3PointsAgainst, Team4PointsAgainst, Team5PointsAgainst, Team6PointsAgainst, Team7PointsAgainst, Team8PointsAgainst, Team1Wins, Team2Wins, Team3Wins, Team4Wins, Team5Wins, Team6Wins, Team7Wins, Team8Wins, team1Players, team2Players, team3Players, team4Players, team5Players, team6Players, team7Players, team8Players); 
             newForm.Show();
             this.Close();
         }

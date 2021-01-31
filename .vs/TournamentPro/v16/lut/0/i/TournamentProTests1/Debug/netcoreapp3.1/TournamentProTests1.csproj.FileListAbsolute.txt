@@ -1,0 +1,13 @@
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\b\TournamentProTests1\Debug\netcoreapp3.1\TournamentPro.exe
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\b\TournamentProTests1\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\b\TournamentProTests1\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\b\TournamentProTests1\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\b\TournamentProTests1\Debug\netcoreapp3.1\TournamentProTests1.deps.json
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\b\TournamentProTests1\Debug\netcoreapp3.1\TournamentProTests1.runtimeconfig.json
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\b\TournamentProTests1\Debug\netcoreapp3.1\TournamentProTests1.runtimeconfig.dev.json
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\b\TournamentProTests1\Debug\netcoreapp3.1\TournamentProTests1.dll
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\i\TournamentProTests1\Debug\netcoreapp3.1\TournamentProTests1.AssemblyInfoInputs.cache
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\i\TournamentProTests1\Debug\netcoreapp3.1\TournamentProTests1.AssemblyInfo.cs
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\i\TournamentProTests1\Debug\netcoreapp3.1\TournamentProTests1.csproj.CopyComplete
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\i\TournamentProTests1\Debug\netcoreapp3.1\TournamentProTests1.dll
+C:\Users\Rich\Desktop\Projects\Tournament\TournamentPro\.vs\TournamentPro\v16\lut\0\i\TournamentProTests1\Debug\netcoreapp3.1\TournamentProTests1.genruntimeconfig.cache

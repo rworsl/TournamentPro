@@ -41,14 +41,26 @@
             </Grid.RowDefinitions>
 
             <!-- Top knockout team -->
-            <TextBlock Grid.Column="1" Grid.Row="1" Name="K1T1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="18"/>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18"/>
-            <TextBlock Grid.Column="1" Grid.Row="3" Name="K1T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Row="1" Name="K1T1" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" RenderTransformOrigin="0.5,0.5" Width="108" Grid.ColumnSpan="2" Height="84" TextAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Row="2" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Grid.ColumnSpan="2" TextAlignment="Center"/>
+            <TextBlock Grid.Row="3" Name="K1T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" RenderTransformOrigin="0.5,0.5" Width="128" Grid.ColumnSpan="2" Height="88" TextAlignment="Center" Margin="0,5,0,0" Grid.RowSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
 
             <!-- Bottom knockout team -->
-            <TextBlock Grid.Column="1" Grid.Row="5" Name="K2T1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="5" Name="K2T1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="18"/>
             <TextBlock Grid.Column="1" Grid.Row="6" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18"/>
-            <TextBlock Grid.Column="1" Grid.Row="7" Name="K2T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="7" Name="K2T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18"/>
 
             <!-- Top match lines -->
             <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="102" Height="2" Margin="0,0,0,10" VerticalAlignment="Bottom"/>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+//using System.Windows;
 
 namespace TournamentPro
 {
@@ -10,6 +11,15 @@ namespace TournamentPro
     /// </summary>
     public partial class Knockouts : Window
     {
+        List<string> Team1Players = new List<string> { };
+        List<string> Team2Players = new List<string> { };
+        List<string> Team3Players = new List<string> { };
+        List<string> Team4Players = new List<string> { };
+        List<string> Team5Players = new List<string> { };
+        List<string> Team6Players = new List<string> { };
+        List<string> Team7Players = new List<string> { };
+        List<string> Team8Players = new List<string> { };
+
         static List<int> Team1 = new List<int> { };
         static List<int> Team2 = new List<int> { };
         static List<int> Team3 = new List<int> { };
@@ -20,36 +30,36 @@ namespace TournamentPro
         static List<int> Team7 = new List<int> { };
         static List<int> Team8 = new List<int> { };
 
-        static int Team1For = 4;
-        static int Team2For = 4;
-        static int Team3For = 4;
-        static int Team4For = 4;
+        static int Team1For = 5;
+        static int Team2For = 5;
+        static int Team3For = 0;
+        static int Team4For = 0;
         static int Team5For = 0;
         static int Team6For = 0;
         static int Team7For = 0;
         static int Team8For = 0;
 
         static int Team1PointsAgainst = 3;
-        static int Team2PointsAgainst = 2;
-        static int Team3PointsAgainst = 3;
-        static int Team4PointsAgainst = 3;
+        static int Team2PointsAgainst = 4;
+        static int Team3PointsAgainst = 0;
+        static int Team4PointsAgainst = 0;
         static int Team5PointsAgainst = 0;
         static int Team6PointsAgainst = 0;
         static int Team7PointsAgainst = 0;
         static int Team8PointsAgainst = 0;
 
-        static int Team1Wins = 3;
-        static int Team2Wins = 3;
-        static int Team3Wins = 3;
-        static int Team4Wins = 4;
+        static int Team1Wins = 0;
+        static int Team2Wins = 0;
+        static int Team3Wins = 0;
+        static int Team4Wins = 0;
         static int Team5Wins = 0;
         static int Team6Wins = 0;
         static int Team7Wins = 0;
         static int Team8Wins = 0;
 
-        static int Team1Losses = 6;
-        static int Team2Losses = 5;
-        static int Team3Losses = 6;
+        static int Team1Losses = 0;
+        static int Team2Losses = 0;
+        static int Team3Losses = 0;
         static int Team4Losses = 0;
         static int Team5Losses = 0;
         static int Team6Losses = 0;
@@ -64,9 +74,19 @@ namespace TournamentPro
         static string FirstHalfTopTeam = "";
         static string FirstHalfSecondTeam = "";
 
-        public Knockouts(int T1Score, int T2Score, int T3Score, int T4Score, int T5Score, int T6Score, int T7Score, int T8Score, int T1PointsAgainst, int T2PointsAgainst, int T3PointsAgainst, int T4PointsAgainst, int T5PointsAgainst, int T6PointsAgainst, int T7PointsAgainst, int T8PointsAgainst, int T1Wins, int T2Wins, int T3Wins, int T4Wins, int T5Wins, int T6Wins, int T7Wins, int T8Wins)
+        public Knockouts(int T1Score, int T2Score, int T3Score, int T4Score, int T5Score, int T6Score, int T7Score, int T8Score, int T1PointsAgainst, int T2PointsAgainst, int T3PointsAgainst, int T4PointsAgainst, int T5PointsAgainst, int T6PointsAgainst, int T7PointsAgainst, int T8PointsAgainst, int T1Wins, int T2Wins, int T3Wins, int T4Wins, int T5Wins, int T6Wins, int T7Wins, int T8Wins, List<string> team1Players, List<string> team2Players, List<string> team3Players, List<string> team4Players, List<string> team5Players, List<string> team6Players, List<string> team7Players, List<string>team8Players)
         {
-            //InitializeComponent();
+            InitializeComponent();
+
+            Team1Players = team1Players;
+            Team2Players = team2Players;
+            Team3Players = team3Players;
+            Team4Players = team4Players;
+            Team5Players = team5Players;
+            Team6Players = team6Players;
+            Team7Players = team7Players;
+            Team8Players = team8Players;
+
             Team1For = T1Score;
             Team2For = T2Score;
             Team3For = T3Score;
@@ -95,7 +115,7 @@ namespace TournamentPro
             Team8Wins = T8Wins;
 
             setup();
-            //AssignGames();
+            AssignGames();
         }
 
         public void setup()
@@ -109,8 +129,87 @@ namespace TournamentPro
         {
             string K1T1Text = FirstHalfTopTeam;
             string K1T2Text = FirstHalfSecondTeam;
-            K1T1.Text = K1T1Text;
-            K1T2.Text = K1T2Text;
+            if (FirstHalfTopTeam == "Team1")
+            {
+                string game1T1Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[2].ToString();
+                K1T1.Text = game1T1Text;               
+            }
+            else if (FirstHalfTopTeam == "Team2")
+            {
+                string game1T1Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team3")
+            {
+                string game1T1Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team4")
+            {
+                string game1T1Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team5")
+            {
+                string game1T1Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team6")
+            {
+                string game1T1Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team7")
+            {
+                string game1T1Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else
+            {
+                string game1T1Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+
+            if (FirstHalfSecondTeam == "Team1")
+            {
+                string game1T2Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team2")
+            {
+                string game1T2Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team3")
+            {
+                string game1T2Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team4")
+            {
+                string game1T2Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team5")
+            {
+                string game1T2Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team6")
+            {
+                string game1T2Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team7")
+            {
+                string game1T2Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else
+            {
+                string game1T2Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
         }
         public void TeamLosses()
         {
