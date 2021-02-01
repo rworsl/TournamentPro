@@ -11,6 +11,13 @@ namespace TournamentPro
     /// </summary>
     public partial class Knockouts : Window
     {
+        string finalTeamOne = "";
+        string finalTeamTwo = "";
+        int knockoutTeamOne = 0;
+        int knockoutTeamTwo = 0;
+        int knockoutTeamThree = 0;
+        int knockoutTeamFour = 0;
+
         List<string> Team1Players = new List<string> { };
         List<string> Team2Players = new List<string> { };
         List<string> Team3Players = new List<string> { };
@@ -73,6 +80,8 @@ namespace TournamentPro
 
         static string FirstHalfTopTeam = "";
         static string FirstHalfSecondTeam = "";
+        static string SecondHalfTopTeam = "";
+        static string SecondHalfSecondTeam = "";
 
         public Knockouts(int T1Score, int T2Score, int T3Score, int T4Score, int T5Score, int T6Score, int T7Score, int T8Score, int T1PointsAgainst, int T2PointsAgainst, int T3PointsAgainst, int T4PointsAgainst, int T5PointsAgainst, int T6PointsAgainst, int T7PointsAgainst, int T8PointsAgainst, int T1Wins, int T2Wins, int T3Wins, int T4Wins, int T5Wins, int T6Wins, int T7Wins, int T8Wins, List<string> team1Players, List<string> team2Players, List<string> team3Players, List<string> team4Players, List<string> team5Players, List<string> team6Players, List<string> team7Players, List<string>team8Players)
         {
@@ -127,89 +136,8 @@ namespace TournamentPro
 
         public void AssignGames()
         {
-            string K1T1Text = FirstHalfTopTeam;
-            string K1T2Text = FirstHalfSecondTeam;
-            if (FirstHalfTopTeam == "Team1")
-            {
-                string game1T1Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[2].ToString();
-                K1T1.Text = game1T1Text;               
-            }
-            else if (FirstHalfTopTeam == "Team2")
-            {
-                string game1T1Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[2].ToString();
-                K1T1.Text = game1T1Text;
-            }
-            else if (FirstHalfTopTeam == "Team3")
-            {
-                string game1T1Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[2].ToString();
-                K1T1.Text = game1T1Text;
-            }
-            else if (FirstHalfTopTeam == "Team4")
-            {
-                string game1T1Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[2].ToString();
-                K1T1.Text = game1T1Text;
-            }
-            else if (FirstHalfTopTeam == "Team5")
-            {
-                string game1T1Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[2].ToString();
-                K1T1.Text = game1T1Text;
-            }
-            else if (FirstHalfTopTeam == "Team6")
-            {
-                string game1T1Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[2].ToString();
-                K1T1.Text = game1T1Text;
-            }
-            else if (FirstHalfTopTeam == "Team7")
-            {
-                string game1T1Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[2].ToString();
-                K1T1.Text = game1T1Text;
-            }
-            else
-            {
-                string game1T1Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[2].ToString();
-                K1T1.Text = game1T1Text;
-            }
-
-            if (FirstHalfSecondTeam == "Team1")
-            {
-                string game1T2Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[2].ToString();
-                K1T2.Text = game1T2Text;
-            }
-            else if (FirstHalfSecondTeam == "Team2")
-            {
-                string game1T2Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[2].ToString();
-                K1T2.Text = game1T2Text;
-            }
-            else if (FirstHalfSecondTeam == "Team3")
-            {
-                string game1T2Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[2].ToString();
-                K1T2.Text = game1T2Text;
-            }
-            else if (FirstHalfSecondTeam == "Team4")
-            {
-                string game1T2Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[2].ToString();
-                K1T2.Text = game1T2Text;
-            }
-            else if (FirstHalfSecondTeam == "Team5")
-            {
-                string game1T2Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[2].ToString();
-                K1T2.Text = game1T2Text;
-            }
-            else if (FirstHalfSecondTeam == "Team6")
-            {
-                string game1T2Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[2].ToString();
-                K1T2.Text = game1T2Text;
-            }
-            else if (FirstHalfSecondTeam == "Team7")
-            {
-                string game1T2Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[2].ToString();
-                K1T2.Text = game1T2Text;
-            }
-            else
-            {
-                string game1T2Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[2].ToString();
-                K1T2.Text = game1T2Text;
-            }
+            FirstKnockoutOne();
+            SecondKnockoutOne();
         }
         public void TeamLosses()
         {
@@ -2544,6 +2472,224 @@ namespace TournamentPro
             int selected2 = rnd.Next(0, 3);
             FinalTeams.Add(RawTeams[selected2]);
             return FinalTeams;
+        }
+        public void FirstKnockoutOne()
+        {
+            string K1T1Text = FirstHalfTopTeam;
+            string K1T2Text = FirstHalfSecondTeam;
+            if (FirstHalfTopTeam == "Team1")
+            {
+                string game1T1Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team2")
+            {
+                string game1T1Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team3")
+            {
+                string game1T1Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team4")
+            {
+                string game1T1Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team5")
+            {
+                string game1T1Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team6")
+            {
+                string game1T1Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else if (FirstHalfTopTeam == "Team7")
+            {
+                string game1T1Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+            else
+            {
+                string game1T1Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[2].ToString();
+                K1T1.Text = game1T1Text;
+            }
+
+            if (FirstHalfSecondTeam == "Team1")
+            {
+                string game1T2Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team2")
+            {
+                string game1T2Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team3")
+            {
+                string game1T2Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team4")
+            {
+                string game1T2Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team5")
+            {
+                string game1T2Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team6")
+            {
+                string game1T2Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else if (FirstHalfSecondTeam == "Team7")
+            {
+                string game1T2Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+            else
+            {
+                string game1T2Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[2].ToString();
+                K1T2.Text = game1T2Text;
+            }
+        }
+        public static void FirstKnockoutTwo()
+        {
+
+        }
+        public static void FirstKnockoutThree()
+        {
+
+        }
+        public void SecondKnockoutOne()
+        {
+            //string K2T1Text = FirstHalfTopTeam;
+            //string K2T2Text = FirstHalfSecondTeam;
+            
+            if (SecondHalfTopTeam == "Team1")
+            {
+                string game1T1Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[2].ToString();
+                K2T1.Text = game1T1Text;
+            }
+            else if (SecondHalfTopTeam == "Team2")
+            {
+                string game1T1Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[2].ToString();
+                K2T1.Text = game1T1Text;
+            }
+            else if (SecondHalfTopTeam == "Team3")
+            {
+                string game1T1Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[2].ToString();
+                K2T1.Text = game1T1Text;
+            }
+            else if (SecondHalfTopTeam == "Team4")
+            {
+                string game1T1Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[2].ToString();
+                K2T1.Text = game1T1Text;
+            }
+            else if (SecondHalfTopTeam == "Team5")
+            {
+                string game1T1Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[2].ToString();
+                K2T1.Text = game1T1Text;
+            }
+            else if (SecondHalfTopTeam == "Team6")
+            {
+                string game1T1Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[2].ToString();
+                K2T1.Text = game1T1Text;
+            }
+            else if (SecondHalfTopTeam == "Team7")
+            {
+                string game1T1Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[2].ToString();
+                K2T1.Text = game1T1Text;
+            }
+            else
+            {
+                string game1T1Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[2].ToString();
+                K2T1.Text = game1T1Text;
+            }
+
+            if (SecondHalfSecondTeam == "Team1")
+            {
+                string game1T2Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[2].ToString();
+                K2T2.Text = game1T2Text;
+            }
+            else if (SecondHalfSecondTeam == "Team2")
+            {
+                string game1T2Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[2].ToString();
+                K2T2.Text = game1T2Text;
+            }
+            else if (SecondHalfSecondTeam == "Team3")
+            {
+                string game1T2Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[2].ToString();
+                K2T2.Text = game1T2Text;
+            }
+            else if (SecondHalfSecondTeam == "Team4")
+            {
+                string game1T2Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[2].ToString();
+                K2T2.Text = game1T2Text;
+            }
+            else if (SecondHalfSecondTeam == "Team5")
+            {
+                string game1T2Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[2].ToString();
+                K2T2.Text = game1T2Text;
+            }
+            else if (SecondHalfSecondTeam == "Team6")
+            {
+                string game1T2Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[2].ToString();
+                K2T2.Text = game1T2Text;
+            }
+            else if (SecondHalfSecondTeam == "Team7")
+            {
+                string game1T2Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[2].ToString();
+                K2T2.Text = game1T2Text;
+            }
+            else
+            {
+                string game1T2Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[2].ToString();
+                K2T2.Text = game1T2Text;
+            }
+        }
+        public static void SecondKnockoutTwo()
+        {
+
+        }
+        public static void SecondKnockoutThree()
+        {
+
+        }
+        public void sortFinalTeams(int knockoutTeamOne, string K1TeamOne, int knockoutTeamTwo, string K1TeamTwo, int knockoutTeamThree, string K2TeamOne, int knockoutTeamFour, string K2TeamTwo)
+        {
+            if (knockoutTeamOne >= 2)
+            {
+                finalTeamOne = K1TeamOne;
+            }
+            else
+            {
+                finalTeamOne = K1TeamTwo;
+            }
+
+            if (knockoutTeamThree >= 2)
+            {
+                finalTeamTwo = K2TeamOne;
+            }
+            else
+            {
+                finalTeamTwo = K2TeamTwo;
+            }
+
+            finalGameOne(finalTeamOne, finalTeamTwo);
+        }
+
+        public void finalGameOne(string TeamOne, string TeamTwo)
+        {
+            /* 
+             * Assign games for the final in here
+             */
         }
     }
 }
