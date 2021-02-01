@@ -39,8 +39,8 @@ namespace TournamentPro
         static int Team7For = 0;
         static int Team8For = 0;
 
-        static int Team1PointsAgainst = 3;
-        static int Team2PointsAgainst = 4;
+        static int Team1PointsAgainst = 0;
+        static int Team2PointsAgainst = 0;
         static int Team3PointsAgainst = 0;
         static int Team4PointsAgainst = 0;
         static int Team5PointsAgainst = 0;

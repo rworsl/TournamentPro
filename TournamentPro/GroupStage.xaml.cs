@@ -123,10 +123,7 @@ namespace TournamentPro
                 var scoreAgainst = Game1T2Score.Text;
                 Team1PointsAgainst += Int32.Parse(scoreAgainst);
                 if (Int32.Parse(score) == 21)
-                {
-                    Team1Wins += 1;
-                }
-                Game1T1Score.Clear();
+                Team1Wins += 1;
             }
             else if (c1t1 == "team2")
             {
@@ -134,10 +131,7 @@ namespace TournamentPro
                 Team2Score += Int32.Parse(score);
                 var scoreAgainst = Game1T2Score.Text;
                 Team2PointsAgainst += Int32.Parse(scoreAgainst);
-                {
-                    Team2Wins += 1;
-                }
-                Game1T1Score.Clear();
+                Team2Wins += 1;
             }
             else if (c1t1 == "team3")
             {
@@ -145,10 +139,7 @@ namespace TournamentPro
                 Team3Score += Int32.Parse(score);
                 var scoreAgainst = Game1T2Score.Text;
                 Team3PointsAgainst += Int32.Parse(scoreAgainst);
-                {
-                    Team3Wins += 1;
-                }
-                Game1T1Score.Clear();
+                Team3Wins += 1;
             }
             else
             {
@@ -156,10 +147,7 @@ namespace TournamentPro
                 Team4Score += Int32.Parse(score);
                 var scoreAgainst = Game1T2Score.Text;
                 Team4PointsAgainst += Int32.Parse(scoreAgainst);
-                {
-                    Team4Wins += 1;
-                }
-                Game1T1Score.Clear();
+                Team4Wins += 1;
             }
         }
         private void scoreCollectC1T2()
@@ -170,7 +158,6 @@ namespace TournamentPro
                 Team1Score += Int32.Parse(score);
                 var scoreAgainst = Game1T1Score.Text;
                 Team1PointsAgainst += Int32.Parse(scoreAgainst);
-                Game1T2Score.Clear();
             }
             else if (c1t2 == "team2")
             {
@@ -178,7 +165,6 @@ namespace TournamentPro
                 Team2Score += Int32.Parse(score);
                 var scoreAgainst = Game1T1Score.Text;
                 Team2PointsAgainst += Int32.Parse(scoreAgainst);
-                Game1T2Score.Clear();
             }
             else if (c1t2 == "team3")
             {
@@ -186,7 +172,6 @@ namespace TournamentPro
                 Team3Score += Int32.Parse(score);
                 var scoreAgainst = Game1T1Score.Text;
                 Team3PointsAgainst += Int32.Parse(scoreAgainst);
-                Game1T2Score.Clear();
             }
             else
             {
@@ -194,7 +179,6 @@ namespace TournamentPro
                 Team4Score += Int32.Parse(score);
                 var scoreAgainst = Game1T1Score.Text;
                 Team4PointsAgainst += Int32.Parse(scoreAgainst);
-                Game1T2Score.Clear();
             }
             
         }
@@ -207,7 +191,6 @@ namespace TournamentPro
                 Team1Score += Int32.Parse(score);
                 var scoreAgainst = Game2T2Score.Text;
                 Team1PointsAgainst += Int32.Parse(scoreAgainst);
-                Game2T1Score.Clear();
             }
             else if (c2t1 == "team2")
             {
@@ -215,7 +198,6 @@ namespace TournamentPro
                 Team2Score += Int32.Parse(score);
                 var scoreAgainst = Game2T2Score.Text;
                 Team2PointsAgainst += Int32.Parse(scoreAgainst);
-                Game2T1Score.Clear();
             }
             else if (c2t1 == "team3")
             {
@@ -223,7 +205,6 @@ namespace TournamentPro
                 Team3Score += Int32.Parse(score);
                 var scoreAgainst = Game2T2Score.Text;
                 Team3PointsAgainst += Int32.Parse(scoreAgainst);
-                Game2T1Score.Clear();
             }
             else
             {
@@ -231,7 +212,6 @@ namespace TournamentPro
                 Team4Score += Int32.Parse(score);
                 var scoreAgainst = Game2T2Score.Text;
                 Team4PointsAgainst += Int32.Parse(scoreAgainst);
-                Game2T1Score.Clear();
             }
             
         }
@@ -244,7 +224,6 @@ namespace TournamentPro
                 Team1Score += Int32.Parse(score);
                 var scoreAgainst = Game2T1Score.Text;
                 Team1PointsAgainst += Int32.Parse(scoreAgainst);
-                Game2T2Score.Clear();
             }
             else if (c2t2 == "team2")
             {
@@ -252,7 +231,6 @@ namespace TournamentPro
                 Team2Score += Int32.Parse(score);
                 var scoreAgainst = Game2T1Score.Text;
                 Team2PointsAgainst += Int32.Parse(scoreAgainst);
-                Game2T2Score.Clear();
             }
             else if (c2t2 == "team3")
             {
@@ -260,7 +238,6 @@ namespace TournamentPro
                 Team3Score += Int32.Parse(score);
                 var scoreAgainst = Game2T1Score.Text;
                 Team3PointsAgainst += Int32.Parse(scoreAgainst);
-                Game2T2Score.Clear();
             }
             else
             {
@@ -268,7 +245,6 @@ namespace TournamentPro
                 Team4Score += Int32.Parse(score);
                 var scoreAgainst = Game2T1Score.Text;
                 Team4PointsAgainst += Int32.Parse(scoreAgainst);
-                Game2T2Score.Clear();
             }
         }
 
@@ -277,34 +253,30 @@ namespace TournamentPro
             if (c3t1 == "team5")
             {
                 var score = Game3T1Score.Text;
-                Team1Score += Int32.Parse(score);
+                Team5Score += Int32.Parse(score);
                 var scoreAgainst = Game3T2Score.Text;
-                Team1PointsAgainst += Int32.Parse(scoreAgainst);
-                Game3T1Score.Clear();
+                Team5PointsAgainst += Int32.Parse(scoreAgainst);
             }
             else if (c3t1 == "team6")
             {
                 var score = Game3T1Score.Text;
-                Team2Score += Int32.Parse(score);
+                Team6Score += Int32.Parse(score);
                 var scoreAgainst = Game3T2Score.Text;
-                Team2PointsAgainst += Int32.Parse(scoreAgainst);
-                Game3T1Score.Clear();
+                Team6PointsAgainst += Int32.Parse(scoreAgainst);
             }
             else if (c3t1 == "team7")
             {
                 var score = Game3T1Score.Text;
-                Team3Score += Int32.Parse(score);
+                Team7Score += Int32.Parse(score);
                 var scoreAgainst = Game3T2Score.Text;
-                Team3PointsAgainst += Int32.Parse(scoreAgainst);
-                Game3T1Score.Clear();
+                Team7PointsAgainst += Int32.Parse(scoreAgainst);
             }
             else
             {
                 var score = Game3T1Score.Text;
-                Team4Score += Int32.Parse(score);
+                Team8Score += Int32.Parse(score);
                 var scoreAgainst = Game3T2Score.Text;
-                Team4PointsAgainst += Int32.Parse(scoreAgainst);
-                Game3T1Score.Clear();
+                Team8PointsAgainst += Int32.Parse(scoreAgainst);
             }
         }
 
@@ -316,7 +288,6 @@ namespace TournamentPro
                 Team5Score += Int32.Parse(score);
                 var scoreAgainst = Game3T1Score.Text;
                 Team5PointsAgainst += Int32.Parse(scoreAgainst);
-                Game3T2Score.Clear();
             }
             else if (c3t2 == "team6")
             {
@@ -324,7 +295,6 @@ namespace TournamentPro
                 Team6Score += Int32.Parse(score);
                 var scoreAgainst = Game3T1Score.Text;
                 Team6PointsAgainst += Int32.Parse(scoreAgainst);
-                Game3T2Score.Clear();
             }
             else if (c3t2 == "team7")
             {
@@ -332,7 +302,6 @@ namespace TournamentPro
                 Team7Score += Int32.Parse(score);
                 var scoreAgainst = Game3T1Score.Text;
                 Team7PointsAgainst += Int32.Parse(scoreAgainst);
-                Game3T2Score.Clear();
             }
             else
             {
@@ -340,7 +309,6 @@ namespace TournamentPro
                 Team8Score += Int32.Parse(score);
                 var scoreAgainst = Game3T1Score.Text;
                 Team8PointsAgainst += Int32.Parse(scoreAgainst);
-                Game3T2Score.Clear();
             }
         }
 
@@ -349,34 +317,30 @@ namespace TournamentPro
             if (c4t1 == "team5")
             {
                 var score = Game4T1Score.Text;
-                Team1Score += Int32.Parse(score);
+                Team5Score += Int32.Parse(score);
                 var scoreAgainst = Game4T2Score.Text;
-                Team1PointsAgainst += Int32.Parse(scoreAgainst);
-                Game4T1Score.Clear();
+                Team5PointsAgainst += Int32.Parse(scoreAgainst);
             }
             else if (c4t1 == "team6")
             {
                 var score = Game4T1Score.Text;
-                Team2Score += Int32.Parse(score);
+                Team6Score += Int32.Parse(score);
                 var scoreAgainst = Game4T2Score.Text;
-                Team2PointsAgainst += Int32.Parse(scoreAgainst);
-                Game4T1Score.Clear();
+                Team6PointsAgainst += Int32.Parse(scoreAgainst);
             }
             else if (c4t1 == "team7")
             {
                 var score = Game4T1Score.Text;
-                Team3Score += Int32.Parse(score);
+                Team7Score += Int32.Parse(score);
                 var scoreAgainst = Game4T2Score.Text;
-                Team3PointsAgainst += Int32.Parse(scoreAgainst);
-                Game4T1Score.Clear();
+                Team7PointsAgainst += Int32.Parse(scoreAgainst);
             }
             else
             {
                 var score = Game4T1Score.Text;
-                Team4Score += Int32.Parse(score);
+                Team8Score += Int32.Parse(score);
                 var scoreAgainst = Game4T2Score.Text;
-                Team4PointsAgainst += Int32.Parse(scoreAgainst);
-                Game4T1Score.Clear();
+                Team8PointsAgainst += Int32.Parse(scoreAgainst);
             }
         }
 
@@ -388,7 +352,6 @@ namespace TournamentPro
                 Team5Score += Int32.Parse(score);
                 var scoreAgainst = Game4T1Score.Text;
                 Team5PointsAgainst += Int32.Parse(scoreAgainst);
-                Game4T2Score.Clear();
             }
             else if (c4t2 == "team6")
             {
@@ -396,7 +359,6 @@ namespace TournamentPro
                 Team6Score += Int32.Parse(score);
                 var scoreAgainst = Game4T1Score.Text;
                 Team6PointsAgainst += Int32.Parse(scoreAgainst);
-                Game4T2Score.Clear();
             }
             else if (c4t2 == "team7")
             {
@@ -404,7 +366,6 @@ namespace TournamentPro
                 Team7Score += Int32.Parse(score);
                 var scoreAgainst = Game4T1Score.Text;
                 Team7PointsAgainst += Int32.Parse(scoreAgainst);
-                Game4T2Score.Clear();
             }
             else
             {
@@ -412,7 +373,6 @@ namespace TournamentPro
                 Team8Score += Int32.Parse(score);
                 var scoreAgainst = Game4T1Score.Text;
                 Team8PointsAgainst += Int32.Parse(scoreAgainst);
-                Game4T2Score.Clear();
             }
         }
 
@@ -799,6 +759,8 @@ namespace TournamentPro
                     C1Info.Text = "";
                     scoreCollectC1T1();
                     scoreCollectC1T2();
+                    Game1T1Score.Clear();
+                    Game1T2Score.Clear();
                     Court1Details();
                     Court2Next();
                 }
@@ -827,6 +789,8 @@ namespace TournamentPro
                     C2Info.Text = "";
                     scoreCollectC2T1();
                     scoreCollectC2T2();
+                    Game2T1Score.Clear();
+                    Game2T2Score.Clear();
                     Court2Details();
                     Court2Next();
                 }
@@ -855,6 +819,8 @@ namespace TournamentPro
                     C3Info.Text = "";
                     scoreCollectC3T1();
                     scoreCollectC3T2();
+                    Game3T1Score.Clear();
+                    Game3T2Score.Clear();
                     Court3Details();
                     Court4Next();
                 }
@@ -883,6 +849,8 @@ namespace TournamentPro
                     C4Info.Text = "";
                     scoreCollectC4T1();
                     scoreCollectC4T2();
+                    Game4T1Score.Clear();
+                    Game4T2Score.Clear();
                     Court4Details();
                     Court4Next();
                 }

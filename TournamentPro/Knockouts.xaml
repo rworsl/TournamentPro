@@ -41,15 +41,15 @@
             </Grid.RowDefinitions>
 
             <!-- Top knockout team -->
-            <TextBlock Grid.Row="1" Name="K1T1" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" RenderTransformOrigin="0.5,0.5" Width="108" Grid.ColumnSpan="2" Height="84" TextAlignment="Center">
+            <TextBlock Grid.Row="1" Name="K1T1" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16" RenderTransformOrigin="0.5,0.5" Width="108" Grid.ColumnSpan="2" Height="64" TextAlignment="Center" Foreground="Red" Margin="0,20,0,0">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBlock Grid.Row="2" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Grid.ColumnSpan="2" TextAlignment="Center"/>
-            <TextBlock Grid.Row="3" Name="K1T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" RenderTransformOrigin="0.5,0.5" Width="128" Grid.ColumnSpan="2" Height="88" TextAlignment="Center" Margin="0,5,0,0" Grid.RowSpan="2">
+            <TextBlock Grid.Row="2" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Grid.ColumnSpan="2" TextAlignment="Center"/>
+            <TextBlock Grid.Row="3" Name="K1T2" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" RenderTransformOrigin="0.5,0.5" Width="128" Grid.ColumnSpan="2" Height="88" TextAlignment="Center" Margin="0,5,0,0" Grid.RowSpan="2" Foreground="Red">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform/>
@@ -58,32 +58,23 @@
             </TextBlock>
 
             <!-- Bottom knockout team -->
-            <TextBlock Grid.Column="1" Grid.Row="5" Name="K2T1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="18"/>
-            <TextBlock Grid.Column="1" Grid.Row="6" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18"/>
-            <TextBlock Grid.Column="1" Grid.Row="7" Name="K2T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18"/>
+            <TextBlock Grid.Column="1" Grid.Row="5" Name="K2T1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="16" Foreground="Red"/>
+            <TextBlock Grid.Column="1" Grid.Row="6" Text="vs" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"/>
+            <TextBlock Grid.Column="1" Grid.Row="7" Name="K2T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16" Foreground="Red"/>
 
             <!-- Top match lines -->
-            <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="102" Height="2" Margin="0,0,0,10" VerticalAlignment="Bottom"/>
-            <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="2" Height="20" Margin="100,97,0,0"/>
-            <Border Grid.Column="3" Grid.Row="3" Background="Black" Width="102" Height="2" Margin="0,10,0,0" VerticalAlignment="Top"/>
-            <Border Grid.Column="3" Grid.Row="3" Background="Black" Width="2" Margin="113,0,13,73"/>
-            <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="2" Height="10" VerticalAlignment="Bottom" Margin="113,0,13,0"/>
-            <Border Grid.Column="3" Grid.Row="2" Background="Black" Width="2" Height="13" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="100,0,0,0"/>
-            <Border Grid.Column="3" Grid.Row="2" Background="Black" Width="2" Height="13" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,0,0"/>
-            <Border Grid.Column="3" Grid.Row="2" Background="Black" Height="2" Width="15" Margin="113,0,0,0"/>
-            <Border Grid.Column="3" Grid.Row="2" Background="Black" Margin="115,16,0,16" RenderTransformOrigin="0.5,0.5"/>
-
-            <Border Grid.Column="4" Grid.Row="2" Background="Black" Width="2" Margin="0,12.15,0,70" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+            <Border Grid.Column="3" Grid.Row="1" Background="Black" Height="3" VerticalAlignment="Top" Margin="16,74,21,0" Visibility="Visible"/>
+            <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="3" Height="27" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,74,0,0" Grid.RowSpan="2" Visibility="Visible"/>
 
 
             <!-- Bottom knockout lines -->
-            <Border Grid.Column="4" Grid.Row="3" Background="Black" Width="2" Height="150" Margin="0,0,0,0" HorizontalAlignment="Left"/>
-            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="150" Height="2" Margin="0,0,0,0" HorizontalAlignment="Left"/>
-            <Border Grid.Column="5" Grid.Row="4" Background="Black" Width="65" Height="2" Margin="0,0,0,0" HorizontalAlignment="Left"/>
-            <Border Grid.Column="5" Grid.Row="3" Background="Black" Width="2" Margin="0,74,0,12" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-            <Border Grid.Column="5" Grid.Row="4" Background="Black" Width="2" Margin="0,12,0,74" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="2" Height="150" Margin="0,0,0,0" HorizontalAlignment="Left"/>
-            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="2" Margin="0,26,0,12.25" HorizontalAlignment="Left" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5">
+            <Border Grid.Column="4" Grid.Row="2" Background="Black" Width="4" Margin="0,12,0,44" HorizontalAlignment="Left" Grid.RowSpan="4"/>
+            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="150" Height="4" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+            <Border Grid.Column="5" Grid.Row="4" Background="Black" Width="65" Height="4" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+            <Border Grid.Column="5" Grid.Row="3" Background="Black" Width="4" Margin="0,74,0,12" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+            <Border Grid.Column="5" Grid.Row="4" Background="Black" Width="4" Margin="0,12,0,74" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="2" Margin="0,0,0,12" HorizontalAlignment="Left" Grid.RowSpan="3"/>
+            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="4" Margin="0,26,0,11" HorizontalAlignment="Left" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -93,16 +84,12 @@
                     </TransformGroup>
                 </Border.RenderTransform>
             </Border>
-            <Border Grid.Column="4" Grid.Row="5" Background="Black" Width="2" Height="20" Margin="0,108,0,14" HorizontalAlignment="Left" Grid.RowSpan="2"/>
 
-            <Border Grid.Column="3" Grid.Row="5" Background="Black" Width="102" Height="2" Margin="0,0,0,10" VerticalAlignment="Bottom"/>
-            <Border Grid.Column="3" Grid.Row="5" Background="Black" Width="2" Height="20" Margin="100,97,0,0"/>
-            <Border Grid.Column="3" Grid.Row="7" Background="Black" Width="102" Height="2" Margin="0,10,0,0" VerticalAlignment="Top"/>
-            <Border Grid.Column="3" Grid.Row="5" Background="Black" Width="2" Margin="113,72,13,7" Grid.RowSpan="2"/>
-
-            <Border Grid.Column="3" Grid.Row="5" Background="Black" Width="2" Margin="113,108,13,14" Grid.RowSpan="2"/>
-            <Border Grid.Column="3" Grid.Row="6" Background="Black" Width="2" Margin="113,18,13,73" Grid.RowSpan="2"/>
-            <Border Grid.Column="3" Grid.Row="6" Background="Black" Width="15" Height="2" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Border Grid.Column="3" Grid.Row="5" Background="Black" Height="3" VerticalAlignment="Top" Margin="16,74,21,0" Visibility="Visible"/>
+            <Border Grid.Column="3" Grid.Row="5" Background="Black" Width="3" Height="27" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,74,0,0" Grid.RowSpan="2" Visibility="Visible"/>
+            <Border Grid.Column="3" Grid.Row="6" Background="Black" Width="3" Height="28" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="102,0,0,70" Grid.RowSpan="2" Visibility="Visible"/>
+            <Border Grid.Column="3" Grid.Row="6" Background="Black" Margin="102,12,124,10" Grid.ColumnSpan="2" Visibility="Visible"/>
+            <Border Grid.Column="3" Grid.Row="7" Background="Black" Height="3" Margin="16,11.2,21,0" VerticalAlignment="Top"/>
 
             <!-- Final -->
             <TextBlock Grid.Column="5" Grid.Row="3" Name="FT1" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
@@ -190,6 +177,10 @@
             <Button Grid.Column="1" Grid.Row="7" Width="45" Height="20" Name="K2B1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
             <Button Grid.Column="2" Grid.Row="7" Width="45" Height="20" Name="K2B2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">Submit</Button>
             <Button Grid.Column="2" Grid.Row="7" Width="45" Height="20" Name="K2B3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
+            <Border Grid.Column="3" Grid.Row="3" Background="Black" Height="3" Margin="16,11.2,21,0" VerticalAlignment="Top"/>
+            <Border Grid.Column="3" Grid.Row="2" Background="Black" Width="3" Height="28" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="102,0,0,70" Grid.RowSpan="2" Visibility="Visible"/>
+            <Border Grid.Column="3" Grid.Row="2" Background="Black" Margin="102,12,124,10" Grid.ColumnSpan="2" Visibility="Visible"/>
+
 
         </Grid>
         <Button Width="115" Height="35" Name="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Results</Button>
