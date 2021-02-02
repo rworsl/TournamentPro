@@ -2664,7 +2664,7 @@ namespace TournamentPro
         }
         public void sortFinalTeams(int knockoutTeamOne, string K1TeamOne, int knockoutTeamTwo, string K1TeamTwo, int knockoutTeamThree, string K2TeamOne, int knockoutTeamFour, string K2TeamTwo)
         {
-            if (knockoutTeamOne >= 2)
+            if (knockoutTeamOne == 2)
             {
                 finalTeamOne = K1TeamOne;
             }
@@ -2673,11 +2673,11 @@ namespace TournamentPro
                 finalTeamOne = K1TeamTwo;
             }
 
-            if (knockoutTeamThree >= 2)
+            if (knockoutTeamThree == 2)
             {
                 finalTeamTwo = K2TeamOne;
             }
-            else
+            else if (knockoutTeamFour == 2)
             {
                 finalTeamTwo = K2TeamTwo;
             }
@@ -2690,6 +2690,45 @@ namespace TournamentPro
             /* 
              * Assign games for the final in here
              */
+        }
+
+        private void K1B1_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if ((Int32.Parse(K1T1G1.Text) == 21) && (Int32.Parse(K1T2G1.Text) < 20))
+                {
+                    //add one to T1 tally, allocate game 2
+                    K1Info.Text = "Team 1 wins first game";
+                    knockoutTeamOne += 1;
+                    FirstKnockoutTwo();
+                }
+                else if ((Int32.Parse(K1T2G1.Text) == 21) && (Int32.Parse(K1T1G1.Text) < 20))
+                {
+                    //add one to T2 tally, allocate game 2
+                    K1Info.Text = "Team 2 wins first game";
+                }
+                else if (((Int32.Parse(K1T2G1.Text) > 21) && Int32.Parse(K1T2G1.Text) < 30) && (Int32.Parse(K1T1G1.Text) == (Int32.Parse(K1T2G1.Text) - 2)))
+                {
+                    K1Info.Text = "Setting v1 entered";
+                }
+                else if (((Int32.Parse(K1T1G1.Text) > 21) && Int32.Parse(K1T1G1.Text) < 30) && (Int32.Parse(K1T2G1.Text) == (Int32.Parse(K1T1G1.Text) - 2)))
+                {
+                    K1Info.Text = "Setting v2 entered";
+                }
+                else if (((Int32.Parse(K1T1G1.Text) == 30) && Int32.Parse(K1T2G1.Text) == 29) || ((Int32.Parse(K1T2G1.Text) == 30) && Int32.Parse(K1T1G1.Text) == 29))
+                {
+                    K1Info.Text = "Setting v3 entered";
+                }
+                else
+                {
+                    K1Info.Text = "Please enter a valid score";
+                }
+            }
+            catch
+            {
+                K1Info.Text = "Please enter a valid score";
+            }
         }
     }
 }
