@@ -2569,6 +2569,7 @@ namespace TournamentPro
             K1B3.IsEnabled = true;
             if (knockoutTeamOne == 2)
             {
+                K1B3.IsEnabled = false;
                 team1_1.Background = Brushes.Red;
                 team1_2.Background = Brushes.Red;
                 T3.Background = Brushes.Red;
@@ -2580,6 +2581,7 @@ namespace TournamentPro
             }
             else if (knockoutTeamTwo == 2)
             {
+                K1B3.IsEnabled = false;
                 T2_1.Background = Brushes.Red;
                 T2_2.Background = Brushes.Red;
                 T3.Background = Brushes.Red;
@@ -2590,7 +2592,90 @@ namespace TournamentPro
             }
             else
             {
-                //K1B3
+                //string K2T1Text = FirstHalfTopTeam;
+                //string K2T2Text = FirstHalfSecondTeam;
+
+                if (FirstHalfTopTeam == "Team1")
+                {
+                    string game1T1Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[1].ToString();
+                    K2T1.Text = game1T1Text;
+                }
+                else if (FirstHalfTopTeam == "Team2")
+                {
+                    string game1T1Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[1].ToString();
+                    K2T1.Text = game1T1Text;
+                }
+                else if (FirstHalfTopTeam == "Team3")
+                {
+                    string game1T1Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[1].ToString();
+                    K2T1.Text = game1T1Text;
+                }
+                else if (FirstHalfTopTeam == "Team4")
+                {
+                    string game1T1Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[1].ToString();
+                    K2T1.Text = game1T1Text;
+                }
+                else if (FirstHalfTopTeam == "Team5")
+                {
+                    string game1T1Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[1].ToString();
+                    K2T1.Text = game1T1Text;
+                }
+                else if (FirstHalfTopTeam == "Team6")
+                {
+                    string game1T1Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[1].ToString();
+                    K2T1.Text = game1T1Text;
+                }
+                else if (FirstHalfTopTeam == "Team7")
+                {
+                    string game1T1Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[1].ToString();
+                    K2T1.Text = game1T1Text;
+                }
+                else
+                {
+                    string game1T1Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[1].ToString();
+                    K2T1.Text = game1T1Text;
+                }
+
+                if (SecondHalfSecondTeam == "Team1")
+                {
+                    string game1T2Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[1].ToString();
+                    K2T2.Text = game1T2Text;
+                }
+                else if (SecondHalfSecondTeam == "Team2")
+                {
+                    string game1T2Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[1].ToString();
+                    K2T2.Text = game1T2Text;
+                }
+                else if (SecondHalfSecondTeam == "Team3")
+                {
+                    string game1T2Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[1].ToString();
+                    K2T2.Text = game1T2Text;
+                }
+                else if (SecondHalfSecondTeam == "Team4")
+                {
+                    string game1T2Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[1].ToString();
+                    K2T2.Text = game1T2Text;
+                }
+                else if (SecondHalfSecondTeam == "Team5")
+                {
+                    string game1T2Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[1].ToString();
+                    K2T2.Text = game1T2Text;
+                }
+                else if (SecondHalfSecondTeam == "Team6")
+                {
+                    string game1T2Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[1].ToString();
+                    K2T2.Text = game1T2Text;
+                }
+                else if (SecondHalfSecondTeam == "Team7")
+                {
+                    string game1T2Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[1].ToString();
+                    K2T2.Text = game1T2Text;
+                }
+                else
+                {
+                    string game1T2Text = Team8Players[0].ToString() + "\n" + "+" + "\n" + Team8Players[1].ToString();
+                    K2T2.Text = game1T2Text;
+                }
                 //allocate game 3 here
             }
         }
@@ -2599,37 +2684,37 @@ namespace TournamentPro
             //string K2T1Text = FirstHalfTopTeam;
             //string K2T2Text = FirstHalfSecondTeam;
             
-            if (SecondHalfTopTeam == "Team1")
+            if (FirstHalfTopTeam == "Team1")
             {
                 string game1T1Text = Team1Players[0].ToString() + "\n" + "+" + "\n" + Team1Players[2].ToString();
                 K2T1.Text = game1T1Text;
             }
-            else if (SecondHalfTopTeam == "Team2")
+            else if (FirstHalfTopTeam == "Team2")
             {
                 string game1T1Text = Team2Players[0].ToString() + "\n" + "+" + "\n" + Team2Players[2].ToString();
                 K2T1.Text = game1T1Text;
             }
-            else if (SecondHalfTopTeam == "Team3")
+            else if (FirstHalfTopTeam == "Team3")
             {
                 string game1T1Text = Team3Players[0].ToString() + "\n" + "+" + "\n" + Team3Players[2].ToString();
                 K2T1.Text = game1T1Text;
             }
-            else if (SecondHalfTopTeam == "Team4")
+            else if (FirstHalfTopTeam == "Team4")
             {
                 string game1T1Text = Team4Players[0].ToString() + "\n" + "+" + "\n" + Team4Players[2].ToString();
                 K2T1.Text = game1T1Text;
             }
-            else if (SecondHalfTopTeam == "Team5")
+            else if (FirstHalfTopTeam == "Team5")
             {
                 string game1T1Text = Team5Players[0].ToString() + "\n" + "+" + "\n" + Team5Players[2].ToString();
                 K2T1.Text = game1T1Text;
             }
-            else if (SecondHalfTopTeam == "Team6")
+            else if (FirstHalfTopTeam == "Team6")
             {
                 string game1T1Text = Team6Players[0].ToString() + "\n" + "+" + "\n" + Team6Players[2].ToString();
                 K2T1.Text = game1T1Text;
             }
-            else if (SecondHalfTopTeam == "Team7")
+            else if (FirstHalfTopTeam == "Team7")
             {
                 string game1T1Text = Team7Players[0].ToString() + "\n" + "+" + "\n" + Team7Players[2].ToString();
                 K2T1.Text = game1T1Text;
@@ -2757,20 +2842,20 @@ namespace TournamentPro
                     K1B1.IsEnabled = false;
                     FirstKnockoutTwo();
                 }
-                //Team 1 wins via setting
+                //Team 2 wins via setting
                 else if (((Int32.Parse(K1T2G1.Text) > 21) && Int32.Parse(K1T2G1.Text) < 30) && (Int32.Parse(K1T1G1.Text) == (Int32.Parse(K1T2G1.Text) - 2)))
                 {
                     K1Info.Text = "Setting v1 entered";
-                    knockoutTeamOne += 1;
+                    knockoutTeamTwo += 1;
                     K1B2.IsEnabled = true;
                     K1B1.IsEnabled = false;
                     FirstKnockoutTwo();
                 }
-                //Team 2 wins via setting
+                //Team 1 wins via setting
                 else if (((Int32.Parse(K1T1G1.Text) > 21) && Int32.Parse(K1T1G1.Text) < 30) && (Int32.Parse(K1T2G1.Text) == (Int32.Parse(K1T1G1.Text) - 2)))
                 {
                     K1Info.Text = "Setting v2 entered";
-                    knockoutTeamTwo += 1;
+                    knockoutTeamOne += 1;
                     K1B2.IsEnabled = true;
                     K1B1.IsEnabled = false;
                     FirstKnockoutTwo();
@@ -2826,7 +2911,7 @@ namespace TournamentPro
                     FirstKnockoutThree();
                 }
                 //Team 2 wins via setting
-                else if (((Int32.Parse(K1T2G2.Text) > 21) && Int32.Parse(K1T2G2.Text) < 30) && (Int32.Parse(K1T1G2.Text) == (Int32.Parse(K1T2G2.Text) - 2)))
+                else if (((Int32.Parse(K1T2G2.Text) > 21) && Int32.Parse(K1T2G2.Text) <= 30) && (Int32.Parse(K1T1G2.Text) == (Int32.Parse(K1T2G2.Text) - 2)))
                 {
                     K1Info.Text = "Setting v1 entered";
                     knockoutTeamTwo += 1;
@@ -2834,7 +2919,7 @@ namespace TournamentPro
                     FirstKnockoutThree();
                 }
                 //Team 1 wins via setting
-                else if (((Int32.Parse(K1T1G2.Text) > 21) && Int32.Parse(K1T1G2.Text) < 30) && (Int32.Parse(K1T2G2.Text) == (Int32.Parse(K1T1G2.Text) - 2)))
+                else if (((Int32.Parse(K1T1G2.Text) > 21) && Int32.Parse(K1T1G2.Text) <= 30) && (Int32.Parse(K1T2G2.Text) == (Int32.Parse(K1T1G2.Text) - 2)))
                 {
                     K1Info.Text = "Setting v2 entered";
                     knockoutTeamOne += 1;
