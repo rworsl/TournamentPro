@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
-//using System.Windows;
+using System.Windows.Media;
 
 namespace TournamentPro
 {
@@ -126,14 +126,16 @@ namespace TournamentPro
             setup();
             AssignGames();
         }
-
         public void setup()
         {
             TeamLosses();
             SortPoints();
             PointsFor();
+            K1B2.IsEnabled = false;
+            K1B3.IsEnabled = false;
+            K2B2.IsEnabled = false;
+            K2B3.IsEnabled = false;
         }
-
         public void AssignGames()
         {
             FirstKnockoutOne();
@@ -152,7 +154,6 @@ namespace TournamentPro
         }
         public static string PointsFor()
         {
-
             List<List<int>> TeamsList = new List<List<int>> { };
             TeamsList.Add(Team1);
             TeamsList.Add(Team2);
@@ -2475,6 +2476,15 @@ namespace TournamentPro
         }
         public void FirstKnockoutOne()
         {
+            team1_1.Background = Brushes.Red;
+            team1_2.Background = Brushes.Red;
+            T3.Background = Brushes.Red;
+            T4.Background = Brushes.Red;
+            T5.Background = Brushes.Red;
+            T6.Background = Brushes.Red;
+            T7.Background = Brushes.Red;
+            T8.Background = Brushes.Red;
+
             string K1T1Text = FirstHalfTopTeam;
             string K1T2Text = FirstHalfSecondTeam;
             if (FirstHalfTopTeam == "Team1")
@@ -2658,8 +2668,22 @@ namespace TournamentPro
         {
 
         }
-        public static void SecondKnockoutThree()
+        public void SecondKnockoutThree()
         {
+            if (knockoutTeamOne == 2)
+            {
+                team1_1.BorderBrush = Brushes.Red;
+
+                //add team 1 to the final top half
+            }
+            else if (knockoutTeamTwo == 2)
+            {
+                //add team 2 to the final top half
+            }
+            else
+            {
+                //allocate game 3 here
+            }
 
         }
         public void sortFinalTeams(int knockoutTeamOne, string K1TeamOne, int knockoutTeamTwo, string K1TeamTwo, int knockoutTeamThree, string K2TeamOne, int knockoutTeamFour, string K2TeamTwo)
@@ -2696,29 +2720,124 @@ namespace TournamentPro
         {
             try
             {
+                //Team 1 wins 21-15
                 if ((Int32.Parse(K1T1G1.Text) == 21) && (Int32.Parse(K1T2G1.Text) < 20))
                 {
                     //add one to T1 tally, allocate game 2
                     K1Info.Text = "Team 1 wins first game";
                     knockoutTeamOne += 1;
+                    K1B2.IsEnabled = true;
+                    K1B1.IsEnabled = false;
                     FirstKnockoutTwo();
                 }
+                //Team 2 wins 21-15
                 else if ((Int32.Parse(K1T2G1.Text) == 21) && (Int32.Parse(K1T1G1.Text) < 20))
                 {
                     //add one to T2 tally, allocate game 2
                     K1Info.Text = "Team 2 wins first game";
+                    knockoutTeamTwo += 1;
+                    K1B2.IsEnabled = true;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutTwo();
                 }
+                //Team 1 wins via setting
                 else if (((Int32.Parse(K1T2G1.Text) > 21) && Int32.Parse(K1T2G1.Text) < 30) && (Int32.Parse(K1T1G1.Text) == (Int32.Parse(K1T2G1.Text) - 2)))
                 {
                     K1Info.Text = "Setting v1 entered";
+                    knockoutTeamOne += 1;
+                    K1B2.IsEnabled = true;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutTwo();
                 }
+                //Team 2 wins via setting
                 else if (((Int32.Parse(K1T1G1.Text) > 21) && Int32.Parse(K1T1G1.Text) < 30) && (Int32.Parse(K1T2G1.Text) == (Int32.Parse(K1T1G1.Text) - 2)))
                 {
                     K1Info.Text = "Setting v2 entered";
+                    knockoutTeamTwo += 1;
+                    K1B2.IsEnabled = true;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutTwo();
                 }
-                else if (((Int32.Parse(K1T1G1.Text) == 30) && Int32.Parse(K1T2G1.Text) == 29) || ((Int32.Parse(K1T2G1.Text) == 30) && Int32.Parse(K1T1G1.Text) == 29))
+                //Either team wins 30-29
+                else if (((Int32.Parse(K1T1G1.Text) == 30) && Int32.Parse(K1T2G1.Text) == 29))
                 {
                     K1Info.Text = "Setting v3 entered";
+                    knockoutTeamOne += 1;
+                    K1B2.IsEnabled = true;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutTwo();
+                }
+                else if ((Int32.Parse(K1T2G1.Text) == 30) && Int32.Parse(K1T1G1.Text) == 29)
+                {
+                    K1Info.Text = "Setting v4 entered";
+                    knockoutTeamTwo += 1;
+                    K1B2.IsEnabled = true;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutTwo();
+                }
+                else
+                {
+                    K1Info.Text = "Please enter a valid score";
+                }
+            }
+            catch
+            {
+                K1Info.Text = "Please enter a valid score";
+            }
+        }
+
+        private void K1B2_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //Team 1 wins 21-15
+                if ((Int32.Parse(K1T1G2.Text) == 21) && (Int32.Parse(K1T2G2.Text) < 20))
+                {
+                    //add one to T1 tally, allocate game 2
+                    K1Info.Text = "Team 1 wins first game";
+                    knockoutTeamOne += 1;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutThree();
+                }
+                //Team 2 wins 21-15
+                else if ((Int32.Parse(K1T2G2.Text) == 21) && (Int32.Parse(K1T1G2.Text) < 20))
+                {
+                    //add one to T2 tally, allocate game 2
+                    K1Info.Text = "Team 2 wins first game";
+                    knockoutTeamTwo += 1;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutThree();
+                }
+                //Team 1 wins via setting
+                else if (((Int32.Parse(K1T2G2.Text) > 21) && Int32.Parse(K1T2G2.Text) < 30) && (Int32.Parse(K1T1G2.Text) == (Int32.Parse(K1T2G2.Text) - 2)))
+                {
+                    K1Info.Text = "Setting v1 entered";
+                    knockoutTeamOne += 1;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutThree();
+                }
+                //Team 2 wins via setting
+                else if (((Int32.Parse(K1T1G2.Text) > 21) && Int32.Parse(K1T1G2.Text) < 30) && (Int32.Parse(K1T2G2.Text) == (Int32.Parse(K1T1G2.Text) - 2)))
+                {
+                    K1Info.Text = "Setting v2 entered";
+                    knockoutTeamTwo += 1;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutThree();
+                }
+                //Either team wins 30-29
+                else if (((Int32.Parse(K1T1G2.Text) == 30) && Int32.Parse(K1T2G2.Text) == 29))
+                {
+                    K1Info.Text = "Setting v3 entered";
+                    knockoutTeamOne += 1;
+                    K1B1.IsEnabled = false;
+                    FirstKnockoutThree();
+                }
+                else if ((Int32.Parse(K1T2G2.Text) == 30) && Int32.Parse(K1T1G2.Text) == 29)
+                {
+                    K1Info.Text = "Setting v4 entered";
+                    knockoutTeamTwo += 1;
+                    K1B2.IsEnabled = false;
+                    FirstKnockoutThree();
                 }
                 else
                 {

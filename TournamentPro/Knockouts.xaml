@@ -63,16 +63,17 @@
             <TextBlock Grid.Row="7" Name="K2T2" Text="" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14" RenderTransformOrigin="0.5,0.5" Width="128" Grid.ColumnSpan="2" Height="88" TextAlignment="Center" Margin="0,13,0,0" Grid.RowSpan="2" Foreground="Red"/>
 
             <!-- Top match lines -->
-            <Border Grid.Column="3" Grid.Row="1" Background="Black" Height="3" VerticalAlignment="Top" Margin="16,74,21,0" Visibility="Visible"/>
-            <Border Grid.Column="3" Grid.Row="1" Background="Black" Width="3" Height="27" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,74,0,0" Grid.RowSpan="2" Visibility="Visible"/>
+            <Border Grid.Column="3" Name="team1_1" Grid.Row="1" Background="Black" Height="3" VerticalAlignment="Top" Margin="16,74,21,0" Visibility="Visible" />
+
+            <Border Grid.Column="3" Name="team1_2" Grid.Row="1" Background="Black" Width="3" Height="27" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,74,0,0" Grid.RowSpan="2" Visibility="Visible"/>
 
 
             <!-- Bottom knockout lines -->
-            <Border Grid.Column="4" Grid.Row="2" Background="Black" Width="4" Margin="0,12,0,44" HorizontalAlignment="Left" Grid.RowSpan="4"/>
-            <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="150" Height="4" Margin="0,0,0,0" HorizontalAlignment="Left"/>
-            <Border Grid.Column="5" Grid.Row="4" Background="Black" Width="65" Height="4" Margin="0,0,0,0" HorizontalAlignment="Left"/>
-            <Border Grid.Column="5" Grid.Row="3" Background="Black" Width="4" Margin="0,74,0,12" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-            <Border Grid.Column="5" Grid.Row="4" Background="Black" Width="4" Margin="0,12,0,74" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+            <Border Name="T4" Grid.Column="4" Grid.Row="2" Background="Black" Width="4" Margin="0,12,0,44" HorizontalAlignment="Left" Grid.RowSpan="4"/>
+            <Border Name="T5"  Grid.Column="4" Grid.Row="4" Background="Black" Width="150" Height="4" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+            <Border Name="T6" Grid.Column="5" Grid.Row="4" Background="Black" Width="65" Height="4" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+            <Border Name="T7" Grid.Column="5" Grid.Row="3" Background="Black" Width="4" Margin="0,74,0,12" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+            <Border Name="T8" Grid.Column="5" Grid.Row="4" Background="Black" Width="4" Margin="0,12,0,74" HorizontalAlignment="Center" Grid.RowSpan="2"/>
             <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="2" Margin="0,0,0,12" HorizontalAlignment="Left" Grid.RowSpan="3"/>
             <Border Grid.Column="4" Grid.Row="4" Background="Black" Width="4" Margin="0,26,0,11" HorizontalAlignment="Left" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5">
                 <Border.RenderTransform>
@@ -159,7 +160,7 @@
             <TextBox Grid.Column="2" Grid.Row="3" Width="45" Height="20" Name="K1T2G2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"/>
             <TextBox Grid.Column="2" Grid.Row="3" Width="45" Height="20" Name="K1T2G3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0"/>
             <Button Grid.Column="1" Grid.Row="3" Width="45" Height="20" Name="K1B1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Click="K1B1_Click">Submit</Button>
-            <Button Grid.Column="2" Grid.Row="3" Width="45" Height="20" Name="K1B2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">Submit</Button>
+            <Button Grid.Column="2" Grid.Row="3" Width="45" Height="20" Name="K1B2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Click="K1B2_Click">Submit</Button>
             <Button Grid.Column="2" Grid.Row="3" Width="45" Height="20" Name="K1B3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
 
             <!-- Lower score entries -->
@@ -181,7 +182,7 @@
             <Button Grid.Column="2" Grid.Row="7" Width="45" Height="20" Name="K2B3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">Submit</Button>
             <Border Grid.Column="3" Grid.Row="3" Background="Black" Height="3" Margin="16,11.2,21,0" VerticalAlignment="Top"/>
             <Border Grid.Column="3" Grid.Row="2" Background="Black" Width="3" Height="28" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="102,0,0,70" Grid.RowSpan="2" Visibility="Visible"/>
-            <Border Grid.Column="3" Grid.Row="2" Background="Black" Margin="102,12,124,10" Grid.ColumnSpan="2" Visibility="Visible"/>
+            <Border Name="T3" Grid.Column="3" Grid.Row="2" Background="Black" Margin="102,12,124,10" Grid.ColumnSpan="2" Visibility="Visible"/>
 
 
         </Grid>
